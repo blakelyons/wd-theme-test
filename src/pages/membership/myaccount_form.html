@@ -1,0 +1,129 @@
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x standard ">
+        <div class="content-body">
+            <!-- Accrisoft Freedom v/11 Apr 7, 2021 --><h1 class="myaccountHeading">Personal Information</h1>
+            <div class="myaccountLister"><br>
+                <form id="myaccount_form" action="index.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <div class="myaccountForm" id="pinfoDiv">
+                            <table id="pinfoTable">
+                                <tbody>
+                                <tr class="tr_image_preview myaccountFormRow">
+                                    <td>Image</td>
+                                    <td>
+                                        <div class="imageBoxContainer"></div>
+                                        <div style="clear:both; padding-bottom: 15px;"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr_image_upload myaccountFormRow">
+                                    <td>Upload Image</td>
+                                    <td>
+                                        <input class="freedomFileUpload" type="file" id="imagefile" name="imagefile" value="" size="40">
+                                    </td>
+                                </tr>
+                                <tr class="tr_image_upload_msg myaccountFormRow">
+                                    <td>&nbsp;</td>
+                                    <td>The largest allowable file size you can currently upload is 122.8MB</td>
+                                </tr>
+                                <tr class="myaccountSpacerRow myaccountFormRow">
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr class="tr_company_name myaccountFormRow">
+                                    <td>Company Name:</td>
+                                    <td><input type="text" id="company_name" name="company_name" value="Accrisoft"></td>
+                                </tr>
+                                <tr class="tr_contact_title myaccountFormRow">
+                                    <td>Title:</td>
+                                    <td><input type="text" id="contact_title" name="contact_title" value=""></td>
+                                </tr>
+                                <tr class="tr_contact_fname myaccountFormRow">
+                                    <td>First Name:</td>
+                                    <td><input type="text" id="contact_fname" name="contact_fname" value="Lea"></td>
+                                </tr>
+                                <tr class="tr_contact_mname myaccountFormRow">
+                                    <td>Middle Name:</td>
+                                    <td><input type="text" id="contact_mname" name="contact_mname" value=""></td>
+                                </tr>
+                                <tr class="tr_contact_lname myaccountFormRow">
+                                    <td>Last Name:</td>
+                                    <td><input type="text" id="contact_lname" name="contact_lname" value="Rickert"></td>
+                                </tr>
+                                <tr class="tr_contact_email myaccountFormRow">
+                                    <td>Email:</td>
+                                    <td>
+                                        <input type="text" id="contact_email" name="contact_email" value="lea.test@accrisoft.com">
+                                    </td>
+                                </tr>
+                                <tr class="tr_contact_phone myaccountFormRow">
+                                    <td>Phone:</td>
+                                    <td><input type="text" id="contact_phone" name="contact_phone" value="941-999-8888">
+                                    </td>
+                                </tr>
+                                <tr class="tr_contact_mobile myaccountFormRow">
+                                    <td>Mobile Phone:</td>
+                                    <td><input type="text" id="contact_mobile" name="contact_mobile" value=""></td>
+                                </tr>
+                                <tr class="tr_contact_fax myaccountFormRow">
+                                    <td>Fax:</td>
+                                    <td><input type="text" id="contact_fax" name="contact_fax" value=""></td>
+                                </tr>
+                                <tr class="tr_contact_website myaccountFormRow">
+                                    <td>Website:</td>
+                                    <td><input type="text" id="contact_website" name="contact_website" value=""></td>
+                                </tr>
+                                <tr class="myaccountSpacerRow myaccountFormRow">
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr class="tr_address_display">
+                                    <td colspan="2">
+                                        <p>
+                                            <button class="myaccountButton green button" onclick="goToUrl('index.php?src=membership&amp;srctype=dispatch&amp;module=membership&amp;section=address_form')" type="button">
+                                                <span>Add an Address</span>
+                                            </button>
+                                        </p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="formButtons formFooterButtons">
+                            <script type="text/javascript">
+                                //<![CDATA[
+                                function validate() {
+                                    return true;
+                                }//]]>
+                            </script>
+                            <button class="submitButton myaccountButton button" type="submit" onclick="javascript: return validate();">
+                                Save
+                            </button>&nbsp;<a href="index.php?src=membership&amp;srctype=myaccount&amp;module=membership&amp;section=pinfo" class="cancelButton myaccountButton button hollow alert">Cancel</a>
+                        </div>
+                    </div>
+                    <div style="display:none">
+                        <input type="hidden" name="src" value="membership">
+                        <input type="hidden" name="srctype" value="myaccount">
+                        <input type="hidden" name="cmd" value="save_pinfo">
+                        <input type="hidden" name="module" value="membership">
+                        <input type="hidden" name="section" value="pinfo">
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript">
+                //<![CDATA[
+
+                function deleteViewerImage(id) {
+                    if (!confirm('Are you sure you want to delete this item?'))
+                        return;
+
+                    var url = 'index.php?src=membership&srctype=json&cmd=delimg&id=' + id;
+                    $.getJSON(url, function (json) {
+                        if (json.result > 0) {
+                            $('#imageBox' + id).hide('slow');
+                        }
+                    });
+                }//]]>
+            </script>
+        </div>
+    </div>
+</main>

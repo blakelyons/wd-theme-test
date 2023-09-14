@@ -1,0 +1,71 @@
+//Even though we use our own freedom pagination markup, i'm using the foundation pagination variables when applicable
+
+/// Default Pagination item Background.
+/// @type Color
+$pagination-item-background: $light-gray !default;
+/// Default Pagination item Background.
+/// @type List
+$pagination-item-border: 1px solid $light-gray !default;
+/// Default Pagination item Background.
+/// @type List
+$pagination-item-border-hover: 1px solid $pagination-item-background-current !default;
+$pagination-item-color-hover: $black !default;
+
+$pagination-font-weight: normal !default;
+
+$pagination-next-background: $pagination-item-background !default;
+$pagination-next-color: $pagination-item-color !default;
+
+$pagination-prev-background: $pagination-item-background !default;
+$pagination-prev-color: $pagination-item-color !default;
+
+/*! Pagination */
+.pagination {
+  clear: both;
+  display: block;
+}
+
+.pagination a, .pagination a:visited {
+  text-decoration: none;
+  color: $pagination-item-color;
+  font-weight: $pagination-font-weight;
+}
+
+.pagination .prevnextCurrent, .pagination .prevnextWindow, .pagination .prevnextWindowArrow, .pagination .prevnextLink {
+  background-color: $pagination-item-background;
+  border: $pagination-item-border;
+  margin: 0;
+  padding: 0.4em 0.7em;
+  font-size: $pagination-font-size;
+  margin-right: 2px;
+  display: inline-block;
+  border-radius: $pagination-radius;
+}
+
+.pagination .pageLinkPrev a {
+  background-color: $pagination-next-background;
+  color: $pagination-next-color;
+}
+
+.pagination .pageLinkNext a {
+  background-color: $pagination-prev-background;
+  color: $pagination-prev-color;
+}
+
+.pagination .prevnextWindow:hover, .pagination .prevnextLink:hover, .pagination .prevnextWindowArrow:hover {
+  border: $pagination-item-border-hover;
+  color: $pagination-item-color;
+  background-color: $pagination-item-background-hover;
+}
+
+.pagination .prevnextCurrent {
+  background: $pagination-item-background-current;
+  color: $pagination-item-color-current;
+  border: 1px solid $pagination-item-background-current;
+  font-weight: bold;
+}
+
+.pagination .prevnextLink, .pagination .prevnextWindowArrow {
+}
+
+/* End Pagination */

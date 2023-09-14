@@ -1,0 +1,160 @@
+//This file a a place to add reusable scss functions and  mixins
+
+@function brand-stripe($palette){
+  $percent: 0;
+  $step: 100 / length($palette);
+  $result:();
+
+  @each $name, $color in $palette {
+    $result: append($result, unquote( $color + " " + $percent + "%" ),  $separator: comma);
+    $percent: $percent+$step;
+    $result: append($result,unquote( $color + " " + $percent + "%"),  $separator: comma);
+  }
+  @return $result;
+}
+// General Background Image Overlay
+@mixin background-image-overlay($color, $opacity, $height, $to-top-or-bottom) {
+  &:after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to top, $color, transparentize($color, .5));;
+    content: '';
+    opacity: $opacity;
+  }
+}
+
+@mixin full-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+
+@mixin overlay-full-transparent($background: $black, $opacity: .8) {
+  &:after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $background;
+    content: '';
+    opacity: $opacity;
+  }
+}
+
+@mixin circle($background: $black , $size: 92px) {
+ @include iconBox($background: $background , $size: $size, $radius: 50%)
+}
+@mixin iconBox($background: $black , $size: 92px, $radius: 50%) {
+  background: $background;
+  width: $size;
+  height: $size;
+  border-radius: $radius;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1;
+  padding: 1rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin zoom-photo-bg(
+  $selector: '.photoBg',
+  $overlay:linear-gradient(180deg, transparent, $black),
+  $hover-transform: scale(1.1),
+
+) {
+  position: relative;
+  overflow: hidden;
+
+  & > #{$selector} {
+    @include full-cover;
+    @include background-cover;
+    z-index: 0;
+    transition: $transition-slow;
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 90%;
+      opacity: .8;
+      background-image: $overlay;
+      transition: $transition-slow;
+    }
+  }
+
+  &:hover > #{$selector} {
+    transform: $hover-transform;
+  }
+
+}
+
+@mixin colorThemeSection($background) {
+  $color: color-pick-contrast($background, ($white, $black));
+
+  & {
+    background: $background;
+    color: $color;
+  }
+  & address, p, a, h1, h2, h3, h4 {
+    color: $color;
+  }
+}
+@mixin alignment-classes() {
+  &.align-left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &.align-right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  &.align-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &.align-top {
+    align-items: flex-start;
+  }
+
+  &.align-middle {
+    align-items: center;
+  }
+
+  &.align-bottom {
+    align-items: flex-end;
+  }
+}
+
+@function str-ends-with($string, $find) {
+  @return str-length($string) >= str-length($find) AND str-slice($string, (str-length($string) - str-length($find) + 1)) == $find;
+}

@@ -1,0 +1,157 @@
+////
+/// @group quicklinks
+////
+
+/// Default quicklink
+/// @type Color
+$quicklink-palette: (
+        1:$primary-color,
+        2:$secondary-color,
+        3:$dark-gray
+) !default;
+
+/// Default quicklink style solid, bordered or both
+/// @type keyword
+$quicklink-style: solid !default;
+
+/// Default quicklink color
+/// @type Color
+$quicklinks-color: $white !default;
+
+/// Builds the solid quicklink look
+/// @param {Map} $palette [] Coloring classes for nth-child coloring
+/// @param {String} $class [null]  class trigger. null to let it be the default style
+@mixin quicklink-solid($palette: [], $class: null) {
+  #{$class} &:hover, #{$class} &:focus {
+    box-shadow: inset 0px 0px 0px 2px white;
+  }
+
+  $length: length($palette);
+  $key: 0;
+  @each $name, $color in $palette {
+    $key: $key+1;
+
+    #{$class} &:nth-child(#{$length}n + #{$key}) {
+      background-color: $color;
+      color: color-pick-contrast($color, $tolerance: 3);
+
+    }
+
+  }
+}
+
+/// Builds the border bottom quicklink look
+/// @param {Map} $palette [] Coloring classes for nth-child coloring
+/// @param {String} $class [null]  class trigger. null to let it be the default style
+@mixin quicklink-bordered($palette, $class: null) {
+  #{$class} &:hover, #{$class} &:focus {
+    color: inherit;
+  }
+
+  $length: length($palette);
+  $key: 0;
+  @each $name, $color in $palette {
+    $key: $key+1;
+    #{$class} &:nth-child(#{$length}n + #{$key}) {
+      box-shadow: inset 0px 0px 0px 1px #e6e6e6, inset 0px -8px 0px $color;
+    }
+
+  }
+}
+
+.quicklinks-component {}
+//the grid
+.quicklinks {
+  justify-content: space-around;
+  align-items: stretch;
+  color: $quicklinks-color;
+  border: 5px solid white;
+}
+
+.quicklink {
+
+  color: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  border-radius: $global-radius;
+  border: 5px solid white;
+  padding: .75rem;
+
+  background-color: $white;
+  transition: $transition-fast;
+
+  @if $quicklink-style {
+    $solid-class: '';
+    $bordered-class: '';
+    @if $quicklink-style == 'both' {
+      $solid-class: '.solid';
+      $bordered-class: '.bordered';
+    }
+    @if $quicklink-style == 'solid' or $quicklink-style == 'both' {
+      @include quicklink-solid($quicklink-palette, $solid-class);
+    }
+    @if $quicklink-style == 'bordered' or $quicklink-style == 'both' {
+      @include quicklink-bordered($quicklink-palette, $bordered-class);
+    }
+  } @else {
+    //@include quicklink-solid($quicklink-palette);
+
+  }
+
+  @include breakpoint(medium up) {
+    & {
+      //max-width: 310px;
+      //min-width: 200px;
+      flex: 1 1 auto;
+      width: auto;
+      padding: 1rem 1rem 1rem 1rem;
+
+    }
+  }
+
+}
+
+.quicklink-icon {
+  color: inherit;
+  width: auto;
+  //height: 70px;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  //border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @include breakpoint(medium up) {
+    & {
+      //width: 110px;
+      //height: 110px;
+      font-size: 3rem;
+    }
+  }
+}
+
+.quicklink-action {
+  //display: flex;
+  //align-items: center;
+}
+
+.quicklink .quicklink-title {
+  //font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.quicklink .quicklink-content {
+  height: 100%;
+  //max-width: 300px;
+  padding: 1rem;
+  box-sizing: border-box;
+  //text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+

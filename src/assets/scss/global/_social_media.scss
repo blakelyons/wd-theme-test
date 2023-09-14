@@ -1,0 +1,61 @@
+////
+/// @group social media Icons
+////
+
+/// Default social icon background
+/// @type Color
+$social-background-color: null !default;
+
+/// Default social icon border-radius
+/// @type Number
+$social-border-radius: 50% !default;
+
+/// Default social icon padding
+/// @type List
+$social-padding: .7rem 1rem !default;
+
+/// Default social icon width
+/// @type Number
+$social-width:  1.6em !default;
+
+/// Default social icon height
+/// @type Number
+$social-height:  1.6em !default;
+
+/// Default social icon size
+/// @type Number
+$social-font-size: 1.5rem !default;
+
+.socialMenu {
+  margin-bottom: $global-margin;
+  li {
+    margin-right: .5rem;
+    &:last-child {
+      margin-right: 0;
+      }
+    }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $social-width;
+    height: $social-height;
+
+    background: $social-background-color;
+    border-radius: $social-border-radius;
+
+    text-decoration: none;
+    text-align: center;
+    font-size: $social-font-size;
+
+    &:hover {
+      text-decoration: none;
+      @if($social-background-color) {
+        background: smart-scale($social-background-color, 10%);
+        }
+      }
+
+    }
+  }

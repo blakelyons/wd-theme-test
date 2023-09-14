@@ -1,0 +1,10 @@
+<section class="quicklinks-component">
+    <div class="grid-container full quicklinks-inner">
+        <div class="grid-x quicklinks solid large-up-4">
+           {{#each modules.quicklinks}}
+            {{> quicklink_single_with_photo this
+                    blurb=(lorem count='20' units='words') }}
+            {{/each}}
+        </div>
+    </div>
+</section>

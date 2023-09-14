@@ -1,0 +1,67 @@
+
+////
+/// @group components-misc
+////
+
+/// Default background color for card image area.
+/// @type Color
+$card-image-background: var(--card-image-bg, var(--clr-primary)) !default;
+
+.card-image {
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  padding-bottom: 60%;
+  background-color: $card-image-background;
+  background-position: center center;
+  background-size: cover;
+
+  &.tall {
+    padding-bottom: 110%;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.cards-slider{
+  a,a:hover {
+    color: inherit
+  }
+  @include breakpoint(medium down){
+    .carousel-cell{
+      max-width: 270px;
+    }
+  }
+
+}
+
+.card-section {
+  transition: all .4s ease-out;
+}
+.card--no-shadow {
+  box-shadow: none;
+}
+.card--elevated {
+  box-shadow:  0 3px 6px rgba(0,0,0,.3);
+}
+ .card--show-more:hover .card-section {
+ transform: translateY(-8px);
+}
+
+.card p.card-action-text {
+  opacity: 0;
+  font-weight: bold;
+  transition: all .4s ease-out;
+  margin-top: auto;
+  position: relative;
+  height: 0;
+}
+
+.card--show-more:hover p.card-action-text {
+  opacity: 1;
+  transform: translateY(-8px);
+}

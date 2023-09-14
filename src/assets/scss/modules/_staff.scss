@@ -1,0 +1,59 @@
+$staff-alternating-background : $light-gray !default;
+/*! ModuleBegin::directory-staff */
+.staff-item .lister-title {
+  //font-size: 1.25rem;
+}
+.staff-item .lister-image {
+  //margin-bottom: 1rem;
+}
+.staff-item .lister-image {  width: 150px;}
+
+//@media screen and (min-width:1025px) and (max-width: 1300px){
+//  .staff-item .lister-image{ flex: 100%; text-align: left; }
+//}
+.staff-item .lister-image .thumbnail {
+  width: 150px;
+  height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 0;
+}
+.staff-item .lister-image .thumbnail.circle {
+  border-radius: 50%;
+  height: 150px;
+}
+.staff-item .lister-image .thumbnail.square {
+  height: 150px;
+}
+
+
+.staff-item.lister-item {
+  margin-bottom: 0.5rem;
+  padding:1rem;
+}
+
+//.staff .lister-content {align-self: center;}
+
+// 4 grid style
+.staff-lister--boxed{
+  box-shadow: $card-shadow;
+  .lister-image {
+    .thumbnail{width:140px;height:140px;overflow:hidden;margin-bottom:0}
+  }
+  .lister-item{
+    margin: 0;
+  }
+}
+.staff-lister--alternating .lister-item:nth-child(4n+2),
+.staff-lister--alternating .lister-item:nth-child(4n+3) {
+  background: $staff-alternating-background;
+}
+
+//photobox style
+.photoBox--staff .photoBox-drawer.vertical{
+  padding-top: 0;
+  transform: translateY(calc(100% - 100px));
+}
+
+/*! ModuleEnd::directory-staff*/

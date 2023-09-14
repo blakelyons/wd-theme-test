@@ -1,0 +1,162 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'freedom_settings';
+@import 'mixins';
+
+@import 'foundation';
+
+/*!
+ * DO NOT EDIT
+ * This file is part of an active deployment and
+ * it is linked to scss files in the wd_master_theme repository
+ * If you need to add styles to the redesign use an additional temporary css file and add that to the layout as well
+ * Or edit the scss files and rebuild them
+ *
+ */
+
+/* Root CSS Variables*/
+@import "global/root_variables";
+// Global styles
+/* Foundation: global-styles, forms, typography  */
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+/* END Foundation: global-styles, forms, typography  */
+
+@import "global/base";
+@import "global/buttons";
+@import "global/tinymce";
+
+// Grids (choose one)
+/* Foundation: grid  */
+@include foundation-xy-grid-classes;
+/* END Foundation: grid  */
+
+/*! -------------------------------------------------------------------- */
+/*! Foundation Components                                                */
+/*! -------------------------------------------------------------------- */
+// Generic components
+@include foundation-table;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-dropdown;
+
+// Containers
+@include foundation-accordion;
+@include foundation-media-object;
+//@include foundation-orbit;
+@include foundation-responsive-embed;
+@include foundation-tabs;
+@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+
+/*! -------------------------------------------------------------------- */
+/*! Framework -  Header, Footer, Content and Sidebar                     */
+/*! -------------------------------------------------------------------- */
+
+@import "global/header";
+//@import "global/header_sub";
+@import "global/footer";
+@import "global/social_media";
+@import 'global/mobile_nav';
+@import 'global/content_framework';
+@import 'global/sidemenu';
+@import 'global/alert_module';
+/*! -------------------------------------------------------------------- */
+/*! Reusable Styles                                                      */
+/*! -------------------------------------------------------------------- */
+@import "global/collapsibles"; //expandies
+
+/*! -------------------------------------------------------------------- */
+/*! Components                                                           */
+/*! -------------------------------------------------------------------- */
+/*! ----- One offs and module components  ------ */
+
+/*! ----- Slideshow ------ */
+@import "modules/slideshow";
+//@import "modules/slideshow_nav_blocks";
+
+/*! ----- Interior Header Banner ----- */
+@import "components/page_header";
+
+/*! ----- Responsive Carousels ------ */
+@import "global/responsive_carousels";
+
+/*! ----- Home Partners ----- */
+@import "components/partners";
+
+/*! ----- Repeating Items / Boxes Component ----- */
+@import "components/repeat_boxes";
+/*! ----- Quicklinks Component ----- */
+//@import "components/quicklinks";
+/*! ----- Cards ----- */
+@import "components/cards";
+
+/*! ----- Testimonial Component ----- */
+@import "components/testimonials";
+
+/*! ----- Photo Boxes - slide out photo quicklinks ------ */
+@import "components/photoboxes";
+
+/*! ----- Quick Stats ------ */
+@import "components/statistics";
+
+/*! ----- CTA Component ------ */
+@import "components/cta";
+
+/*! ----- Multi Column  ------ */
+@import "components/multi_column";
+/*! ----- Split Media / Text  ------ */
+@import "components/split_content";
+/*! ----- Pop up Alert Module  ------ */
+@import "modules/popup_alerts";
+
+//generic 'Theme' background and color combos - place below so they can override
+@import "global/themes";
+
+/*! ----- Traditional Freedom Module Styles ------ */
+@import "modules/general";
+@import "global/modules_custom";
+@import "modules/pagination";
+@import "modules/forms";
+@import "modules/membership";
+@import "modules/events";
+@import "modules/photos";
+@import "modules/commerce";
+@import "modules/staff";
+
+//Turn on the following only when needed
+// Real Estate
+//@import "rets/rets_base";
+//@import "rets/rets_agents";
+//@import "rets/affiliates";
+//@import "rets/rets_offices";
+//@import "rets/rets_properties";
+
+//Community Centers
+
+// ----- Group Exercise  ------ */
+@import "components/fitness_schedule";
+// ----- Programs  ------ */
+//@import "modules/programs";
+
+//@import "debug";
+
+@import "global/membership_application";
+
+
+//  Foundation: Layout components
+//@include foundation-reveal;
+@include foundation-sticky;
+
+// Helpers
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;

@@ -1,0 +1,20 @@
+<section class="testimonial-component testimonial-component--cards content theme-medium">
+    <div class="grid-container wide">
+        <div class="testimonial-slider carousel-wrapper" data-flickity='{"cellAlign":"left"}'>
+            {{#repeat 3}}
+            <div class="cell testimonial-slide">
+                <div class="testimonial-image" style="background-image: url('https://picsum.photos/100/100');"></div>
+                <div class="testimonial-card-text">
+                    <div class="testimonial-citation">
+                        <div class="h4">Hellen W.</div>
+                        <p>United States</p>
+                    </div>
+                    <div class="testimonial-text small">
+                        <p>{{lorem count='1' units='paragraph'}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/repeat}}
+        </div>
+    </div>
+</section>

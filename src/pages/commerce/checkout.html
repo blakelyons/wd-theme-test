@@ -1,0 +1,659 @@
+---
+page-title: Checkout
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <!-- Accrisoft Freedom v/11 Jan 18, 2021 -->
+
+            <script type="text/javascript">
+                //<![CDATA[
+
+                function Validator(form) {
+                    var obj;
+                    var errorMsg = '';
+                    var REGEX_EMAIL = /^[a-z0-9&.+_' -]+@(([a-z0-9\._-]+\.+[a-z]{2,})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))$|^"[a-z0-9&.+_' -]+@(([a-z0-9\._-]+\.+[a-z]{2,})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))"$/i;
+                    var REGEX_PHONE = /^((\()?\d{3}(\))?[- .])?\d{3}[- .]\d{4}( .*)?$/;
+                    var REGEX_ALPHANUMSPACE = /^(\w|\d| )*$/;
+                    obj = document.getElementById('IDFormField_email_0');
+                    if (obj != null) {
+                        if (obj.value == '' || (obj.value != '' && !REGEX_EMAIL.test(obj.value))) {
+                            errorMsg += "Email is required\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_dayphone_0');
+                    if (obj != null) {
+                        if (obj.value == '' || (obj.value != '' && !REGEX_PHONE.test(obj.value))) {
+                            errorMsg += "Daytime phone is required (nnn-nnn-nnnn)\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_bill_address1_0');
+                    if (obj != null) {
+                        if (obj.value == '') {
+                            errorMsg += "\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_bill_country_0');
+                    if (obj != null) {
+                        if (obj.value == '') {
+                            errorMsg += "Country code is required\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_bill_city_0');
+                    if (obj != null) {
+                        if (obj.value == '') {
+                            errorMsg += "\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_bill_state_0');
+                    if (obj != null) {
+                        if (obj.value == '') {
+                            errorMsg += "State is required\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_bill_zip_0');
+                    if (obj != null) {
+                        if (obj.value == '') {
+                            errorMsg += "Zip is Required\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_ship_firstname_0');
+                    if (obj != null) {
+                        if ((obj.value != '' && !REGEX_ALPHANUMSPACE.test(obj.value))) {
+                            errorMsg += "Required first name\n";
+                        }
+                    }
+                    obj = document.getElementById('IDFormField_ship_lastname_0');
+                    if (obj != null) {
+                        if ((obj.value != '' && !REGEX_ALPHANUMSPACE.test(obj.value))) {
+                            errorMsg += "Required last name\n";
+                        }
+                    }
+                    if (errorMsg != '') {
+                        alert(errorMsg);
+                        return false;
+                    }
+                    if (CommerceToolkit.ValidateShipping() == false) {
+                        return false;
+                    }
+
+                    if (CommerceToolkit.ValidateBillingAddress() == false) {
+                        return false;
+                    }
+
+                    if (!$('input[name$=bill_same_as]').is(':checked')) {
+                        if (CommerceToolkit.ValidateShippingAddress() == false) {
+                            return false;
+                        }
+                    }
+
+                    if (CommerceToolkit.ValidatePayment() == false) {
+                        return false;
+                    }
+                    let submitBtns = form.querySelectorAll('[type=submit]');
+                    if (submitBtns.length > 0) {
+                        submitBtns[0].disabled = true;
+                    }
+                    ;
+                    return true;
+                }
+
+                //]]>
+            </script>
+            <h1>Store Checkout</h1>
+            <div class="freedomWebForm">
+                <form id="form" name="form" method="post" action="index.php?formProcessed=commerce_checkout" onsubmit="return  Validator(this)" _lpchecked="1">
+                    <div class="formContent">
+                        <style>
+
+                        </style>
+
+                        <div id="commerce_checkoutTable" class="formContent">
+
+                            <div class="checkout-form"><!-- .checkout-form == left column, right column = summary -->
+                                <div id="" class="step-bar checkout-heading"><span><b>Customer Information</b></span></div>
+                                <div class="checkout-panel formContent">
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_dayphone_0" class="formLabel formLabel--required">Daytime Phone</label>
+                                        <input type="tel" placeholder="999-999-9999" id="IDFormField_dayphone_0" name="formField_dayphone" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_email_0" class="formLabel formLabel--required">Email</label>
+                                        <input type="email" placeholder="" id="IDFormField_email_0" name="formField_email" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--medium">
+                                        <label for="IDFormField_bill_lastname_0" class="formLabel ">Last Name</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_lastname_0" name="formField_bill_lastname" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--medium">
+                                        <label for="IDFormField_bill_firstname_0" class="formLabel ">First Name</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_firstname_0" name="formField_bill_firstname" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_bill_address1_0" class="formLabel formLabel--required">Address 1</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_address1_0" name="formField_bill_address1" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_bill_address2_0" class="formLabel ">Address 2</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_address2_0" name="formField_bill_address2" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--full"><span class="unitedStatesValue">United States</span></div>
+
+                                    <div class="formGroup formGroup--small">
+                                        <label for="IDFormField_bill_city_0" class="formLabel formLabel--required">City</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_city_0" name="formField_bill_city" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--small">
+                                        <label for="IDFormField_bill_state_0" class="formLabel formLabel--required">State</label>
+                                        <select class="formInput" id="IDFormField_bill_state_0" name="formField_bill_state">
+                                            <option value=""></option>
+                                            <optgroup label="United States">
+                                                <option value="AK">Alaska (AK)</option>
+                                                <option value="AL">Alabama (AL)</option>
+                                                <option value="AR">Arkansas (AR)</option>
+                                                <option value="AZ">Arizona (AZ)</option>
+                                                <option value="CA">California (CA)</option>
+                                                <option value="CO">Colorado (CO)</option>
+                                                <option value="CT">Connecticut (CT)</option>
+                                                <option value="DC">District of Columbia (DC)</option>
+                                                <option value="DE">Delaware (DE)</option>
+                                                <option value="FL">Florida (FL)</option>
+                                                <option value="GA">Georgia (GA)</option>
+                                                <option value="GU">Guam (GU)</option>
+                                                <option value="HI">Hawaii (HI)</option>
+                                                <option value="IA">Iowa (IA)</option>
+                                                <option value="ID">Idaho (ID)</option>
+                                                <option value="IL">Illinois (IL)</option>
+                                                <option value="IN">Indiana (IN)</option>
+                                                <option value="KS">Kansas (KS)</option>
+                                                <option value="KY">Kentucky (KY)</option>
+                                                <option value="LA">Louisiana (LA)</option>
+                                                <option value="MA">Massachusetts (MA)</option>
+                                                <option value="MD">Maryland (MD)</option>
+                                                <option value="ME">Maine (ME)</option>
+                                                <option value="MI">Michigan (MI)</option>
+                                                <option value="MN">Minnesota (MN)</option>
+                                                <option value="MO">Missouri (MO)</option>
+                                                <option value="MP">Northern Mariana Islands (MP)</option>
+                                                <option value="MS">Mississippi (MS)</option>
+                                                <option value="MT">Montana (MT)</option>
+                                                <option value="NC">North Carolina (NC)</option>
+                                                <option value="ND">North Dakota (ND)</option>
+                                                <option value="NE">Nebraska (NE)</option>
+                                                <option value="NH">New Hampshire (NH)</option>
+                                                <option value="NJ">New Jersey (NJ)</option>
+                                                <option value="NM">New Mexico (NM)</option>
+                                                <option value="NV">Nevada (NV)</option>
+                                                <option value="NY">New York (NY)</option>
+                                                <option value="OH">Ohio (OH)</option>
+                                                <option value="OK">Oklahoma (OK)</option>
+                                                <option value="OR">Oregon (OR)</option>
+                                                <option value="PA">Pennsylvania (PA)</option>
+                                                <option value="PR">Puerto Rico (PR)</option>
+                                                <option value="RI">Rhode Island (RI)</option>
+                                                <option value="SC">South Carolina (SC)</option>
+                                                <option value="SD">South Dakota (SD)</option>
+                                                <option value="TN">Tennessee (TN)</option>
+                                                <option value="TX">Texas (TX)</option>
+                                                <option value="UT">Utah (UT)</option>
+                                                <option value="VA">Virginia (VA)</option>
+                                                <option value="VI">Virgin Islands (VI)</option>
+                                                <option value="VT">Vermont (VT)</option>
+                                                <option value="WA">Washington (WA)</option>
+                                                <option value="WI">Wisconsin (WI)</option>
+                                                <option value="WV">West Virginia (WV)</option>
+                                                <option value="WY">Wyoming (WY)</option>
+                                            </optgroup>
+                                        </select>
+
+                                        <input type="text" value="" name="formField_bill_state" id="textField_bill_state" disabled="disabled" style="display: none;"></div>
+
+                                    <input type="hidden" name="formField_bill_statedefault" id="IDFormField_bill_statedefault_0" value="">
+
+                                    <div class="formGroup formGroup--small">
+                                        <label for="IDFormField_bill_zip_0" class="formLabel formLabel--required">Zip</label>
+                                        <input type="text" placeholder="" id="IDFormField_bill_zip_0" name="formField_bill_zip" value="">
+
+                                    </div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_comments_0" class="formLabel ">Comments and Special Instructions</label>
+                                        <textarea name="formField_comments" id="IDFormField_comments_0" placeholder=""></textarea>
+                                    </div>
+
+                                    <input type="hidden" value="United States" name="formField_bill_country" id="hiddenField_bill_country"></div><!-- end panel-->
+                                <div class="checkout-heading step-bar"><span><b> Delivery</b></span></div>
+                                <div class="checkout-panel formContent ">
+                                    <div class="formGroup formGroup--radio formGroup--full">
+                                        <fieldset class="formInput-group" data-column="2">
+                                            <legend class="formLabel ">How do you want to receive your items?</legend>
+                                            <div class="formInput-columns columns-2">
+                                                <label class="formLabel" data-columns="2"><input type="radio" class="formRadio" id="IDFormField_delivery_choice_0_1" name="formField_delivery_choice" value="shipping" checked="checked">&nbsp;Ship
+                                                                                                                                                                                                                                         to
+                                                                                                                                                                                                                                         Me</label>
+
+                                                <label class="formLabel" data-columns="2"><input type="radio" class="formRadio" id="IDFormField_delivery_choice_0_2" name="formField_delivery_choice" value="pickup">&nbsp;Pick
+                                                                                                                                                                                                                     Up
+                                                                                                                                                                                                                     at
+                                                                                                                                                                                                                     Office</label>
+
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="formStaticText pickupInfoWrapper" style="text-align: left; display: none;">
+                                        <p><strong><span class="st">Pickup Location</span></strong></p>
+                                        <p>123 Test Drive&nbsp;<br>Big City FL, 12544</p></div>
+
+                                    <div class="shippingInfoWrapper formContent">
+                                        <div class="formGroup formGroup--checkbox formGroup--align">
+                                            <label for="IDFormField_bill_same_as_0" class="formtext formLabel">Ship To Billing
+                                                <input class="formInput" type="checkbox" id="IDFormField_bill_same_as_0" name="formField_bill_same_as" value="1" checked="checked">
+                                            </label>
+
+                                        </div>
+
+                                        <div class="hide_this_section_unless_checked formContent" style="display: none;">
+                                            <div class="formGroup formGroup--medium">
+                                                <label for="IDFormField_ship_firstname_0" class="formLabel ">First Name</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_firstname_0" name="formField_ship_firstname" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--medium">
+                                                <label for="IDFormField_ship_lastname_0" class="formLabel ">Last Name</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_lastname_0" name="formField_ship_lastname" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_companyname_0" class="formLabel ">Company Name</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_companyname_0" name="formField_ship_companyname" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_address1_0" class="formLabel ">Address 1</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_address1_0" name="formField_ship_address1" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_address2_0" class="formLabel ">Address 2</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_address2_0" name="formField_ship_address2" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_city_0" class="formLabel ">City</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_city_0" name="formField_ship_city" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_state_0" class="formLabel ">State/Province</label>
+                                                <select class="formInput" id="IDFormField_ship_state_0" name="formField_ship_state" disabled="disabled">
+                                                    <option value=""></option>
+                                                    <optgroup label="United States">
+                                                        <option value="AK">Alaska (AK)</option>
+                                                        <option value="AL">Alabama (AL)</option>
+                                                        <option value="AR">Arkansas (AR)</option>
+                                                        <option value="AZ">Arizona (AZ)</option>
+                                                        <option value="CA">California (CA)</option>
+                                                        <option value="CO">Colorado (CO)</option>
+                                                        <option value="CT">Connecticut (CT)</option>
+                                                        <option value="DC">District of Columbia (DC)</option>
+                                                        <option value="DE">Delaware (DE)</option>
+                                                        <option value="FL">Florida (FL)</option>
+                                                        <option value="GA">Georgia (GA)</option>
+                                                        <option value="GU">Guam (GU)</option>
+                                                        <option value="HI">Hawaii (HI)</option>
+                                                        <option value="IA">Iowa (IA)</option>
+                                                        <option value="ID">Idaho (ID)</option>
+                                                        <option value="IL">Illinois (IL)</option>
+                                                        <option value="IN">Indiana (IN)</option>
+                                                        <option value="KS">Kansas (KS)</option>
+                                                        <option value="KY">Kentucky (KY)</option>
+                                                        <option value="LA">Louisiana (LA)</option>
+                                                        <option value="MA">Massachusetts (MA)</option>
+                                                        <option value="MD">Maryland (MD)</option>
+                                                        <option value="ME">Maine (ME)</option>
+                                                        <option value="MI">Michigan (MI)</option>
+                                                        <option value="MN">Minnesota (MN)</option>
+                                                        <option value="MO">Missouri (MO)</option>
+                                                        <option value="MP">Northern Mariana Islands (MP)</option>
+                                                        <option value="MS">Mississippi (MS)</option>
+                                                        <option value="MT">Montana (MT)</option>
+                                                        <option value="NC">North Carolina (NC)</option>
+                                                        <option value="ND">North Dakota (ND)</option>
+                                                        <option value="NE">Nebraska (NE)</option>
+                                                        <option value="NH">New Hampshire (NH)</option>
+                                                        <option value="NJ">New Jersey (NJ)</option>
+                                                        <option value="NM">New Mexico (NM)</option>
+                                                        <option value="NV">Nevada (NV)</option>
+                                                        <option value="NY">New York (NY)</option>
+                                                        <option value="OH">Ohio (OH)</option>
+                                                        <option value="OK">Oklahoma (OK)</option>
+                                                        <option value="OR">Oregon (OR)</option>
+                                                        <option value="PA">Pennsylvania (PA)</option>
+                                                        <option value="PR">Puerto Rico (PR)</option>
+                                                        <option value="RI">Rhode Island (RI)</option>
+                                                        <option value="SC">South Carolina (SC)</option>
+                                                        <option value="SD">South Dakota (SD)</option>
+                                                        <option value="TN">Tennessee (TN)</option>
+                                                        <option value="TX">Texas (TX)</option>
+                                                        <option value="UT">Utah (UT)</option>
+                                                        <option value="VA">Virginia (VA)</option>
+                                                        <option value="VI">Virgin Islands (VI)</option>
+                                                        <option value="VT">Vermont (VT)</option>
+                                                        <option value="WA">Washington (WA)</option>
+                                                        <option value="WI">Wisconsin (WI)</option>
+                                                        <option value="WV">West Virginia (WV)</option>
+                                                        <option value="WY">Wyoming (WY)</option>
+                                                    </optgroup>
+                                                </select>
+
+                                                <input type="text" value="" name="formField_ship_state" id="textField_ship_state" disabled="disabled" style="display: none;"></div>
+
+                                            <div class="formGroup formGroup--full">
+                                                <label for="IDFormField_ship_zip_0" class="formLabel ">Zip</label>
+                                                <input type="text" placeholder="" id="IDFormField_ship_zip_0" name="formField_ship_zip" value="" disabled="disabled">
+
+                                            </div>
+
+                                            <div class="formGroup formGroup--full">United
+                                                                                   States<input type="hidden" value="United States" name="formField_ship_country" id="hiddenField_ship_country" disabled="disabled">
+                                            </div>
+
+                                        </div><!-- ./hide if checked-->
+                                        <div class="formGroup formGroup--full">
+                                            <label for="IDFormField_shipping_type_0" class="formLabel ">Shipping Type</label>
+                                            <select class="formInput" id="IDFormField_shipping_type_0" name="formField_shipping_type">
+                                                <option value=""></option>
+                                                <option value="Standard">Standard: $15.00</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- end panel-->
+                                <div class="step-bar checkout-heading"><span><b> Payment</b></span></div>
+                                <div class="checkout-panel formContent">
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_coupon_code_0" class="formLabel ">Coupon</label>
+                                        <input type="text" placeholder="" id="IDFormField_coupon_code_0" name="formField_coupon_code" value="">
+
+                                        <input type="button" class="button" value="Apply Coupon" id="applyCouponBtn"><br><span id="applyCouponMessage"></span></div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_giftcard_code_0" class="formLabel ">Gift Card</label>
+                                        <input type="text" placeholder="" id="IDFormField_giftcard_code_0" name="formField_giftcard_code" value="">
+
+                                        <input type="button" class="button" value="Apply Gift Card" id="applyGiftCardBtn"><br><span id="applyGiftCardMessage"></span></div>
+
+                                    <div class="formGroup formGroup--full">
+                                        <label for="IDFormField_payment_type_0" class="formLabel ">Payment Type</label>
+                                        <select class="formInput" id="IDFormField_payment_type_0" name="formField_payment_type">
+                                            <option value="">-- Select --</option>
+                                            <option value="creditcard" selected="selected">creditcard</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div id="commerceCheckoutSection_free" class="formContent" style="display: none;">
+                                        <div class="formStaticText" style="text-align:left;">
+                                            <p>Your order is Free!</p></div>
+
+                                    </div><!-- /#commerceCheckoutSection_ free-->
+                                    <div id="commerceCheckoutSection_creditcard" class="formContent">
+                                        <div class="formStaticText" style="text-align:left;">
+                                            <p class="shoppingHeader">Credit Card Info</p></div>
+
+                                        <div class="formGroup formGroup--full">
+                                            <label for="IDFormField_card_name_0" class="formLabel ">Name on Card</label>
+                                            <input type="text" placeholder="" id="IDFormField_card_name_0" name="formField_card_name" value="">
+
+                                        </div>
+
+                                        <div class="formGroup formGroup--medium">
+                                            <label for="IDFormField_card_number_0" class="formLabel ">Card Number</label>
+                                            <input type="text" placeholder="" id="IDFormField_card_number_0" name="formField_card_number" value="">
+
+                                        </div>
+
+                                        <div class="formGroup formGroup--small">
+                                            <label for="IDFormField_card_type_0" class="formLabel ">Card Type</label>
+                                            <select class="formInput" id="IDFormField_card_type_0" name="formField_card_type">
+                                                <option value=""></option>
+                                                <option value="visa">Visa</option>
+                                                <option value="mastercard">Mastercard</option>
+                                                <option value="amex">American Express</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="formGroup formGroup--medium">
+                                            <label for="IDFormField_card_month_0" class="formLabel ">Expiration</label>
+                                            <select class="formInput" id="IDFormField_card_month_0" name="formField_card_month">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="formGroup formGroup--medium">
+                                            <label for="IDFormField_card_year_0" class="formLabel ">&nbsp;</label>
+                                            <select class="formInput" id="IDFormField_card_year_0" name="formField_card_year">
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="formGroup formGroup--full">
+                                            <label for="IDFormField_card_cvv_0" class="formLabel ">CVV</label>
+                                            <input type="text" placeholder="" id="IDFormField_card_cvv_0" name="formField_card_cvv" value="" size="5">
+
+                                        </div>
+
+                                    </div><!-- /#commerceCheckoutSection_creditcard -->
+                                </div><!--  end panel -->
+                            </div><!-- end left checkout_form -->
+                            <div class="checkout-summary">
+                                <div class="step-bar checkout-heading"><span><b>Order Summary</b></span></div>
+                                <div class="checkout-panel">
+                                    <div class="text-right"><a href="index.php?src=commerce"><b>Edit Cart</b></a></div>
+                                    <div id="checkout_mini_cart">
+                                        <div class="shoppingCartCheckout">
+                                            <table class="table shoppingCartTable shoppingCart" cellpadding="2" cellspacing="0">
+                                                <thead>
+                                                <tr class="shoppingCartTableHeader">
+                                                    <td class="">Item</td>
+                                                    <td class="total">Total Price</td>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                <tr class="shoppingCartItem product odd">
+                                                    <td class="description">
+                                                        <div class="cartItemInner">
+                                                            <a href="product_detail.html" target="_blank" class="name">Running Shoes</a>
+                                                            <p class="cartSubDetails" id="details1" data-img="clientuploads/directory/products/running-shoe-371624_640.jpg">
+                                                                <!--Sku: SuperWidget_01_Regular<br>-->
+                                                                Regular <br>
+                                                                1 @ $10.00 <br>
+                                                                <!-- todo something here? <a href="index.php?src=commerce&cmd=del&sku=SuperWidget_01_Regular">Remove</a> | <a href="index.php?src=directory&view=products&srctype=detail&refno=25">Full Product Details</a>-->
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="total" style="vertical-align:top">$10.00</td>
+                                                </tr>
+                                                <tr class="shoppingCartItem product even">
+                                                    <td class="description">
+                                                        <div class="cartItemInner">
+                                                            <a href="product_detail.html" target="_blank" class="name">Running Shoes</a>
+                                                            <p class="cartSubDetails" id="details2" data-img="clientuploads/directory/products/running-shoe-371624_640.jpg">
+                                                                <!--Sku: SuperWidget_01_Deluxe<br>-->
+                                                                Deluxe <br>
+                                                                3 @ $20.00 <br>
+                                                                <!-- todo something here? <a href="index.php?src=commerce&cmd=del&sku=SuperWidget_01_Deluxe">Remove</a> | <a href="index.php?src=directory&view=products&srctype=detail&refno=25">Full Product Details</a>-->
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="total" style="vertical-align:top">$60.00</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- we let the checkout summary handle the total amount -->
+
+                                    </div>
+                                    <table id="cart_charges_summary" style="">
+                                        <tbody>
+                                        <tr>
+                                            <td style="text-align: left;" width="50%">Sub Total</td>
+                                            <td style="text-align: right;" align="right"><span id="cart_subtotal">$70.00</span></td>
+                                        </tr>
+                                        <tr id="cart_tax_inc_row" style="display: none;">
+                                            <td>(Includes Tax</td>
+                                            <td align="right"><span id="cart_tax_inc">$0.00</span>)</td>
+                                        </tr>
+                                        <tr id="cart_coupon_row" style="display: none;">
+                                            <td>Coupon</td>
+                                            <td align="right"><span id="cart_coupon">$0.00</span></td>
+                                        </tr>
+                                        <tr id="cart_tax_1_row">
+                                            <td>Primary Tax</td>
+                                            <td align="right"><span id="cart_tax_1">$0.00</span></td>
+                                        </tr>
+                                        <tr id="cart_tax_2_row">
+                                            <td>Secondary Tax</td>
+                                            <td align="right"><span id="cart_tax_2">$0.00</span></td>
+                                        </tr>
+                                        <tr id="cart_tax_total_row" style="display: none;">
+                                            <td>Total Tax</td>
+                                            <td align="right"><span id="cart_tax_total">$0.00</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surcharge</td>
+                                            <td align="right"><span id="cart_surcharge">$0.00</span></td>
+                                        </tr>
+                                        <tr id="cart_shipping_row">
+                                            <td>Shipping</td>
+                                            <td align="right"><span id="cart_shipping">$15.00</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td align="right"><span id="cart_total" style="font-weight: bold;">$85.00</span></td>
+                                        </tr>
+                                        <tr id="cart_giftcard_row" style="display: none;">
+                                            <td>Gift Card</td>
+                                            <td align="right"><span id="cart_giftcard">$0.00</span></td>
+                                        </tr>
+                                        <tr id="cart_final_total_row" style="display: none;">
+                                            <td>Final Total</td>
+                                            <td align="right"><span id="cart_final_total" style="font-weight: bold;">$0.00</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- ./panel -->
+                            </div>
+
+                            <input type="hidden" name="formHeading_1" id="IDFormField__18" value="Commerce Details">
+
+                            <input type="hidden" name="formField_cart_subtotal" id="IDFormField_cart_subtotal_0" value="$70.00">
+
+                            <input type="hidden" name="formField_cart_shipping" id="IDFormField_cart_shipping_0" value="$15.00">
+
+                            <input type="hidden" name="formField_cart_coupon" id="IDFormField_cart_coupon_0" value="">
+
+                            <input type="hidden" name="formField_cart_surcharge" id="IDFormField_cart_surcharge_0" value="$0.00">
+
+                            <input type="hidden" name="formField_cart_tax_1" id="IDFormField_cart_tax_1_0" value="$0.00">
+
+                            <input type="hidden" name="formField_cart_tax_2" id="IDFormField_cart_tax_2_0" value="$0.00">
+
+                            <input type="hidden" name="formField_cart_tax_inc" id="IDFormField_cart_tax_inc_0" value="">
+
+                            <input type="hidden" name="formField_cart_total" id="IDFormField_cart_total_0" value="$85.00">
+
+                            <input type="hidden" name="formField_cart_final_total" id="IDFormField_cart_final_total_0" value="85">
+
+                            <input type="hidden" name="formField_cart_giftcard" id="IDFormField_cart_giftcard_0" value="">
+
+                            <script type="text/javascript">
+
+                                $('.pickupInfoWrapper').hide();
+                                $('input[type=radio][name=formField_delivery_choice]').change(function () {
+                                    if (this.value == 'pickup') {
+                                        console.log("pickup");
+                                        // show instructions
+                                        $('.pickupInfoWrapper').show();
+                                        $('.shippingInfoWrapper').hide();
+                                        $('select[ name$="shipping_type"]').val('').triggerHandler('change');
+                                        //check ship to bill and trigger handler to hide address fields if shown
+                                        $('input[ name$="bill_same_as" ]').prop('checked', true).triggerHandler('change')
+                                    } else if (this.value == 'shipping') {
+                                        console.log("Shipping");
+                                        $('.pickupInfoWrapper').hide();
+                                        $('.shippingInfoWrapper').show();
+                                    }
+                                });
+
+                            </script>
+
+                        </div>
+                        <div class="formNavigation">
+                            <button type="submit" class="button formNavigation-next" alt="Next">Purchase Now</button>
+                        </div>
+
+                    </div>
+                    <div style="display:none"><input type="hidden" name="formmodule" value="commerce">
+                        <input type="hidden" name="hash" value="7aa9dc2fca6974c74cb6a4a262a333cd">
+                        <input type="hidden" name="csrfToken" value="0c7f20843710d53cf692488a40370a9f">
+                        <input type="hidden" name="edit_id" value="0">
+                        <input type="hidden" name="module" value="">
+                        <input type="hidden" name="src" value="forms">
+                        <input type="hidden" name="srctype" value="process">
+                        <input type="hidden" name="id" value="commerce_checkout">
+                        <input type="hidden" name="fs_id" value="commerce_checkout">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</main>

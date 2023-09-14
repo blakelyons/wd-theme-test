@@ -1,0 +1,66 @@
+////
+/// @group sidemenu
+////
+
+/// Default sidemenu color
+/// @type Color
+$sidemenu-color: $black !default;
+
+/// Default sidemenu active color
+/// @type Color
+$sidemenu-color-active: $dark-gray !default;
+
+/// Default sidemenu font family
+/// @type Color
+$sidemenu-font-family: null !default;
+
+/*! Side Menu */
+.sideMenu-title {
+  margin-left: 1rem;
+  }
+
+.sideMenu {
+  font-family: $sidemenu-font-family;
+  padding: 2rem;
+}
+
+.sideMenu-nav {
+  & > .menu {
+    //top level menu
+    }
+
+  .menu a {
+    color: $sidemenu-color;
+    font-size: 1rem;
+    font-weight: $global-weight-bold;
+
+    &:hover, &.current {
+      color: $sidemenu-color-active;
+      }
+    }
+
+  & > .menu ul a {
+    padding-left: 1.5rem;
+    }
+
+  & > .menu ul ul a {
+    padding-left: 2.5rem;
+    }
+
+  }
+
+// Accordian plus instead of arrows
+.accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a::after {
+  transform: none;
+  content: $accordion-minus-content;
+  }
+.accordion-menu .is-accordion-submenu-parent>a {
+  //padding-left: 2rem;
+  }
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after {
+  border: 0;
+  content: $accordion-plus-content;
+  right: unset;
+  left: 0;
+  margin-top: -8px
+  }

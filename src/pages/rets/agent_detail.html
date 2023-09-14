@@ -1,0 +1,338 @@
+---
+page-title: Agent Details
+page-eyebrow:
+---
+
+<section class="content">
+  <div class="grid-container grid-x">
+    <div class="content-body">
+
+      <div class="retsModule retsDetail retsAgentsDetail">
+        <div id="utilityBar">
+          <a href="index.php?src=directory&amp;view=rets_agents&amp;hurl=n" class="button secondary searchResultsLink" data-append-query="">Return to Results</a>
+        </div>
+
+        {{#with retsAgents.agent_detail_sample_data}}
+        <div class="agent grid-x grid-padding-x box-shadow">
+          <a href="" class="cell medium-4 image" id="photo" data-photos="{{photo_count}}" style="background-image: url('{{agent_photo}}');"></a>
+          <div class="cell medium-8 agent-info main-section">
+            <div class="agent-info-inner grid-x">
+              <div class="name cell"><h3>{{first_name}} {{last_name}}</h3></div>
+              <div class="contact cell large-7">
+                <div><span class="value">{{office_long_name}}</span></div>
+                <div><span class="label"><a href="mailto:{{email}}">{{email}}</a></span></div>
+              </div>
+              <div class="phone cell large-5">
+                <span class="label">Office: </span><span class="value">{{phone}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/with}}
+
+        <div class="retsList" id="propertyOfAgent" data-agent-id="{{mls_id}}">
+          <hr />
+          <h2>Property Listings</h2>
+          <ul class="tabs" data-tabs id="property_types">
+            <li class="tabs-title is-active"><a href="#residential" aria-selected="true">Residential Properties (92)</a></li>
+            <li class="tabs-title"><a href="#singleFamily">Single-Family Properties (92)</a></li>
+            <li class="tabs-title"><a href="#multiFamily">Multi-Family Properties (23)</a></li>
+            <li class="tabs-title"><a href="#commercial">Commercial Properties (18)</a></li>
+            <li class="tabs-title"><a href="#lotsAndLand">Lots &amp; Land (10)</a></li>
+          </ul>
+
+          <div class="tabs-content" data-tabs-content="property_types">
+
+            <div class="tabs-panel is-active" id="residential">
+              <p><< REMOVE ME: This is just to show the tabs are working >> #residentail </p>
+              {{#with retsProperties.sample_data}}
+              {{#repeat 5}}
+              <a href="{{detail_url}}" class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                <div class="cell medium-3 property-image" style="background-image: url(https://picsum.photos/1024/768);"></div>
+                <div class="cell medium-9 property-info grid-x">
+
+                  <div class="cell property-info-row grid-x">
+
+                    <div class="medium-6 property-address">
+                      <h4>{{location.address_1}}<br />
+                        {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                      <p>{{info.category}}: {{info.style_description}}</p>
+                    </div>
+                    <div class="medium-6 property-meta-info">
+                      <h3 class="property-price">{{info.listing_price}}</h3>
+                      <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                      <!--
+                      Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                      <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                      -->
+                    </div>
+
+                  </div>
+
+                  <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                    <div class="cell">
+                      Bedrooms: {{info.bedrooms}}
+                    </div>
+                    <div class="cell">
+                      Full Baths: {{info.bathrooms}}
+                    </div>
+                    <div class="cell">
+                      1/2 Baths: {{info.total_half_baths}}
+                    </div>
+                    <div class="cell">
+                      Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                    </div>
+                  </div>
+
+                  <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                    <div class="cell">
+                      List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                    </div>
+                    <div class="cell text-align-right">
+                      List Office: {{property_listing_office.long_name}}
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+              {{/repeat}}
+              {{/with}}
+            </div>
+
+            <div class="tabs-panel" id="singleFamily">
+              <p><< REMOVE ME: This is just to show the tabs are working >> #singleFamily</p>
+              {{#with retsProperties.sample_data}}
+              {{#repeat 5}}
+              <a href="{{detail_url}}" class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                <div class="cell medium-3 property-image" style="background-image: url(https://picsum.photos/1024/768);"></div>
+                <div class="cell medium-9 property-info grid-x">
+
+                  <div class="cell property-info-row grid-x">
+
+                    <div class="medium-6 property-address">
+                      <h4>{{location.address_1}}<br />
+                        {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                      <p>{{info.category}}: {{info.style_description}}</p>
+                    </div>
+                    <div class="medium-6 property-meta-info">
+                      <h3 class="property-price">{{info.listing_price}}</h3>
+                      <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                      <!--
+                      Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                      <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                      -->
+                    </div>
+
+                  </div>
+
+                  <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                    <div class="cell">
+                      Bedrooms: {{info.bedrooms}}
+                    </div>
+                    <div class="cell">
+                      Full Baths: {{info.bathrooms}}
+                    </div>
+                    <div class="cell">
+                      1/2 Baths: {{info.total_half_baths}}
+                    </div>
+                    <div class="cell">
+                      Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                    </div>
+                  </div>
+
+                  <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                    <div class="cell">
+                      List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                    </div>
+                    <div class="cell text-align-right">
+                      List Office: {{property_listing_office.long_name}}
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+              {{/repeat}}
+              {{/with}}
+            </div>
+
+            <div class="tabs-panel" id="multiFamily">
+              <p><< REMOVE ME: This is just to show the tabs are working >> #multiFamily</p>
+              {{#with retsProperties.sample_data}}
+              {{#repeat 5}}
+              <a href="{{detail_url}}" class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                <div class="cell medium-3 property-image" style="background-image: url(https://picsum.photos/1024/768);"></div>
+                <div class="cell medium-9 property-info grid-x">
+
+                  <div class="cell property-info-row grid-x">
+
+                    <div class="medium-6 property-address">
+                      <h4>{{location.address_1}}<br />
+                        {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                      <p>{{info.category}}: {{info.style_description}}</p>
+                    </div>
+                    <div class="medium-6 property-meta-info">
+                      <h3 class="property-price">{{info.listing_price}}</h3>
+                      <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                      <!--
+                      Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                      <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                      -->
+                    </div>
+
+                  </div>
+
+                  <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                    <div class="cell">
+                      Bedrooms: {{info.bedrooms}}
+                    </div>
+                    <div class="cell">
+                      Full Baths: {{info.bathrooms}}
+                    </div>
+                    <div class="cell">
+                      1/2 Baths: {{info.total_half_baths}}
+                    </div>
+                    <div class="cell">
+                      Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                    </div>
+                  </div>
+
+                  <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                    <div class="cell">
+                      List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                    </div>
+                    <div class="cell text-align-right">
+                      List Office: {{property_listing_office.long_name}}
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+              {{/repeat}}
+              {{/with}}
+            </div>
+
+            <div class="tabs-panel" id="commercial">
+              <p><< REMOVE ME: This is just to show the tabs are working >> #commercial</p>
+              {{#with retsProperties.sample_data}}
+              {{#repeat 5}}
+              <a href="{{detail_url}}" class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                <div class="cell medium-3 property-image" style="background-image: url(https://picsum.photos/1024/768);"></div>
+                <div class="cell medium-9 property-info grid-x">
+
+                  <div class="cell property-info-row grid-x">
+
+                    <div class="medium-6 property-address">
+                      <h4>{{location.address_1}}<br />
+                        {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                      <p>{{info.category}}: {{info.style_description}}</p>
+                    </div>
+                    <div class="medium-6 property-meta-info">
+                      <h3 class="property-price">{{info.listing_price}}</h3>
+                      <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                      <!--
+                      Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                      <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                      -->
+                    </div>
+
+                  </div>
+
+                  <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                    <div class="cell">
+                      Bedrooms: {{info.bedrooms}}
+                    </div>
+                    <div class="cell">
+                      Full Baths: {{info.bathrooms}}
+                    </div>
+                    <div class="cell">
+                      1/2 Baths: {{info.total_half_baths}}
+                    </div>
+                    <div class="cell">
+                      Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                    </div>
+                  </div>
+
+                  <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                    <div class="cell">
+                      List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                    </div>
+                    <div class="cell text-align-right">
+                      List Office: {{property_listing_office.long_name}}
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+              {{/repeat}}
+              {{/with}}
+            </div>
+
+            <div class="tabs-panel" id="lotsAndLand">
+              <p><< REMOVE ME: This is just to show the tabs are working >> #lotsAndLand</p>
+              {{#with retsProperties.sample_data}}
+              {{#repeat 5}}
+              <a href="{{detail_url}}" class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                <div class="cell medium-3 property-image" style="background-image: url(https://picsum.photos/1024/768);"></div>
+                <div class="cell medium-9 property-info grid-x">
+
+                  <div class="cell property-info-row grid-x">
+
+                    <div class="medium-6 property-address">
+                      <h4>{{location.address_1}}<br />
+                        {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                      <p>{{info.category}}: {{info.style_description}}</p>
+                    </div>
+                    <div class="medium-6 property-meta-info">
+                      <h3 class="property-price">{{info.listing_price}}</h3>
+                      <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                      <!--
+                      Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                      <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                      -->
+                    </div>
+
+                  </div>
+
+                  <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                    <div class="cell">
+                      Bedrooms: {{info.bedrooms}}
+                    </div>
+                    <div class="cell">
+                      Full Baths: {{info.bathrooms}}
+                    </div>
+                    <div class="cell">
+                      1/2 Baths: {{info.total_half_baths}}
+                    </div>
+                    <div class="cell">
+                      Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                    </div>
+                  </div>
+
+                  <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                    <div class="cell">
+                      List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                    </div>
+                    <div class="cell text-align-right">
+                      List Office: {{property_listing_office.long_name}}
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+              {{/repeat}}
+              {{/with}}
+            </div>
+
+          </div>
+
+        </div>
+
+        <script>
+          //initAgentDetailPage('18207');
+          //_initThumbnailsAndDetailLinks('.agent');
+        </script>
+      </div>
+
+    </div>
+  </div>
+</section>

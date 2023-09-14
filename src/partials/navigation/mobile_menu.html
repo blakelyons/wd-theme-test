@@ -1,0 +1,62 @@
+<nav class="mobileNav" data-mobile-nav="">
+    <div class="mobileNav-overlay" data-mobile-nav-overlay=""></div>
+    <div class="mobileNav-inner">
+        <div class="mobileNav-actions">
+            <div class="mobileNav-login"><a href="{{root}}login.html" class="button primary ">Optional Button</a></div>
+            <div class="mobileNav-trigger" data-mobile-nav-trigger="">
+                <div class="mobileNav-hamburger"></div>
+            </div>
+        </div>
+        <ul class="mobile_menu menu vertical accordion-menu mobileNav-menu" data-submenu-toggle="true" data-accordion-menu="">
+            <li class="item1 "><a class="first " href="#">Menu Item 1 </a>
+                <ul class="menu nested">
+                    <li class="item1 "><a class="first " href="#">Sample Sub Menu Link 1 </a>
+                        <ul class="menu">
+                            <li class="item1"><a class="first" href="">Sample Sub Menu Link 1a </a></li>
+                            <li class="item2"><a class="last" href="">Sample Sub Menu Link 1b </a></li>
+                        </ul>
+                    </li>
+                    <li class="item2"><a href="components.html">Sample Sub Menu Link 2 </a></li>
+                    <li class="item3"><a class="last" href="#">Sample Sub Menu Link 3 </a></li>
+                </ul>
+            </li>
+            {{> primary_navigation}}
+        </ul>
+        <div class="mobileNav-secondary" data-mobile-nav-secondary>
+            <div class="header-links">
+                <ul class="menu vertical">
+                    <li><a href="{{root}}interior.html" class="">
+                        <i class="af-icon icon-lock"></i>
+                        <span class="text"><strong>Member Login</strong></span>
+                    </a></li>
+                    <li><a href="{{root}}form.html">
+                        <i class="af-icon icon-24-hours-support"></i>
+                        <span class="text"><strong>Contact Us</strong></span>
+                    </a></li>
+                    <li><a href="{{root}}components.html">
+                        <i class="af-icon icon-heart-hand"></i>
+                        <span class="text"><strong>Donate</strong></span>
+                    </a></li>
+                </ul>
+            </div>
+            <nav class="socialMenu">
+                <ul class="menu">
+                    <li><a href="#"><i class="fab fa-facebook-f facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube youtube"></i></a></li>
+                </ul>
+            </nav>
+            <form method="get" action="index.php" style="margin:0;" id="search_box_form"><div style="display:none;"><input type="hidden" name="engine_id" value=""><input type="hidden" name="src" value="search"><input type="hidden" name="search_id" value="site_search"></div><div class="input-group ">
+                <input class="input-group-field" type="search" name="search_this" placeholder="Site Search">
+                <div class="input-group-button">
+                    <button type="submit" class="button primary" value="Search"> <span class="show-for-sr">Search Site</span>
+                        <span aria-hidden="true">
+            <i class="fa fa-search"></i>
+        </span>
+                    </button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,80 @@
+<header class="site-header" data-header>
+
+    {{#if show-top-bar}}
+    {{> top_util_bar }}
+    {{/if}}
+    <div class="header-main-bar">
+        <div class="grid-container wide">
+            <div class="header-main">
+
+                <div class="header-logo">
+                    {{#if general.logo}}
+                    <a href="{{root}}index.html" class="logo">
+                        <!-- this can be image, inline svg, text, or combination -->
+                        <img src="{{root}}{{general.logo}}">
+                    </a>
+                    {{else}}
+                    <a href="{{root}}index.html" class="logo">
+                        <svg class="svg-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                            <circle cx="45" cy="45" r="40" stroke="#333" stroke-width="3" fill="currentColor" />
+                        </svg>
+                        <div class="text">Accrisoft<br> Master Theme </div>
+
+                    </a>
+                    {{/if}}
+
+                </div>
+
+                <!-- START RIGHT OF LOGO SECTION -->
+                {{#ifequal main-bar-style 'featured-links'}}
+
+                <!-- 1. FEATURED ICON LINKS - SINGLE LEVEL STYLE -->
+                {{> featured_links }}
+                <div class="header-mobile-only-trigger">
+                    <div class="mobileNav-trigger" data-mobile-nav-trigger="">
+                        <div class="mobileNav-hamburger"></div>
+                    </div>
+                </div>
+
+                {{else}}
+
+                {{#ifequal main-bar-style 'primary-dropdown'}}
+                <!-- 2. DROP DOWN MENU STYLE -->
+                <ul class="menu_main_header menu header-nav dropdown" data-dropdown-menu data-nav>
+                    {{> primary_navigation}}
+                </ul>
+                {{/ifequal}}
+
+                {{#ifequal main-bar-style 'primary-mega'}}
+                <!-- 3. MEGA MENU STYLE -->
+                <ul class="menu_main_header menu header-nav header-mega-menu"  data-check-icons data-mega-menu data-nav>
+                    {{> primary_navigation}}
+                </ul>
+                {{/ifequal}}
+
+                <!-- UTIL - FOR PRIMARY NAVIGATION BASED OPTIONS  -->
+                <div class="header-util">
+                    <div class="header-buttons">
+                        <a href="login.html" class="button primary">Member Login</a>
+                    </div>
+
+                    <div class="mobileNav-trigger" data-mobile-nav-trigger="">
+                        <div class="mobileNav-hamburger"></div>
+                    </div>
+                </div>
+                {{/ifequal}}
+                <!-- END MAIN NAVIGATION SECTION -->
+            </div>
+
+        </div>
+    </div>
+    {{#if show-fullnav-bar}}
+    <div class="header-fullnav-bar theme-dark">
+        <div class="grid-container wide">
+            {{> full_nav_bar}}
+        </div>
+    </div>
+    {{/if}}
+
+
+</header>

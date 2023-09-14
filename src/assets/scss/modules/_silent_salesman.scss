@@ -1,0 +1,35 @@
+/*! ModuleStart::silent-salesman */
+.corner-boxss {position:fixed; bottom:10px; right:15px; z-index:500; opacity:0; display:none;}
+.corner-boxss.box-left {right:auto; left:15px;}
+.corner-boxss .boxheader {padding:10px 15px; transition: all .3s ease;}
+.corner-boxss .boxheader img {width:20px; margin:-2px 3px 0 0;}
+.corner-boxss .boxheader img.no-title {margin:-2px 0 0;}
+.corner-boxss .boxcontainer {border:2px solid #fff; border-radius:25px; -webkit-border-radius:25px; transition: all .3s ease;}
+.corner-boxss .boxheader:hover {cursor:pointer;}
+.corner-boxss .boxheader p {margin:0; color:#fff; font-size:16px; font-family:'Cachet Bold', Arial, Helvetica, sans-serif; display:inline-block;}
+.corner-boxss .boxcontent {display:none; width:340px; max-height:445px; overflow-y:auto; }
+.corner-boxss .boxcontent p {color:#777;}
+.corner-boxss .boxwrapper {font-size:14px; background:#fff; margin:0 10px 10px; padding:10px; border-radius:6px; -webkit-border-radius:6px}
+.corner-boxss .boxwrapper p {font-size:14px; margin:0 auto 15px;}
+.corner-boxss .boxwrapper .button {margin:0 auto; display:block;}
+.corner-boxss.open .boxheader {border-radius:15px 15px 0 0; -webkit-border-radius:15px 15px 0 0; }
+.corner-boxss.open .boxheader:after {content:'\25bc'; position:absolute; right:10px; color:#fff;}
+.corner-boxss.open .boxcontent {border-radius:0 0 15px 15px; -webkit-border-radius:0 0 15px 15px;display:block;}
+.corner-boxss.open .boxcontainer {border-radius:15px; -webkit-border-radius:15px;}
+@media only screen and (max-width: 370px) {
+  .corner-boxss .boxcontent {width:100%;}
+  .corner-boxss.open {right:15px; left:15px;}
+}
+@media only screen and (max-height: 660px) {
+  .corner-boxss .boxcontent {max-height:320px;}
+}
+@media only screen and (max-height: 530px) {
+  .corner-boxss .boxcontent {max-height:220px;}
+}
+@media only screen and (max-height: 430px) {
+  .corner-boxss .boxcontent {max-height:180px;}
+}
+@media only screen and (max-height: 360px) {
+  .corner-boxss .boxcontent {max-height:120px;}
+}
+/*! ModuleEnd::silent-salesman */

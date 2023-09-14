@@ -1,0 +1,651 @@
+---
+page-title: Fitness Schedule
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <div id="scheduleLister">
+
+                <div class="editorContent">Intro Text Optional</div>
+
+                <p class="key"><b>Class Intensity Key:</b> <span class="fa fa-circle pip low"></span> Low
+                    <span class="fa fa-circle pip med"></span>Medium &nbsp;&nbsp;&nbsp;
+                    <span class="fa fa-circle pip high"></span>High</p>
+                <div class="schedule buttons">
+                    <a href="" class="button secondary">Fitness Class
+                                                        Descriptions&nbsp;&nbsp;<span class="fa fa-info-circle"></span></a>
+                    <a target="_blank" href="" id="pdf_schedule" class="button">Printer Friendly Schedule
+                        <span class="fa fa-file-pdf-o"></span></a>
+                </div>
+                <div id="instructorFilter" class="scheduleFilter">
+                    <span>Filter By Instructor:</span>
+                    <select id="js-instructorFilter">
+                        <option value="Show All">Show All Instructors</option>
+                        <option value="Angela">Angela</option>
+                        <option value="Anita">Anita</option>
+                        <option value="Anna">Anna</option>
+                        <option value="Carolyn">Carolyn</option>
+                        <option value="Cecelia">Cecelia</option>
+                        <option value="Cindy">Cindy</option>
+                        <option value="Kathy">Kathy</option>
+                        <option value="Layla">Layla</option>
+                        <option value="Lindsey">Lindsey</option>
+                        <option value="Mary">Mary</option>
+                        <option value="Roberta">Roberta</option>
+                        <option value="Rocio">Rocio</option>
+                    </select>
+                </div>
+
+                <div id="scheduleToggle" class="scheduleFilter">
+                    <span>Select Day: &nbsp;&nbsp;</span>
+                    <select id="js-mobileDayFilter">
+                        <option value="mobileSunday">Sunday</option>
+                        <option value="mobileMonday">Monday</option>
+                        <option value="mobileTuesday">Tuesday</option>
+                        <option value="mobileWednesday">Wednesday</option>
+                        <option value="mobileThursday">Thursday</option>
+                        <option value="mobileFriday">Friday</option>
+                        <option value="mobileSaturday">Saturday</option>
+                    </select>
+
+                </div>
+
+                <div id="scheduleWrapper">
+                    <div id="scheduleHead" class="scheduleLabels scheduleHeader">
+                        <div class="mobileSunday">
+                            <div class="scheduleDOW">Sunday</div>
+                            <div class="scheduleDate" data-dow="Sunday">12/27/2020</div>
+                        </div>
+                        <div class="mobileMonday">
+                            <div class="scheduleDOW">Monday</div>
+                            <div class="scheduleDate" data-dow="Monday">12/28/2020</div>
+                        </div>
+                        <div class="mobileTuesday">
+                            <div class="scheduleDOW">Tuesday</div>
+                            <div class="scheduleDate" data-dow="Tuesday">12/29/2020</div>
+                        </div>
+                        <div class="mobileWednesday currentSchedule">
+                            <div class="scheduleDOW">Wednesday</div>
+                            <div class="scheduleDate" data-dow="Wednesday">12/30/2020</div>
+                        </div>
+                        <div class="mobileThursday">
+                            <div class="scheduleDOW">Thursday</div>
+                            <div class="scheduleDate" data-dow="Thursday">12/31/2020</div>
+                        </div>
+                        <div class="mobileFriday">
+                            <div class="scheduleDOW">Friday</div>
+                            <div class="scheduleDate" data-dow="Friday">1/1/2021</div>
+                        </div>
+                        <div class="mobileSaturday">
+                            <div class="scheduleDOW">Saturday</div>
+                            <div class="scheduleDate" data-dow="Saturday">1/2/2021</div>
+                        </div>
+                    </div>
+                    <div id="schedule">
+                        <div class="rowTitle"><span>5:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday5am" class="mobileSunday"></div>
+                            <div id="Monday5am" class="mobileMonday"></div>
+                            <div id="Tuesday5am" class="mobileTuesday"></div>
+                            <div id="Wednesday5am" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday5am" class="mobileThursday"></div>
+                            <div id="Friday5am" class="mobileFriday"></div>
+                            <div id="Saturday5am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>6:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday6am" class="mobileSunday"></div>
+                            <div id="Monday6am" class="mobileMonday"></div>
+                            <div id="Tuesday6am" class="mobileTuesday"></div>
+                            <div id="Wednesday6am" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday6am" class="mobileThursday"></div>
+                            <div id="Friday6am" class="mobileFriday"></div>
+                            <div id="Saturday6am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>7:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday7am" class="mobileSunday"></div>
+                            <div id="Monday7am" class="mobileMonday"></div>
+                            <div id="Tuesday7am" class="mobileTuesday"></div>
+                            <div id="Wednesday7am" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday7am" class="mobileThursday"></div>
+                            <div id="Friday7am" class="mobileFriday"></div>
+                            <div id="Saturday7am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>8:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday8am" class="mobileSunday"></div>
+                            <div id="Monday8am" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday8am" data-instructor="Cecelia">
+                                    <div class="itemInner" data-open="popup83821" aria-controls="popup83821" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">8:30 am - 9:25 am</div>
+                                        <div class="itemName">
+                                            Cycling <span class="fa fa-circle pip low medium"></span>
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cecelia</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday8am" class="mobileTuesday"></div>
+                            <div id="Wednesday8am" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday8am" data-instructor="Cecelia">
+                                    <div class="itemInner" data-open="popup83822" aria-controls="popup83822" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">8:30 am - 9:25 am</div>
+                                        <div class="itemName">
+                                            Cycling <span class="fa fa-circle pip medium"></span>
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cecelia</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday8am" class="mobileThursday"></div>
+                            <div id="Friday8am" class="mobileFriday">
+                                <div class="scheduleItem" data-dow="Friday" data-alert1="" data-alert2="" data-alert3="" data-placein="Friday8am" data-instructor="Cecelia">
+                                    <div class="itemInner" data-open="popup83823" aria-controls="popup83823" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">8:30 am - 9:25 am</div>
+                                        <div class="itemName">
+                                            Cycling <span class="fa fa-circle pip high"></span>
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cecelia</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Saturday8am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>9:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday9am" class="mobileSunday"></div>
+                            <div id="Monday9am" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday9am" data-instructor="Cindy">
+                                    <div class="itemInner" data-open="popup84033" aria-controls="popup84033" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:00 am - 10:00 am</div>
+                                        <div class="itemName">
+                                            BodyPump
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cindy</div>
+                                    </div>
+
+                                </div>
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday9am" data-instructor="Lindsey">
+                                    <div class="itemInner" data-open="popup84103" aria-controls="popup84103" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:35 am - 10:30 am</div>
+                                        <div class="itemName">
+                                            AquaFit
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Lindsey</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday9am" class="mobileTuesday">
+                                <div class="scheduleItem" data-dow="Tuesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Tuesday9am" data-instructor="Lindsey">
+                                    <div class="itemInner" data-open="popup83817" aria-controls="popup83817" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:35 am - 10:30 am</div>
+                                        <div class="itemName">
+                                            AquaFit
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Lindsey</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Wednesday9am" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday9am" data-instructor="Cindy">
+                                    <div class="itemInner" data-open="popup84068" aria-controls="popup84068" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:00 am - 10:00 am</div>
+                                        <div class="itemName">
+                                            BodyPump
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cindy</div>
+                                    </div>
+
+                                </div>
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday9am" data-instructor="Rocio">
+                                    <div class="itemInner" data-open="popup84104" aria-controls="popup84104" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:35 am - 10:30 am</div>
+                                        <div class="itemName">
+                                            AquaFit
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Rocio</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday9am" class="mobileThursday">
+                                <div class="scheduleItem" data-dow="Thursday" data-alert1="" data-alert2="" data-alert3="" data-placein="Thursday9am" data-instructor="Angela">
+                                    <div class="itemInner" data-open="popup83818" aria-controls="popup83818" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:35 am - 10:30 am</div>
+                                        <div class="itemName">
+                                            AquaFit
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Angela</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Friday9am" class="mobileFriday">
+                                <div class="scheduleItem" data-dow="Friday" data-alert1="" data-alert2="" data-alert3="" data-placein="Friday9am" data-instructor="Cindy">
+                                    <div class="itemInner" data-open="popup84036" aria-controls="popup84036" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:00 am - 10:00 am</div>
+                                        <div class="itemName">
+                                            BodyPump
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cindy</div>
+                                    </div>
+
+                                </div>
+                                <div class="scheduleItem" data-dow="Friday" data-alert1="" data-alert2="" data-alert3="" data-placein="Friday9am" data-instructor="Rocio">
+                                    <div class="itemInner" data-open="popup84106" aria-controls="popup84106" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">9:35 am - 10:30 am</div>
+                                        <div class="itemName">
+                                            AquaFit
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Rocio</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Saturday9am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>10:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday10am" class="mobileSunday">
+                                <div class="scheduleItem" data-dow="Sunday" data-alert1="" data-alert2="" data-alert3="" data-placein="Sunday10am" data-instructor="Carolyn">
+                                    <div class="itemInner" data-open="popup84037" aria-controls="popup84037" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">Virtual Only</div>
+                                        <div class="teacher">Carolyn</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Monday10am" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday10am" data-instructor="Anita">
+                                    <div class="itemInner" data-open="popup84038" aria-controls="popup84038" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Pilates Mat
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anita</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday10am" class="mobileTuesday">
+                                <div class="scheduleItem" data-dow="Tuesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Tuesday10am" data-instructor="Anna">
+                                    <div class="itemInner" data-open="popup84190" aria-controls="popup84190" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Total Body
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anna</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Wednesday10am" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday10am" data-instructor="Anita">
+                                    <div class="itemInner" data-open="popup84042" aria-controls="popup84042" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Pilates Mat
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anita</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday10am" class="mobileThursday">
+                                <div class="scheduleItem" data-dow="Thursday" data-alert1="" data-alert2="" data-alert3="" data-placein="Thursday10am" data-instructor="Anna">
+                                    <div class="itemInner" data-open="popup84191" aria-controls="popup84191" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Total Body <span class="fa fa-circle pip med"></span></div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anna</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Friday10am" class="mobileFriday">
+                                <div class="scheduleItem" data-dow="Friday" data-alert1="" data-alert2="" data-alert3="" data-placein="Friday10am" data-instructor="Anita">
+                                    <div class="itemInner" data-open="popup84046" aria-controls="popup84046" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">10:00 am - 11:00 am</div>
+                                        <div class="itemName">
+                                            Pilates Mat
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anita</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Saturday10am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>11:00 AM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday11am" class="mobileSunday"></div>
+                            <div id="Monday11am" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday11am" data-instructor="Anita">
+                                    <div class="itemInner" data-open="popup84039" aria-controls="popup84039" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">11:15 am - 12:15 pm</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Anita</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday11am" class="mobileTuesday">
+                                <div class="scheduleItem" data-dow="Tuesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Tuesday11am" data-instructor="Kathy">
+                                    <div class="itemInner" data-open="popup84188" aria-controls="popup84188" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">11:15 am - 12:15 pm</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Kathy</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Wednesday11am" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday11am" data-instructor="Roberta">
+                                    <div class="itemInner" data-open="popup84043" aria-controls="popup84043" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">11:15 am - 12:15 pm</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Roberta</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday11am" class="mobileThursday">
+                                <div class="scheduleItem" data-dow="Thursday" data-alert1="" data-alert2="" data-alert3="" data-placein="Thursday11am" data-instructor="Kathy">
+                                    <div class="itemInner" data-open="popup84189" aria-controls="popup84189" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">11:15 am - 12:15 pm</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Kathy</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Friday11am" class="mobileFriday">
+                                <div class="scheduleItem" data-dow="Friday" data-alert1="" data-alert2="" data-alert3="" data-placein="Friday11am" data-instructor="Mary">
+                                    <div class="itemInner" data-open="popup84047" aria-controls="popup84047" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">11:15 am - 12:15 pm</div>
+                                        <div class="itemName">
+                                            Yoga
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Mary</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Saturday11am" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>12:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday12pm" class="mobileSunday"></div>
+                            <div id="Monday12pm" class="mobileMonday"></div>
+                            <div id="Tuesday12pm" class="mobileTuesday"></div>
+                            <div id="Wednesday12pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday12pm" class="mobileThursday"></div>
+                            <div id="Friday12pm" class="mobileFriday"></div>
+                            <div id="Saturday12pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>1:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday1pm" class="mobileSunday"></div>
+                            <div id="Monday1pm" class="mobileMonday"></div>
+                            <div id="Tuesday1pm" class="mobileTuesday"></div>
+                            <div id="Wednesday1pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday1pm" class="mobileThursday"></div>
+                            <div id="Friday1pm" class="mobileFriday"></div>
+                            <div id="Saturday1pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>2:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday2pm" class="mobileSunday"></div>
+                            <div id="Monday2pm" class="mobileMonday"></div>
+                            <div id="Tuesday2pm" class="mobileTuesday"></div>
+                            <div id="Wednesday2pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday2pm" class="mobileThursday"></div>
+                            <div id="Friday2pm" class="mobileFriday"></div>
+                            <div id="Saturday2pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>3:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday3pm" class="mobileSunday"></div>
+                            <div id="Monday3pm" class="mobileMonday"></div>
+                            <div id="Tuesday3pm" class="mobileTuesday"></div>
+                            <div id="Wednesday3pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday3pm" class="mobileThursday"></div>
+                            <div id="Friday3pm" class="mobileFriday"></div>
+                            <div id="Saturday3pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>4:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday4pm" class="mobileSunday"></div>
+                            <div id="Monday4pm" class="mobileMonday"></div>
+                            <div id="Tuesday4pm" class="mobileTuesday"></div>
+                            <div id="Wednesday4pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday4pm" class="mobileThursday"></div>
+                            <div id="Friday4pm" class="mobileFriday"></div>
+                            <div id="Saturday4pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>5:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday5pm" class="mobileSunday"></div>
+                            <div id="Monday5pm" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday5pm" data-instructor="Layla">
+                                    <div class="itemInner" data-open="popup84040" aria-controls="popup84040" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">5:30 pm - 6:20 pm</div>
+                                        <div class="itemName">
+                                            Barre
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Layla</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday5pm" class="mobileTuesday"></div>
+                            <div id="Wednesday5pm" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday5pm" data-instructor="Layla">
+                                    <div class="itemInner" data-open="popup84044" aria-controls="popup84044" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">5:30 pm - 6:20 pm</div>
+                                        <div class="itemName">
+                                            Barre <span class="fa fa-circle pip low"></span>
+                                            <span class="fa fa-circle pip med"></span></div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Layla</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday5pm" class="mobileThursday"></div>
+                            <div id="Friday5pm" class="mobileFriday"></div>
+                            <div id="Saturday5pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>6:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday6pm" class="mobileSunday"></div>
+                            <div id="Monday6pm" class="mobileMonday">
+                                <div class="scheduleItem" data-dow="Monday" data-alert1="" data-alert2="" data-alert3="" data-placein="Monday6pm" data-instructor="Mary">
+                                    <div class="itemInner" data-open="popup84041" aria-controls="popup84041" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:30 pm - 7:30 pm</div>
+                                        <div class="itemName">
+                                            Yoga Flow
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Mary</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Tuesday6pm" class="mobileTuesday">
+                                <div class="scheduleItem" data-dow="Tuesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Tuesday6pm" data-instructor="Cindy">
+                                    <div class="itemInner" data-open="popup84034" aria-controls="popup84034" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:00 pm - 7:00 pm</div>
+                                        <div class="itemName">
+                                            BodyPump
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cindy</div>
+                                    </div>
+
+                                </div>
+                                <div class="scheduleItem" data-dow="Tuesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Tuesday6pm" data-instructor="Cecelia">
+                                    <div class="itemInner" data-open="popup83819" aria-controls="popup83819" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:00 pm - 6:55 pm</div>
+                                        <div class="itemName">
+                                            Cycling
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cecelia</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Wednesday6pm" class="mobileWednesday currentSchedule">
+                                <div class="scheduleItem" data-dow="Wednesday" data-alert1="" data-alert2="" data-alert3="" data-placein="Wednesday6pm" data-instructor="Mary">
+                                    <div class="itemInner" data-open="popup84045" aria-controls="popup84045" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:30 pm - 7:30 pm</div>
+                                        <div class="itemName">
+                                            Yoga Flow
+                                        </div>
+                                        <div class="location">In-Person &amp; Virtual</div>
+                                        <div class="teacher">Mary</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Thursday6pm" class="mobileThursday">
+                                <div class="scheduleItem" data-dow="Thursday" data-alert1="" data-alert2="" data-alert3="" data-placein="Thursday6pm" data-instructor="Cindy">
+                                    <div class="itemInner" data-open="popup84035" aria-controls="popup84035" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:00 pm - 7:00 pm</div>
+                                        <div class="itemName">
+                                            BodyPump
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cindy</div>
+                                    </div>
+
+                                </div>
+                                <div class="scheduleItem" data-dow="Thursday" data-alert1="" data-alert2="" data-alert3="" data-placein="Thursday6pm" data-instructor="Cecelia">
+                                    <div class="itemInner" data-open="popup83820" aria-controls="popup83820" aria-haspopup="true" tabindex="0">
+                                        <div class="itemTime">6:00 pm - 6:55 pm</div>
+                                        <div class="itemName">
+                                            Cycling
+                                        </div>
+                                        <div class="location">In-Person</div>
+                                        <div class="teacher">Cecelia</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="Friday6pm" class="mobileFriday"></div>
+                            <div id="Saturday6pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>7:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday7pm" class="mobileSunday"></div>
+                            <div id="Monday7pm" class="mobileMonday"></div>
+                            <div id="Tuesday7pm" class="mobileTuesday"></div>
+                            <div id="Wednesday7pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday7pm" class="mobileThursday"></div>
+                            <div id="Friday7pm" class="mobileFriday"></div>
+                            <div id="Saturday7pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>8:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday8pm" class="mobileSunday"></div>
+                            <div id="Monday8pm" class="mobileMonday"></div>
+                            <div id="Tuesday8pm" class="mobileTuesday"></div>
+                            <div id="Wednesday8pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday8pm" class="mobileThursday"></div>
+                            <div id="Friday8pm" class="mobileFriday"></div>
+                            <div id="Saturday8pm" class="mobileSaturday"></div>
+                        </div>
+                        <div class="rowTitle"><span>9:00 PM</span></div>
+                        <div class="rowDays">
+                            <div id="Sunday9pm" class="mobileSunday"></div>
+                            <div id="Monday9pm" class="mobileMonday"></div>
+                            <div id="Tuesday9pm" class="mobileTuesday"></div>
+                            <div id="Wednesday9pm" class="mobileWednesday currentSchedule"></div>
+                            <div id="Thursday9pm" class="mobileThursday"></div>
+                            <div id="Friday9pm" class="mobileFriday"></div>
+                            <div id="Saturday9pm" class="mobileSaturday"></div>
+                        </div>
+                    </div>
+                    <div id="scheduleFooter" class="scheduleLabels scheduleFooter">
+                        <div class="mobileSunday">
+                            <div class="scheduleDOW">Sunday</div>
+                            <div class="scheduleDate" data-dow="Sunday">12/27/2020</div>
+                        </div>
+                        <div class="mobileMonday">
+                            <div class="scheduleDOW">Monday</div>
+                            <div class="scheduleDate" data-dow="Monday">12/28/2020</div>
+                        </div>
+                        <div class="mobileTuesday">
+                            <div class="scheduleDOW">Tuesday</div>
+                            <div class="scheduleDate" data-dow="Tuesday">12/29/2020</div>
+                        </div>
+                        <div class="mobileWednesday currentSchedule">
+                            <div class="scheduleDOW">Wednesday</div>
+                            <div class="scheduleDate" data-dow="Wednesday">12/30/2020</div>
+                        </div>
+                        <div class="mobileThursday">
+                            <div class="scheduleDOW">Thursday</div>
+                            <div class="scheduleDate" data-dow="Thursday">12/31/2020</div>
+                        </div>
+                        <div class="mobileFriday">
+                            <div class="scheduleDOW">Friday</div>
+                            <div class="scheduleDate" data-dow="Friday">1/1/2021</div>
+                        </div>
+                        <div class="mobileSaturday">
+                            <div class="scheduleDOW">Saturday</div>
+                            <div class="scheduleDate" data-dow="Saturday">1/2/2021</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="scheduleRawItems">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

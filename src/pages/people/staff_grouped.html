@@ -1,0 +1,46 @@
+---
+page-title: People Directory
+page-eyebrow:  Staff / Board / Committee Etc
+---
+
+<main id="contentControl" class="content modulePage">
+
+    <div class="grid-container">
+        <div >
+            <div class="button-group" style="border-bottom: 1px solid #ddd">
+                <a class="button dark">Staff</a>
+                <a class="button light">Board of Directors</a>
+            </div>
+        </div>
+
+            {{#each people.departments}}
+                <h2 class="lister-subHeader">{{this}}</h2>
+
+                <div class="grid-x staff-lister staff-lister--boxed medium-up-2">
+                {{#repeat 5}}
+                <div class="staff-item cell lister-item">
+                    <div class="lister-image ">
+                        <div class="thumbnail"><img class="" src="https://www.placebear.com/150/175" alt=""></div>
+                    </div>
+                    <div class="lister-content">
+
+                        <h3 class="lister-title"><a href="">Peter Parker</a></h3>
+                        <p class="position">Director of {{this}}</p>
+                        <p>
+                            <span class="phone"><i class="icon icon-telephone"></i> 999-777-2222</span><br>
+                            <span class="email"><i class="icon icon-send-mail"></i> <a href="mailto:ceo@yourwebsite.org">Email Me</a></span>
+                        </p>
+
+
+                    </div>
+                </div>
+                {{/repeat}}
+                    </div>
+            {{/each}}
+
+
+        </div>
+
+
+    </div>
+</main>

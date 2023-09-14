@@ -1,0 +1,70 @@
+{
+  "sample_data": {
+    "detail_url": "office_detail.html",
+    "location": {
+      "matrix_unique_id": "123456789",
+      "address_1": "2001 Siesta Dr.",
+      "address_2": "Suite 202",
+      "address_city": "Sarasota",
+      "address_state": "FL",
+      "address_zip": "34231",
+      "county": "Sarasota",
+      "street_direction": "",
+      "street_number": "",
+      "street_prefix": "",
+      "street_name": "",
+      "street_suffix": ""
+    },
+    "info": {
+      "area_code": "941",
+      "association": "Technology",
+      "contact_member": "Mark Zeitler",
+      "contact_mui": "1234564",
+      "email": "contact.email@realtorsample.com",
+      "fax_area_code": "",
+      "fax_area_code_prefix": "",
+      "fax_phone": "",
+      "office_long_name": "Accrisoft Corporation",
+      "mls_number": "12345647",
+      "phone": "5551212",
+      "photos": "",
+      "status": "Active",
+      "type": "Software",
+      "webpage_address": "www.accrisoft.com"
+    }
+  },
+  "office_tags": {
+    "detail_url": "[[detail_url]]",
+    "location": {
+      "matrix_unique_id": "[[misc0]]",
+      "address_1": "[[address_1]]",
+      "address_2": "[[address_2]]",
+      "address_city": "[[address_city]]",
+      "address_state": "[[address_state]]",
+      "address_zip": "[[address_zip]]",
+      "county": "",
+      "street_direction": "",
+      "street_number": "",
+      "street_prefix": "",
+      "street_name": "",
+      "street_suffix": ""
+    },
+    "info": {
+      "area_code": "[[Office_Area_Code]]",
+      "association": "",
+      "contact_member": "[[Office_Contact_Member]]",
+      "contact_mui": "[[Office_Contact_Member_MUI]]",
+      "email": "[[misc3]]",
+      "fax_area_code": "",
+      "fax_area_code_prefix": "",
+      "fax_phone": "",
+      "office_long_name": "[[name]]",
+      "mls_number": "[[MLS]]",
+      "phone": "[[Office_Phone]]",
+      "photos": "",
+      "status": "[[Status]]",
+      "type": "[[category]]",
+      "webpage_address": "[[misc4]]"
+    }
+  }
+}

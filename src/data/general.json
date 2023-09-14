@@ -1,0 +1,80 @@
+
+{
+  "logo": "",
+  "font_url": "https://use.typekit.net/owu3qtp.css",
+  "theme-palette": ["primary","secondary","primary-light","secondary-light","dark","medium","light","light-gray","medium-gray","dark-gray","darker-gray","black"],
+  "button-palette": ["primary","secondary","dark","white"],
+  "events": [
+    {
+      "title": "This is an Event Title",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": ""
+    },
+    {
+      "title": "This is an Event Title",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet,",
+      "image": "https://picsum.photos/400/400"
+    }
+  ],
+  "program_intro": [
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    }
+  ],
+  "quicklinks": [
+    {
+      "title": "Find a Property",
+      "icon": "icon icon-buy"
+    },
+    {
+      "title": "Member Benefits",
+      "icon": "icon icon-collaboration"
+    },
+    {
+      "title": "Resource Library",
+      "icon": "icon icon-video"
+    }
+  ]
+}

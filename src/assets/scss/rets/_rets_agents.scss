@@ -1,0 +1,126 @@
+// RETS Agents
+$rets-agent-accent-color: $retsAccent1 !default;
+
+$rets-agent-image-border-radius: 8px !default;
+$rets-agent-item-box-shadow: 0px 3px 15px rgba(0,0,0,.2) !default;
+$rets-agent-item-box-shadow-hover: 0px 3px 15px rgba(0,0,0,.4) !default;
+$tabs-title-background-color: var(--clr-secondary)!default;
+$tabs-title-active-background-color: var(--clr-primary) !default;
+
+.retsAgentSearch {
+  margin-bottom: 4rem;
+}
+
+.retsAgentsList {
+  width: 100%;
+  .agent {
+    margin: 2rem 0;
+    transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+    border-top-left-radius: $rets-agent-image-border-radius;
+    border-bottom-left-radius: $rets-agent-image-border-radius;
+
+    .media-object {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
+
+.retsAgentsList, .retsAgentsDetail {
+  margin-top: 2rem;
+  .agent {
+    border-top-left-radius: $rets-agent-image-border-radius;
+    border-bottom-left-radius: $rets-agent-image-border-radius;
+    .image {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-self: center;
+      background-color: $light-gray;
+      color: $medium-gray;
+      min-height: 200px;
+      @include background-cover;
+      border-right: 5px solid $retsAccent1;
+      border-top-left-radius: $rets-agent-image-border-radius;
+      border-bottom-left-radius: $rets-agent-image-border-radius;
+    }
+    .image.no-image::before {
+      align-self: center;
+      content: '\f030';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 300%;
+    }
+    .agent-info {
+      padding: 1.5rem 2rem;
+    }
+    .agent-action {
+      align-self: center;
+      text-align: right;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    &.box-shadow {
+      box-shadow: $rets-agent-item-box-shadow;
+      &:hover {
+        box-shadow: $rets-agent-item-box-shadow-hover;
+      }
+    }
+  }
+}
+
+.retsAgentsDetail {
+  .agent {
+    margin: 2rem auto;
+    .image {
+      min-height: 400px;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tabs-title {
+    float: unset;
+  }
+
+  @media screen and (max-width: 64em) {
+    .tabs-title {
+      width: 100%;
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  .tabs-title a {
+    background-color: $tabs-title-background-color;
+  }
+
+  .tabs-title a {
+    color: color-pick-contrast($tabs-title-background-color, $colors: ($white,$body-font-color), $tolerance: 4);
+  }
+
+  .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
+    background: $tabs-title-active-background-color;
+    color: color-pick-contrast($tabs-title-active-background-color, $colors: ($body-font-color,$white), $tolerance: 4);
+  }
+}
+
+#propertyOfAgent {
+  margin-top: 4rem;
+}

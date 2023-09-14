@@ -1,0 +1,19 @@
+{{#each navigation.primary}}
+<li><a href="{{@root.root}}{{link}}" class="{{#if submenu}}parent-anchor{{/if}}" >{{text}}</a>
+    {{#if submenu}}
+    <ul class="menu nested">
+<!--        <li class="item1 sponsor"><a class="first" href="#">Sponsor Spanning Text </a></li>-->
+        {{#each submenu}}
+        <li class="menu-icon-{{icon}}"> <a href="{{@root.root}}{{link}}" class="">{{text}}</a>
+            {{#if submenu}}
+            <ul class="menu nested ">
+                {{#each submenu}}
+                <li> <a href="{{@root.root}}{{link}}" class="">{{text}}</a>
+                    {{/each}}
+            </ul>
+            {{/if}}
+            {{/each}}
+    </ul>
+    {{/if}}
+</li>
+{{/each}}

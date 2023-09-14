@@ -1,0 +1,441 @@
+$calendar-nav-background: var(--clr-site-dark) !default;
+$calendar-nav-color: #ffffff !default;
+
+$calendar-popover-background: var(--clr-site-dark) !default;
+$calendar-popover-color: #ffffff !default;
+$calendar-week-background: $light-gray !default;
+$calendar-week-color: var(--clr-primary) !default;
+$calendar-small-width: 450px !default;
+
+/*! ModuleBegin::events */
+/*! ----- Events Glance View ----- */
+#eventForm table tbody {
+    border: 0;
+}
+#eventCategoryFilter {
+    max-width: 300px;
+}
+
+.cal {
+    position: relative;
+    text-align: center;
+}
+.calTop {
+    margin-bottom: 0;
+}
+.calTop a,
+.calTop button.calPrev,
+.calTop button.calNext {
+    transition: all 0.3s cubic-bezier(0.36, 0.53, 0.33, 1.01);
+    opacity: 0.8;
+    color: $calendar-nav-color;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.calTop a:hover,
+.calTop button.calPrev:hover,
+.calTop button.calNext:hover {
+    opacity: 1;
+}
+.calTop td {
+    background-color: $calendar-nav-background;
+    vertical-align: middle;
+    text-align: center;
+    color: $calendar-nav-color;
+}
+.calMonth {
+    text-align: center;
+    font-family: $header-font-family;
+    font-size: 1.25rem;
+}
+.calGrid {
+    clear: both;
+    margin-right: auto;
+    margin-left: auto;
+    background: transparent;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.calGrid tbody,
+.calGrid tfoot,
+.calGrid thead {
+    border: 0;
+    background: 0 0;
+}
+.calGrid td,
+.calGrid tr {
+    border: none;
+    background: 0 0;
+}
+.calGrid td {
+    position: relative;
+    padding: 0;
+    width: 14.2857%;
+    height: 48px;
+    vertical-align: middle;
+    text-align: center;
+}
+.calGrid tr.calWeek {
+    border: none;
+    background-color: $calendar-week-background;
+    color: $calendar-week-color;
+    text-align: center;
+}
+.calGrid tr.calWeek td {
+    border-top: 0;
+    border-left: 0;
+    height: 33px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+//same big and small
+//.cal .calGrid td.emptyDay{  background: $light-gray;}
+.calGrid td.today {
+    background: $light-gray;
+}
+.calGrid .dayDate {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    font-weight: 900;
+}
+.show-for-smallCalendar,
+.show-for-largeCalendar {
+    display: none;
+}
+.largeCalendar .show-for-largeCalendar {
+    display: table-row;
+}
+.smallCalendar .show-for-smallCalendar {
+    display: table-row;
+}
+
+.cal.smallCalendar {
+    max-width: $calendar-small-width;
+}
+.cal.smallCalendar .calGrid tr.calWeek td {
+    border-top: 0;
+    border-left: 0;
+}
+.cal.smallCalendar .calGrid td:first-child {
+    border-left: 0;
+}
+.cal.smallCalendar .calGrid tr:first-child + tr td {
+    border-top: 0;
+}
+
+.cal.smallCalendar .calGrid td {
+    $popover-arrow-size: 8px;
+    $popover-width: 156px;
+    $popover-margin-left: ($popover-width * 0.5);
+    .glanceInner {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transition: all 0.3s;
+        opacity: 0;
+        margin-left: -$popover-margin-left;
+        background: $calendar-popover-background;
+        padding: 8px 8px;
+        width: $popover-width;
+        text-transform: uppercase;
+        line-height: 17px;
+        color: $calendar-popover-color;
+        font-size: 1.1rem;
+
+        //links in popover
+        a {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 0.8rem;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        //arrow
+        &::after {
+            position: absolute;
+            bottom: -$popover-arrow-size;
+            left: 50%;
+            transform: translateX(-$popover-arrow-size);
+            border-top: $popover-arrow-size solid $calendar-popover-background;
+            border-right: $popover-arrow-size solid transparent;
+            border-left: $popover-arrow-size solid transparent;
+            content: "";
+        }
+    }
+
+    &:hover .glanceInner,
+    &.hovered .glanceInner {
+        display: block;
+        bottom: 38px;
+        opacity: 1;
+        z-index: 25;
+    }
+    &.eventOn {
+        &,
+        a {
+            cursor: pointer;
+            font-weight: 700;
+        }
+    }
+
+    span.corner-indicator {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        //border-top: 12px solid transparent;;
+        //border-right: 12px solid #cccccc;
+        width: 0;
+        height: 0;
+    }
+    .indicator {
+        display: none;
+    }
+}
+//Large Calendar
+.cal.largeCalendar {
+    .calTop td {
+        padding: 1rem;
+    }
+
+    .calGrid td {
+        border-right: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+        padding: 0.5rem 0.625rem 1rem;
+        height: 150px;
+        vertical-align: top;
+        text-align: left;
+    }
+    .calGrid td:first-child {
+        border-left: 1px solid $light-gray;
+    }
+
+    .calGrid a {
+        color: $body-font-color;
+    }
+
+    .calGrid tr.calWeek td {
+        border-right: 0;
+        border-bottom: 0;
+        height: auto;
+        text-align: center;
+    }
+
+    .calGrid td .glanceInner {
+        display: block;
+        padding-top: 7px;
+        line-height: 1.2;
+        font-size: 1rem;
+    }
+
+    .calGrid .indicator {
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        text-align: center;
+        color: $anchor-color;
+        font-weight: bold;
+        width: 100%;
+    }
+    .glanceInner.moreEvents + .indicator {
+        display: block;
+    }
+}
+
+.glancePopup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    background-color: #f6f6f6; //todo color variable
+    padding: 1.5rem 1rem 1rem;
+    width: 300px;
+}
+
+.glancePopup.active {
+    display: block;
+}
+.glancePopup::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: inherit;
+    width: 15px;
+    height: 15px;
+    content: "";
+}
+.glancePopup.left {
+    right: 100%;
+    left: auto;
+}
+.glancePopup.left::after {
+    right: 0;
+    left: auto;
+    transform: translate(50%, -50%) rotate(45deg);
+    box-shadow: 3px -1px 3px rgba(0, 0, 0, 0.1);
+}
+.glancePopup .close-button {
+    top: 0;
+    right: 0.5rem;
+}
+.glancePopup .title {
+    font-weight: bold;
+} //should be consistent
+
+.glancePopup a,
+.glanceInner a {
+    display: block;
+    margin-bottom: 10px;
+}
+.glanceInner .time {
+    display: none;
+}
+.glanceInner.moreEvents a:nth-child(n + 3) {
+    display: none;
+}
+
+/*! ---- Events Registration ----- */
+.ticketTypeSummary {
+}
+.ticketTypeSummary thead {
+    background: var(--clr-site-dark);
+    color: var(--clr-on-dark);
+}
+
+.ticketTypeSummary .ticketPriceTotal {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.ticketTypeSummary .ticketPriceTotal td {
+    border-top: 1px solid #cccccc;
+}
+.ticketQuantity {
+    text-align: center;
+}
+td.ticketTotal,
+.ticketPriceTotal td {
+    text-align: right;
+}
+.repeatSection {
+}
+.eventTicketTypeTitle {
+    margin: 20px auto;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+.eventTicketTypeTitle {
+    counter-reset: attendee;
+}
+.attendeeLabel::after {
+    content: " " counter(attendee);
+    counter-increment: attendee;
+}
+.odd.repeatSection {
+}
+.odd.repeatSection.last {
+}
+#registrationSummary td {
+    padding: 1px 10px;
+}
+.ticketTypeTable thead {
+    background: var(--clr-site-dark);
+    color: var(--clr-on-dark);
+}
+.ticketTypeTable {
+    max-width: 650px;
+}
+.ticketTypeSubmit {
+    display: inline-block;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    margin: 0 0 1rem 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: var(--btn-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
+    padding: 0.85em 1em;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    -webkit-appearance: none;
+}
+/*! Detail*/
+.negativeMarginTop {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    @media screen and (min-width: 60em) {
+        margin-top: -240px;
+    }
+}
+.eventIntro {
+    position: relative;
+    margin-bottom: 3rem;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+.eventInfo {
+    position: relative;
+    padding: 2rem;
+
+    @include breakpoint(large up) {
+        padding: 3rem;
+    }
+
+    @media screen and (max-width: 40em) {
+        order: 2;
+    }
+}
+.eventInfo-badge {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    border-radius: $global-radius 0 0 $global-radius;
+    background: var(--clr-secondary);
+    padding: 5px;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.detailRow {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-flow: row wrap;
+}
+
+.detailRow .label {
+    width: 120px;
+    flex: 0 0 auto;
+}
+.eventImage {
+    background-size: cover;
+    @media screen and (max-width: 40em) {
+        width: 100%;
+        height: 250px;
+        order: 1;
+    }
+}
+
+/*! ModuleEnd::events */

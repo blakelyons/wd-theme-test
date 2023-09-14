@@ -1,0 +1,57 @@
+<section class="photoBox-component">
+    <div class="grid-container">
+        <div class="moduleHeader ">
+            <div class="editorContent ">
+                <h2 class="text-center">Photo Quicklinks Component</h2>
+                <p class="text-center">The sliding photo component can be used within a page to display images
+                                       with a sliding overlay for text. This component will show up to three
+                                       items in a row. Customer has ability to update the image, text and URL
+                                       that the item could link to. A text intro can be applied above the boxes
+                                       just as you are reading this text right now. </p>
+                <p class="text-center">
+                    <a class="button secondary" href="#">Button</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="grid-x photoBoxes grid-margin-x large-up-3">
+            {{#repeat 3}}
+            <div class="cell photoBox ">
+                <div class="photoBoxBg photoBg" style="background-image: url('https://picsum.photos/600/600');"></div>
+
+                <div class="photoBox-drawer vertical">
+                    <a href="components.html" class="photoBox-content">
+                        <h4 class="title">Optional Section Heading</h4>
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo vulputate condimentum</p>
+                        <div class="photoBox-drawerCopy">
+                            <span class="moreLink photoBox-action">Learn More</span>
+                        </div>
+
+                    </a>
+                    <div class="photoBox-drawerTab"><i class="icon icon-house"></i></div>
+                </div>
+            </div>
+            {{/repeat}}
+
+        </div>
+        <div class="grid-x photoBoxes grid-margin-x large-up-3 pad-top-small">
+            {{#repeat 3}}
+            <div class="cell photoBox ">
+                <div class="photoBoxBg photoBg" style="background-image: url('https://picsum.photos/600/600');"></div>
+                <div class="photoBox-drawer horizontal theme-dark">
+                    <a href="#" class="photoBox-content">
+                        <h4 class="title">Optional Section Heading</h4>
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo vulputate condimentum</p>
+                        <div class="photoBox-drawerCopy">
+                            <span class="moreLink photoBox-action">Learn More</span>
+                        </div>
+
+                    </a>
+                    <div class="photoBox-drawerTab"><i class="icon icon-house"></i></div>
+                </div>
+            </div>
+            {{/repeat}}
+
+        </div>
+    </div>
+</section>

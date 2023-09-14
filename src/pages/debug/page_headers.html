@@ -1,0 +1,82 @@
+---
+page-title: Page Headers Potential Variations
+---
+<section class="pageHeader pageHeader--hasImage">
+    <div class="pageHeader-background" style="background-image: url('{{root}}/assets/img/interior_header.jpg')">
+    </div>
+    <div class="grid-container pageHeader-inner">
+        <div class="pageHeader-content">
+            <div class="eyebrow">Image Background</div>
+            <h1 class="">Lorem ipsum dolor sit amet consectetur</h1>
+        </div>
+    </div>
+</section>
+{{#each general.theme-palette}}
+    {{> page_header
+            page-title='Lorem ipsum dolor sit amet consectetur'
+            page-eyebrow=this
+            pageheader-bg-class='showOverlay'
+            pageheader-class=(append 'theme-' this)
+            pageheader-image='/assets/img/interior_header.jpg'
+    }}
+    {{> page_header
+            page-title='Lorem ipsum dolor sit amet consectetur'
+            page-eyebrow=this
+            pageheader-class=(append 'theme-' this)
+    }}
+
+{{/each}}
+
+<section class="pageHeader pageHeader--alt">
+    <div class="grid-container pageHeader-inner align-right">
+        <div class="pageHeader-content">
+            <div class="eyebrow">Alt Color align-right</div>
+            <h1 class="">Page Header</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="lister.html" class="button">Button</a>&nbsp;&nbsp;<a href="lister.html" class="button">Button</a>
+        </div>
+    </div>
+</section>
+<section class="pageHeader">
+    <div class="grid-container pageHeader-inner align-center">
+        <div class="pageHeader-content">
+            <div class="eyebrow">Center Align</div>
+            <h1 class="">Page Header</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="lister.html" class="button">Button</a>&nbsp;&nbsp;<a href="lister.html" class="button">Button</a>
+        </div>
+    </div>
+</section>
+<section class="pageHeader pageHeader--alt">
+    <div class="grid-container pageHeader-inner align-top">
+        <div class="pageHeader-content">
+            <div class="eyebrow">Vertical Align Top</div>
+            <h1 class="">Page Header</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="lister.html" class="button secondary">Button</a>&nbsp;&nbsp;<a href="lister.html" class="button secondary">Button</a>
+        </div>
+    </div>
+</section>
+<section class="pageHeader">
+    <div class="grid-container pageHeader-inner align-bottom">
+        <div class="pageHeader-content">
+            <div class="eyebrow">Vertical Align Bottom</div>
+            <h1 class="">Page Header</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="lister.html" class="button">Button</a>&nbsp;&nbsp;<a href="lister.html" class="button">Button</a>
+        </div>
+    </div>
+</section>
+<section class="pageHeader pageHeader--alt">
+
+    <div class="grid-container pageHeader-inner">
+        <div class="pageHeader-content">
+            <div class="eyebrow h5">Alternative Style</div>
+            <h1 class="">Page Header</h1>
+        </div>
+    </div>
+</section>

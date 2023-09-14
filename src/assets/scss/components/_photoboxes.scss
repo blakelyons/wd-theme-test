@@ -1,0 +1,158 @@
+////
+/// @group photoboxes
+////
+
+/// Default photobox draw tab background
+/// @type Color
+$photobox-drawertab: var(--photobox-drawertabs-color, var(--clr-primary) ) !default;
+
+.photoBox-component {}
+
+.photoBoxes {
+  justify-content: center;
+}
+
+.photoBox {
+  height: 378px;
+  max-width: 800px;
+
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, .3);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  .photoBoxBg {
+    @include full-cover;
+    @include background-cover;
+  }
+
+  &:not(.cell) {
+    width: 384px;
+    flex: 1 1 auto;
+    margin: 1rem;
+  }
+
+  .photoBox-content {
+    display: flex;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    position: relative;
+
+    &, .title, .photoBox-action:not(.button) {
+      transition: $transition-fast;
+      color: inherit;
+    }
+
+    .desc {
+      max-height: calc(100% - 106px);
+      overflow: hidden;
+    }
+
+  }
+
+  .photoBox-drawer {
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    color: color-pick-contrast($white);
+    position: absolute;
+    transition: all .3s cubic-bezier(.36, .53, .33, 1.01);
+
+  }
+
+  //vertical - up and down - using transform so it opens to dynamic height
+  .photoBox-drawer.vertical {
+    height: auto;
+    transform: translateY(calc(100% - 166px));
+    padding-top: 25px;
+    bottom: 0;
+    min-height: 166px;
+
+    .photoBox-content {
+      align-items: center;
+    }
+  }
+
+  //horizontal slide - left and right - opens to set percentage not a dynamic width
+  .photoBox-drawer.horizontal {
+    width: 90%;
+    right: calc(100% - 50px);
+    padding-right: 25px;
+
+
+    .photoBox-content {
+      justify-content: center;
+    }
+  }
+
+  //stuff only visible when open
+  .photoBox-drawerCopy {
+    opacity: 0;
+    transition: $transition-slow;
+  }
+
+
+  &:hover, &.active {
+    .photoBox-drawer.vertical {
+      transform: translateY(0);
+    }
+
+    .photoBox-drawer.horizontal {
+      right: 10%;
+    }
+
+    .photoBox-drawerCopy {
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint(750 down) {
+    .photoBox-drawer.vertical {
+      transform: translateY(0);
+    }
+    .photoBox-drawerCopy {
+      opacity: 1;
+    }
+  }
+
+  .horizontal .photoBox-drawerTab {
+    right: -25px;
+    top: calc(50% - 25px);
+    left: unset;
+  }
+
+  .photoBox-drawerTab {
+    background: $photobox-drawertab;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 25px);
+    border-radius: 50%;
+    color: $white;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    .fa, .icon {
+      font-size: 1.5rem;
+    }
+
+    .month {
+      font-size: 0.75rem;
+      display: block;
+    }
+  }
+
+}
+

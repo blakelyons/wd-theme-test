@@ -1,0 +1,133 @@
+---
+page-title: Your Shopping Cart
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <!-- Accrisoft Freedom v/11 Jan 20, 2021 -->
+            <form method="POST" action="index.php" class="commerce_shoppingcart">
+                <input type="hidden" name="cmd" value="set">
+                <input type="hidden" name="src" value="commerce">
+                <input type="hidden" name="srctype" value="cart">
+
+                <div class="grid-x grid-margin-x">
+                    <div class="cart cell large-8">
+                        <table style="width: 100%;" class="table shoppingCartTable shoppingCart" cellpadding="5" cellspacing="0">
+                            <thead>
+                            <tr class="shoppingCartTableHeader">
+                                <td class="description">Item</td>
+                                <td class="price">Item Price</td>
+                                <td class="quantity">Qty</td>
+                                <td class="total">Total Price</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr class="product">
+                                <td class="description">
+                                    <h4><a href="">Running Shoes</a></h4>
+                                    <p>Regular</p>
+
+                                </td>
+                                <td class="price">
+                                    <p>$10.00 </p></td>
+                                <td class="quantity">
+                                    <div class="cartQuantityControl">
+                                        <a class="cartDelete ajaxCartDelete" data-itemsku="SuperWidget_01_Regular" href="#"><i title="delete" class="fas fa-trash"></i></a>
+                                        <input type="text" id="QNEW_1" name="arrQty[3]" size="3" value="1" class="shoppingFormQuantity">
+
+                                    </div>
+                                </td>
+                                <td class="total">
+                                    <p class="cartTotalPrice">$10.00</p></td>
+                            </tr>
+                            <tr class="product even">
+                                <td class="description">
+                                    <h4><a href="">Running Shoes</a></h4>
+                                    <p>Deluxe</p>
+
+                                </td>
+                                <td class="price">
+                                    <p>$20.00 </p></td>
+                                <td class="quantity">
+                                    <div class="cartQuantityControl">
+                                        <a class="cartDelete ajaxCartDelete" data-itemsku="SuperWidget_01_Deluxe" href="#"><i title="delete" class="fas fa-trash"></i></a>
+                                        <input type="text" id="QNEW_2" name="arrQty[4]" size="3" value="3" class="shoppingFormQuantity">
+
+                                    </div>
+                                </td>
+                                <td class="total">
+                                    <p class="cartTotalPrice">$60.00</p></td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                        <div class="shoppingCartButtons">
+                            <div class=""><a class="button" href="products.html">Continue Shopping</a></div>
+                        </div>
+                        <br>
+
+                    </div><!-- end cart -->
+                    <div class="summary cell large-4">
+                        <table style="width: 100%;" class="table shoppingCartTable" cellpadding="5" cellspacing="0">
+                            <thead>
+                            <tr class="shoppingCartTableHeader">
+                                <th class="description" colspan="2">Order Summary
+
+                                </th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            <tr class="">
+                                <td align="left">Subtotal</td>
+                                <td class="total" align="right">$70.00</td>
+                            </tr>
+                            <tr class="">
+                                <td align="left">Shipping</td>
+                                <td class="total" align="right" id="cart_shipping"><small>Calculated at checkout</small></td>
+                            </tr>
+                            <tr class="">
+                                <td align="left">Tax</td>
+                                <td class="total" align="right" id="cart_tax_total">--</td>
+                            </tr>
+
+                            </tbody>
+
+                            <tfoot>
+                            <tr class="shoppingCartTableFooter">
+
+                                <td align="left">Estimated Total</td>
+                                <td class="total text-right" align="right"><b>$70.00</b></td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        <div class="shoppingCartButtons">
+                            <div class=""><a href="checkout.html" class="button large">Proceed to Check Out <i class="fas fa-chevron-right"></i></a></div>
+                        </div>
+                        <script>
+                            /* Add alternating colors on product rows ignoring discount rows*/
+                            $('.shoppingCartTable tr.product').each(function (i, el) {
+                                if (i % 2) {
+                                    $(el).addClass('even')
+                                }
+                            });
+                            $oCart = new CommerceAjaxCart();
+                            $oCart.initSet('.shoppingFormQuantity', 'keyup');
+                            $oCart.initDelete('.ajaxCartDelete');
+                        </script>
+                    </div><!-- end summary-->
+                </div>
+                <div id="loginAsk" class="">
+                    <p><strong>Do you already have an account?</strong><br><a href="login.html">Sign in</a> to easily retrieve your order details and downloads in the future.</p>
+                    <p><strong>No Account?</strong> <br>You will have a chance to create an account during checkout.</p>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</main>

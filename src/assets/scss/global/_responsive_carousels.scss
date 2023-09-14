@@ -1,0 +1,48 @@
+$flickity-button-background: null !default;
+$flickity-button-color: null !default;
+
+@import 'vendor/normalize';
+@import '../_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import '../_vendor/sassy-lists/stylesheets/helpers/true';
+@import '../_vendor/sassy-lists/stylesheets/functions/contain';
+@import '../_vendor/sassy-lists/stylesheets/functions/purge';
+@import '../_vendor/sassy-lists/stylesheets/functions/remove';
+@import '../_vendor/sassy-lists/stylesheets/functions/replace';
+@import '../_vendor/sassy-lists/stylesheets/functions/to-list';
+@import 'xy-grid/xy-grid';
+.carousel-wrapper {
+  margin-bottom: $carousel-margin-bottom;
+
+  &.flickity-enabled {
+    display: block;
+  }
+  .flickity-button {
+    background: $flickity-button-background;
+    color: $flickity-button-color;
+  }
+// may need to change $gutter-type to none depending on the slider designed on the site.
+  @include -zf-each-breakpoint {
+    @for $i from 2 through 5 {
+      &.#{$-zf-size}-up-#{$i} .flickity-slider {
+        @include xy-grid-layout($n: $i, $selector: '.cell', $gutter-type: padding, $output: (size));
+      }
+    }
+    @if (type-of($grid-margin-gutters) == 'map' and map-has-key($grid-margin-gutters, $-zf-size)) {
+      &.flickity-enabled .cell {
+        @include xy-cell($vertical: false, $output: (size gutters), $gutter-type: padding);
+      }
+    }
+  }
+
+  &.cards-slider {
+    @include  breakpoint(1340px up) {
+      .flickity-prev-next-button.previous {
+        left: -70px;
+      }
+
+      .flickity-prev-next-button.next {
+        right: -70px;
+      }
+    }
+  }
+}

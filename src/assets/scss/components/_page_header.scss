@@ -1,0 +1,212 @@
+////
+/// @group  page header
+////
+
+/// Default background when no image is used.
+/// @type Color
+$pageheader-background: var(--pageheader-bg, var(--clr-site-dark)) !default;
+
+/// Default content color for default no image style.
+/// @type Color
+$pageheader-color: var(--pageheader-color, var(--clr-on-dark)) !default;
+
+
+/// Default background for alt style.
+/// @type Color
+$pageheader-background-alt: var(--clr-site-medium) !default;
+
+
+/// Default content color for alt style.
+/// @type Color
+$pageheader-color-alt: var(--clr-on-medium) !default;
+
+/// Default  vertical position align-items value
+/// @type Keyword
+$pageheader-vertical: center !default;
+
+/// Default horizontal position justify-items value
+/// @type Keyword
+$pageheader-horizontal: flex-start !default;
+
+/// Default height.
+/// @type Number
+$pageheader-height: 250px !default;
+
+/// Default short height.
+/// @type Number
+$pageheader-image-height: $pageheader-height !default;
+
+/// Page Header Content Title H1 Text Transform
+/// @type Keyword
+$pageheader-content-title-text-transform: none !default;
+
+// Default image overlay opacity
+// @type Number
+$pageheader-image-overlay-opacity: .6 !default;
+
+/// If `true`, images have overlay by default and an .noOverlay class is created. If `false`, a .showOverlay class is created.
+/// @type Boolean
+$pageheader-has-overlay: false !default;
+
+
+/* ---------------------------------------------------------------------------*/
+/* Advanced Overlay settings - not used by default                            */
+/* By default image overlays use background inherit and generic theme classes */
+/* -------------------------------------------------------------------------- */
+$pageheader-overlay-direction: to right !default;
+
+
+.pageHeader {
+  --header-overlay-color: var(--theme-background, #{$pageheader-background});
+  --header-overlay-direction: #{$pageheader-overlay-direction};
+  --header-overlay-opacity: #{$pageheader-image-overlay-opacity};
+  height: auto;
+
+  padding: 0;
+  display: block;
+  position: relative;
+  background-color: $pageheader-background;
+  color: $pageheader-color;
+
+
+  .eyebrow {
+    color: inherit;
+  }
+
+  @include breakpoint(medium up){
+    height: $pageheader-height;
+  }
+
+  &--hasImage {
+    color: $pageheader-color-image;
+    @include breakpoint(medium up){
+      height: $pageheader-image-height;
+    }
+  }
+
+  &--alt {
+    background: $pageheader-background-alt;
+    color:$pageheader-color-alt;
+  }
+
+  .pageHeader-inner {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    position: relative;
+
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    align-items: $pageheader-vertical;
+    justify-content: $pageheader-horizontal;
+    @include alignment-classes();
+
+    .pageHeader-cta {
+      margin-left: auto;
+    }
+
+    &.align-center, &.align-right {
+      .pageHeader-cta {
+        margin-left: 0;
+        flex: 1 0 100%;
+      }
+    }
+
+  }
+
+  .pageHeader-background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include background-cover;
+    background-color: inherit;
+
+    //z-index: -1;
+
+    img {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      font-family: "object-fit: cover";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &::after{
+      @include full-cover();
+
+      @if $pageheader-has-overlay == true {
+        content: "";
+      } @else if $pageheader-has-overlay == false {
+        content: unset;
+      }
+    }
+    @if $pageheader-has-overlay == true {
+      &.hideOverlay::after {
+        content: unset;
+      }
+    } @else if $pageheader-has-overlay == false {
+      &.showOverlay::after{
+        content: "";
+      }
+    }
+    &.gradientOverlay::after {
+      background-image:linear-gradient(var(--header-overlay-direction, to right),var(--header-overlay-color),var(--header-overlay-to-color, transparent))
+    }
+    &.fullOverlay::after {
+      background-color: inherit;
+      opacity: var(--header-overlay-opacity, #{$pageheader-image-overlay-opacity});
+    }
+    &.noImage {
+      display: none;
+    }
+  }
+
+
+  .pageHeader-content {
+
+    //hide until the page title switching it finalized
+    &.loading {
+      opacity: 0;
+    }
+
+    transition: opacity 0.8s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  h1 {
+    color: inherit;
+    line-height: 1;
+  }
+
+}
+//Split Image Style
+@media screen and (max-width:1024px) {
+  .pageHeader--splitImage {height: auto;}
+  .pageHeader--splitImage .pageHeader-content {
+    padding-bottom: 200px;
+  }
+  .pageHeader--splitImage .pageHeader-background {
+    height: 200px;
+    bottom: 0;
+  }
+}
+@media screen and (min-width:1024px) {
+
+  .pageHeader--splitImage .pageHeader-content{
+    width: 50%;
+  }
+  .pageHeader--splitImage .pageHeader-background{
+    width: 50%;
+    height: 100%;
+    left: unset;
+    right: 0;
+  }
+}

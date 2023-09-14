@@ -1,0 +1,92 @@
+//this file should be included later so that it can override things
+//generic 'theme' combos used across modules
+
+////
+/// @group global
+////
+
+/// Default theme palette map
+/// @deprecated
+/// @type Map
+$theme-colors:(
+        "primary": $primary-color,
+        "secondary":$secondary-color,
+
+        "dark": get-color(dark),
+        "medium": get-color(medium),
+        "light": get-color(light),
+
+) !default;
+
+
+/// Variable theme palette map
+/// @type Map
+$variable-theme-colors:(
+        primary: #{var(--clr-primary)},
+        primary-dark: #{var(--clr-primary-dark)},
+        primary-light: #{var(--clr-primary-light)},
+
+        secondary:#{var(--clr-secondary)},
+        secondary-dark:#{var(--clr-secondary-dark)},
+        secondary-light:#{var(--clr-secondary-light)},
+
+        dark: #{var(--clr-site-dark)},
+        medium: #{var(--clr-site-medium)},
+        light: #{var(--clr-site-light)},
+
+) !default;
+
+@function theme-color-variable($key) {
+  $fallbackColor: '--clr-on-dark';
+  @if $key == white {
+    $fallbackColor: '--clr-on-light';
+  }
+  @if (str-ends-with(quote($key), '-light')) {
+    $fallbackColor: '--clr-on-light';
+  }
+  @if $fallbackColor == --clr-on-#{$key} {
+    @return var(--clr-on-#{$key});
+  } @else {
+    @return var(--clr-on-#{$key}, var(#{$fallbackColor}));
+
+  }
+
+}
+
+
+
+@each $key, $color in $variable-theme-colors {
+  .theme-#{$key} {
+    //is --theme-color or --theme-bg better
+    --theme-background: #{$color};
+    background-color: #{$color};
+    color: #{theme-color-variable($key) };
+  }
+  //only variables
+  .theme-#{$key}-vars {
+    --theme-background: #{$color};
+    --theme-on-color: #{theme-color-variable($key)};
+  }
+
+  .bg-#{$key} {
+    background-color: #{$color};
+  }
+  .text-#{$key} {
+    color: #{$color};
+  }
+  .text-on-#{$key} {
+    color: var(--clr-on-#{$key}, inherit);
+  }
+
+}
+
+.bg-theme {
+  background-color: var(--theme-background);
+}
+
+
+.theme-primary,.theme-dark {
+  h1,h2,h3,h4,h5,h6,p,address {
+    color: unset;
+  }
+}

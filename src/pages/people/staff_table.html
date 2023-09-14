@@ -1,0 +1,42 @@
+---
+page-title: People Directory
+page-eyebrow:  Staff / Board / Committee Etc
+---
+
+<main id="contentControl" class="content modulePage">
+    <!-- example of how an banner override word -->
+    <!--<div id="interiorHeaderOverride">
+        <div class="hide"><span id="bnrinst_1_1" ><img src="assets/img/myrtle_beach_3.png" width="806" height="448" style="border:0" alt=""  /></span>
+        </div>
+    </div>-->
+    <div class="grid-container">
+        <h2 class="lister-subHeader">Staff</h2>
+        <div class="staffModule tableLister">
+            <table class="staffTable" width="100%" cellpadding="3" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Department</th>
+                    <th>Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each people.staff}}
+                    <tr valign="top">
+                        <td><a class="js-OpenModal" href="/people/staff_popup.html"> {{first_name}} {{last_name}} </a></td>
+                        <td>{{position}}</td>
+                        <td><a href="staff/administration/">Membership</a></td>
+                        <td><a href="tel:{{phone}}">{{phone}}</a></td>
+                    </tr>
+                {{/each}}
+
+                </tbody>
+            </table>
+            <div class="freedomPagination"><div style="text-align:center;width:100%;padding-top:10px" class="paginationText">Items 1-33 of 33  </div></div>
+        </div>
+
+
+        </div>
+
+</main>

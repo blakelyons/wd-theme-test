@@ -1,0 +1,26 @@
+/* Vue Manager */
+#vueManager {padding: 15px 20px 15px;}
+#vueManager .managerBox {background: #e5e5e5; border:1px solid #dfdfdf; border-radius: 6px; padding:5px 15px;}
+
+#vueManager .managerButtons {margin: 0 0 12px;}
+#vueManager .managerButtons button {margin: 0 5px 0 0;}
+
+#vueManager .managerItem { border: 1px solid #ddd; background: #fff; border-radius: 6px; padding: 12px 18px; margin-bottom: 15px;}
+#vueManager .managerItem h3 {padding: 7px 0; margin:0px; line-height:1em; color: #999 !important;}
+#vueManager .managerItem .label {font-weight: bold; padding: 12px 0 0;}
+#vueManager .managerItem input[type="text"], #vueManager .managerItem select, #vueManager .managerItem textarea {width: 320px;}
+#vueManager .managerItem .options {margin: 18px 0 0;padding: 16px 24px; border: 1px dashed #ccc; position: relative;  border-radius: 20px;}
+#vueManager .managerItem .options::after {display:block; content: 'Actions'; position: absolute; left:18px; top: -7px; line-height:15px; color: #aaa; background: #fff; padding: 0 6px;}
+#vueManager .managerItem .options button {margin: 0 5px 0 0;}
+#vueManager .managerItem .managerRow { display:flex;}
+#vueManager .managerItem .managerRow input, #vueManager .managerItem .managerRow select { display:block; width:auto;}
+
+#vueManager .managerItem input[type="text"].small, #vueManager .managerItem select.small, #vueManager .managerItem textarea.small {
+    width: 80px;
+    }
+
+#vueManager .managerItem input[type="text"].large, #vueManager .managerItem select.large, #vueManager .managerItem textarea.large {
+    width: 450px;
+    }
+
+#vvueManager textarea.debug { opacity: 0.7; pointer-events: none; resize: none; height: 400px;}

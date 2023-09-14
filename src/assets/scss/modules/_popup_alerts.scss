@@ -1,0 +1,141 @@
+
+.corner-box {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  opacity: 0;
+  display: none;
+}
+
+.corner-box.box-left {
+  right: auto;
+  left: 15px;
+}
+
+.corner-box-header {
+  padding: 10px 15px;
+  transition: all .3s ease;
+  font-weight: bold;
+  font-size: 1.25rem;
+  cursor: pointer;
+  p {
+    margin: 0;
+    color: inherit;
+    display: inline-block;
+  }
+}
+
+.corner-box-header img {
+  width: 20px;
+  margin: -2px 3px 0 0;
+}
+
+.corner-box-header img.no-title {
+  margin: -2px 0 0;
+}
+
+.corner-box-main{
+  border: 2px solid #fff;
+  border-radius: 15px;
+  transition: all .3s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,.3);
+}
+
+.corner-box-content {
+  display: none;
+  width: 340px;
+  max-height: 445px;
+  overflow-y: auto;
+  color: #777;
+}
+
+.corner-box-content-inner {
+  width: auto;
+  font-size: 14px;
+  background: #fff;
+  margin: 0 10px 10px;
+  padding: 1rem;
+  border-radius: 4px;
+
+}
+
+.corner-box.open .corner-box-header {
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.corner-box.open .corner-box-header:after {
+  display: inline;
+  width: 0;
+  height: 0;
+  border: inset 10px;
+  content: '';
+  border-bottom-width: 0;
+  border-top-style: solid;
+  border-color: currentColor transparent transparent;
+  right: 16px;
+  left: auto;
+}
+
+.corner-box.open .corner-box-content {
+  border-radius: 0 0 15px 15px;
+}
+
+
+@media only screen and (max-width: 370px) {
+  .corner-box .corner-box-content {
+    width: 100%;
+  }
+  .corner-box.open {
+    right: 15px;
+    left: 15px;
+  }
+}
+
+@media only screen and (max-height: 660px) {
+  .corner-box .corner-box-content {
+    max-height: 320px;
+  }
+}
+
+@media only screen and (max-height: 530px) {
+  .corner-box .corner-box-content {
+    max-height: 220px;
+  }
+}
+
+@media only screen and (max-height: 430px) {
+  .corner-box .corner-box-content {
+    max-height: 180px;
+  }
+}
+
+@media only screen and (max-height: 360px) {
+  .corner-box .corner-box-content {
+    max-height: 120px;
+  }
+}
+
+.popup {
+  padding:0;
+}
+.popup-content {
+
+}
+.popup-image{
+  background-size: cover;
+  background-position: center center;
+  min-height: 50vh;
+}
+@include breakpoint( medium up){
+  .popup-image{
+    min-height: 200px;
+  }
+}
+.popup-text {
+  padding: 1rem;
+}

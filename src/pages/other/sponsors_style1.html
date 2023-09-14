@@ -1,0 +1,117 @@
+---
+page-title: Sponsors
+---
+
+<section class="content directions extraPaddingTop">
+    <div class="grid-container">
+        <div class="editorContent grid-x grid-padding-x grid-padding-y">
+            <div class="cell large-12">
+                <h6 class="eyebrow text-center">Sponsor Directory</h6>
+                <h2 class="h2 text-center">Corporate Sponsors</h2>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, purus vel faucibus gravida, nibh enim dictum nisl, ac viverra mauris justo ullamcorper velit. Vestibulum maximus ultrices nunc, id ornare leo imperdiet eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, purus vel faucibus gravida, nibh enim dictum nisl, ac viverra mauris justo ullamcorper velit.</p>
+            </div>
+            <div class="cell large-offset-3 large-2">
+                <select>
+                    <option value="">All Departments</option>
+                </select>
+            </div>
+            <div class="cell large-2">
+                <p>or</p>
+            </div>
+            <div class="cell large-2">
+                <select>
+                    <option value="">By Level</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sponsorGrid-component">
+
+    <div class="grid-x xlarge-up-5 large-up-4 medium-up-3 small-up-2 sponsorGrides photoCards expandingPhotoGrid">
+        {{#repeat 8}}
+
+
+        <div class="cell sponsorGrid" >
+            <div class="sponsorGrid-bg" style="background-image: url('https://picsum.photos/600/600');"></div>
+            <a href="#" class="sponsorGrid-content">
+                <div class="eyebrow">HEALTH</div>
+                <h5 class="title">Abrazo Health</h5>
+                <span class="sponsorGrid-action"><i class="fas fa-chevron-down"></i></span>
+            </a>
+
+            <div class="sponsorGrid-detail">
+                <div class="sponsorGrid-detailInner">
+
+                    <h3 class="title">Abrazo Health</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, purus vel faucibus gravida, nibh enim dictum nisl, ac viverra mauris justo ullamcorper velit. Vestibulum maximus ultrices nunc, id ornare leo imperdiet eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, purus vel faucibus gravida, nibh enim dictum nisl, ac viverra mauris justo ullamcorper velit.</p>
+                    <a class="button secondary">Visit Website</a>
+
+                    <button class="closeDetail">&times</button>
+                </div>
+            </div>
+            <div class="levelIcon Gold">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        {{/repeat}}
+
+
+    </div>
+</section>
+
+<script>
+
+    function initSponsorFilter() {
+        $('.staffSearch #xsearch_0').change( function(){
+            $('#form_staff_search1').submit();
+        });
+    }
+
+    function initSponsorGrid() {
+
+        $('.sponsorGrid').on('click', function (e) {
+            e.preventDefault();
+
+            var closeOnly = false;
+            if ($(this).hasClass('activeBox')) {
+                closeOnly = true
+            }
+            closeActiveDetail();
+            if (closeOnly) {return;  }
+
+            var $box = $(this);
+            var offsetTop = this.offsetTop;
+            var firstOfRow = null;
+            $(this).nextAll().each(function () {
+                if (offsetTop < this.offsetTop) {
+                    firstOfRow = $(this).addClass('firstOfRow');
+                    return false;
+                }
+            });
+            var $newDetail = $(this).find('.sponsorGrid-detail').clone().hide().addClass('activeDetail');
+            if (firstOfRow) {
+                firstOfRow.before($newDetail);
+            } else {
+                $(this).parent().append($newDetail);
+            }
+            $('.activeDetail').slideDown(function () {
+                $box.addClass('activeBox');
+            });
+        });
+
+        function closeActiveDetail() {
+            $('.activeDetail').slideUp(function () {
+                $(this).remove();
+                $('.sponsorGrid').removeClass('activeBox firstOfRow');
+
+            });
+        }
+
+        $('.sponsorGrid-component').on('click', '.closeDetail', closeActiveDetail);
+    }
+
+    initSponsorGrid();
+    initSponsorFilter();
+</script>

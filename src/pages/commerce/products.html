@@ -1,0 +1,273 @@
+---
+page-title: Store
+<!--page-eyebrow: Products-->
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <div class="productsModule moduleLister">
+                <div class="moduleHeader">
+                    <h2>All Products</h2>
+                    <div class="moduleIntro">
+                        <form action="index.php" method="get" id="form_products_search" style="margin:0px;">
+                            <div class="grid-x lister-search" style="align-items:flex-end">
+                                <div class="lister-searchItem">
+                                    <strong>Search Keywords</strong>
+                                    <input type="text" name="xsearch[0]" size="20" value="" class="directorySearchInput">
+                                </div>
+                                <div class="lister-searchItem">
+                                    <strong>By Category</strong>
+                                    <select name="xsearch[1]" id="xsearch_1" class="directorySearchInput" size="1">
+                                        <option value="" selected=""></option>
+                                        <option value="">Apparel</option>
+                                        <option value="">Posters</option>
+                                        <option value="">Downloads</option>
+                                        <option value="">Marketing Materials</option>
+                                    </select>
+                                </div>
+                                <div class="lister-searchItem"><input type="submit" name="submit" value="Go" class="button"></div>
+                            </div>
+                            <div style="display:none">
+                                <input type="hidden" name="xsearch_id" value="products_search"><input type="hidden" name="src" value="directory"><input type="hidden" name="srctype" value="products_lister"><input type="hidden" name="view" value="products">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <hr style="margin-top:10px; margin-bottom:10px">
+
+                <div class="lister-striped">
+                    <div class="lister-item  product-item">
+                        <div class="lister-image"><img class="thumbnail" src="https://via.placeholder.com/195x280?text=Product%20Image" alt=""></div>
+                        <div class="lister-content">
+                            <!--<p class="lister-category category">Shoes</p>-->
+                            <div class="product-heading">
+                                <h3 class="lister-title"><a class="" href="{{root}}commerce/product_detail.html">Running
+                                                                                                                                                                                          Shoes</a></h3>
+                                <div class="product-price h4"><span class="normalinline diritem_price" id="item_price_25" origprice="varies">$10.00</span></div>
+                            </div>
+
+                            <div class="lister-blurb"><p>Lorem ipsum dolor sit amet, vix prompta epicuri splendide te, munere deserunt tincidunt an mel, probatus reprehendunt cu his. Sea mutat
+                                                         efficiantur te. Duis legimus ad mea. Vis ne commodo labores.</p>
+                                <p><a href="product_detail.html" class="moreLink">Details</a></p>
+                            </div>
+
+                            <div class="">
+                                <form relid="25" id="item_25" class="cart_add" method="post" action="https://asoft100117.accrisoft.com/themelibrary01/index.php">
+                                    <script type="text/javascript">
+                                        //<![CDATA[
+
+                                        $(document).ready(function () {
+                                            CommerceOptions.fAddOptionForm($('#item_25'));
+                                        });
+                                        //]]>
+                                    </script>
+
+                                    <div style="display:none">
+                                        <input type="hidden" name="cmd" value="add">
+                                        <input type="hidden" name="src" value="commerce">
+                                        <input type="hidden" name="srctype" value="cart">
+                                        <input type="hidden" name="back" value="products">
+                                        <input type="hidden" name="refno" value="25">
+                                        <input type="hidden" name="view" value="products">
+                                    </div>
+                                    <div class="cartAddWidget">
+                                        <div class="cartAddSelect">
+                                            <div id="shoppingOption1">
+                                                <span class="choice">Edition: </span>
+                                                <select size="1" name="choice">
+                                                    <option value="1">Regular</option>
+                                                    <option value="2">Deluxe</option>
+                                                </select>
+                                            </div>
+                                            <script type="text/javascript">
+                                                //<![CDATA[
+                                                CommerceOptions.fAddOptionSet({
+                                                    "1": {"sku": "SuperWidget_01_Regular", "price": "$10.00", "status": "normal"},
+                                                    "2": {"sku": "SuperWidget_01_Deluxe", "price": "$20.00", "status": "normal"}
+                                                });//]]>
+                                            </script>
+
+                                        </div>
+                                        <div class="cartAddQty">Qty: <input type="text" name="quantity" size="2" value="1" class="shoppingFormQuantity">
+                                        </div>
+                                        <div class="cartAddSubmit"><input type="submit" class="button" value="Add To Cart"></div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="lister-item  product-item">
+                        <div class="lister-image"><img class="thumbnail" src="https://via.placeholder.com/195x280?text=Product%20Image" alt=""></div>
+                        <div class="lister-content">
+                            <!--<p class="lister-category category">Shoes</p>-->
+                            <div class="product-heading">
+                                <h3 class="lister-title"><a class="" href="{{root}}commerce/product_detail.html">Labor Laws
+                                                                                                                                                                                          Poster</a>
+                                </h3>
+                                <div class="product-price h4"><span class="normalinline diritem_price" id="item_price_25" origprice="varies">$10.00</span></div>
+                            </div>
+
+                            <div class="lister-blurb"><p>Lorem ipsum dolor sit amet, vix prompta epicuri splendide te, munere deserunt tincidunt an mel, probatus reprehendunt cu his. Sea mutat
+                                                         efficiantur te. Duis legimus ad mea. Vis ne commodo labores.</p>
+                                <p><a href="product_detail.html" class="moreLink">Details</a></p>
+                            </div>
+
+                            <div class="">
+                                <form relid="00" id="item_00" class="cart_add" method="post" action="">
+
+                                    <div style="display:none">
+                                        <input type="hidden" name="cmd" value="add">
+                                        <input type="hidden" name="src" value="commerce">
+                                        <input type="hidden" name="srctype" value="cart">
+                                        <input type="hidden" name="back" value="products">
+                                        <input type="hidden" name="refno" value="25">
+                                        <input type="hidden" name="view" value="products">
+                                    </div>
+                                    <div class="cartAddWidget">
+                                        <div class="cartAddSelect">
+                                            <div id="">
+                                                <span class="choice">Paper: </span>
+                                                <select size="1" name="choice">
+                                                    <option value="1">Matte</option>
+                                                    <option value="2">Glossy</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="cartAddQty">Qty: <input type="text" name="quantity" size="2" value="1" class="shoppingFormQuantity">
+                                        </div>
+                                        <div class="cartAddSubmit"><input type="submit" class="button" value="Add To Cart"></div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="lister-item  product-item">
+                        <div class="lister-image"><img class="thumbnail" src="https://via.placeholder.com/195x280?text=Product%20Image" alt=""></div>
+                        <div class="lister-content">
+                            <!--<p class="lister-category category">Shoes</p>-->
+                            <div class="product-heading">
+                                <h3 class="lister-title"><a class="" href="{{root}}commerce/product_detail.html">Chamber Logo
+                                                                                                                                                                                          Pin</a></h3>
+                                <div class="product-price h4"><span class="normalinline diritem_price" id="item_price_25" origprice="varies">$10.00</span></div>
+                            </div>
+
+                            <div class="lister-blurb"><p>Lorem ipsum dolor sit amet, vix prompta epicuri splendide te, munere deserunt tincidunt an mel, probatus reprehendunt cu his. Sea mutat
+                                                         efficiantur te. Duis legimus ad mea. Vis ne commodo labores.</p>
+                                <p><a href="product_detail.html" class="moreLink">Details</a></p>
+                            </div>
+
+                            <div class="">
+                                <form relid="00" id="item_002" class="cart_add" method="post" action="">
+
+                                    <div style="display:none">
+                                        <input type="hidden" name="cmd" value="add">
+                                        <input type="hidden" name="src" value="commerce">
+                                        <input type="hidden" name="srctype" value="cart">
+                                        <input type="hidden" name="back" value="products">
+                                        <input type="hidden" name="refno" value="25">
+                                        <input type="hidden" name="view" value="products">
+                                    </div>
+                                    <div class="cartAddWidget">
+                                        <div class="cartAddSelect">
+                                            <div>
+                                                <span class="choice">Color: </span>
+                                                <select size="1" name="choice">
+                                                    <option value="1">Red</option>
+                                                    <option value="2">Blue</option>
+                                                    <option value="2">Green</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="cartAddQty">Qty: <input type="text" name="quantity" size="2" value="1" class="shoppingFormQuantity">
+                                        </div>
+                                        <div class="cartAddSubmit"><input type="submit" class="button" value="Add To Cart"></div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div style="text-align:center;width:100%;padding-top:10px" class="paginationText">Items 1-1 of 1</div>
+                </div>
+                <!--<script>initAjaxCart()</script>-->
+            </div>
+        </div>
+        <div class="content-sidebar" style="display: block">
+            <div id="subMenu" class="sideMenu sidebarItem">
+                <div class="h4 sideMenu-title">Categories</div>
+                <nav class="sideMenu-nav">
+                <ul class="sub_menu vertical menu ">
+                    <li class="item1 "><a class="first " href="#">Posters </a></li>
+                    <li class="item2 "><a class="" href="#">Apparel </a>
+                        <ul class="menu vertical ">
+                            <li class="item1"><a class="first last" href="#">Clothing </a></li>
+                            <li class="item1"><a class="first last" href="#">Hats </a></li>
+                            <li class="item1"><a class="first last" href="#">Pins </a></li>
+                        </ul>
+                    </li>
+                    <li class="item3"><a href="#">Downloads </a></li>
+                    <li class="item4"><a href="#">Marketing Materials </a></li>
+                </ul>
+                </nav>
+            </div>
+            <div data-sidebar-item="" class="sidebarItem sidebarItem--boxed">
+                <form method="POST" action="index.php" class="commerce_shoppingcart_mini">
+                    <input type="hidden" name="cmd" value="set">
+                    <input type="hidden" name="src" value="directory">
+                    <input type="hidden" name="srctype" value="cart">
+                    <input type="hidden" name="view" value="products">
+                    <div class="shoppingCartMini">
+                        <h3>Shopping Cart</h3>
+
+                        <div class="shoppingCart">
+                            <div class="shoppingCartMini-item">
+                                <div class="cartRow">
+                                    <a href="" class="name" target="_blank">Running Shoes</a>
+                                    <a href="" class="cartDelete ajaxCartDelete" data-itemsku="SuperWidget_01_Regular"><span class="show-for-sr"></span><i class="fas fa-trash"></i></a>
+                                </div>
+                                <div class="cartRow">	Regular        	    		    		    		</div>
+                                <div class="cartRow">
+                                    <p class="details" id="details1" data-img=""><input type="text" id="QNEW_1" name="arrQty[3]" size="3" value="1" class="shoppingFormQuantity">
+                                        x $10.00<br>
+                                    </p>
+                                    <p class="total">$10.00</p>
+                                </div>
+
+                            </div>
+                            <div class="shoppingCartMini-item">
+                                <div class="cartRow"><a href="" class="name" target="_blank">Running Shoes</a>
+                                    <a href="" class="cartDelete ajaxCartDelete" data-itemsku="SuperWidget_01_Deluxe"><span class="show-for-sr"></span><i class="fas fa-trash"></i></a>
+                                </div>
+                                <div class="cartRow">	Deluxe        	    		    		    		</div>
+                                <div class="cartRow">
+                                    <p class="details" id="details2" data-img=""><input type="text" id="QNEW_2" name="arrQty[4]" size="3" value="3" class="shoppingFormQuantity">
+                                        x $20.00<br>
+                                    </p>
+                                    <p class="total">$60.00</p>
+                                </div>
+
+                            </div>
+                            <div class="cartRow shoppingCartMini-summary"><div>Estimated Total</div><div class="total"> $70.00</div></div>
+
+                        </div>
+                        <div class="shoppingCartButtons">
+                            <a class="button primary" href="cart.html">Edit Cart</a>
+                            <a class="button secondary" href="checkout.html">Checkout</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>checkSideMenu()</script>
+
+    </div>
+</main>

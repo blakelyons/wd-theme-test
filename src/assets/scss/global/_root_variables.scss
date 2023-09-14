@@ -1,0 +1,100 @@
+////
+/// @group global
+/// Root Variables
+////
+
+/*
+For generic variables the following prefixes are used.
+These have no opinion on how they are used
+--ff = font-family
+--clr = color
+--fs = font-size
+
+Notes on color: generic color variables start with --clr-mycolorvar
+The use of the keyword -on is used to mark contrasting text color for a particular color name
+example --clr-on-mycolortype
+for specific color implementations on certain components
+use the ending of -color, -bg, -background or -text-color as appropriate
+example --pageheader-bg
+This is still a work in progress
+*/
+
+:root {
+  --clr-base: #{$black};
+  --ff-base: 'Nunito', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  --ff-alt-alpha: 'Poppins', sans-serif;
+  --ff-alt-beta: 'Merriweather', sans-serif;
+
+  /* generic neutral colors */
+
+  --clr-ntrl-min: #FFF;
+  --clr-ntrl-lighter: #F5F5F5;
+  --clr-ntrl-light: #{$light-gray};
+  --clr-ntrl-medium: #{$medium-gray};
+  --clr-ntrl-dark: #{$dark-gray};
+  --clr-ntrl-darker: #{$darker-gray};
+  --clr-ntrl-darkest: #222;
+  --clr-ntrl-max: #000;
+  /* site neutral themes */
+  //discussion point - light vs medium  color naming inconsistency
+  --clr-site-light: #FFF;
+  --clr-on-light: var(--clr-base);
+  --clr-site-medium: #f5f5f5;
+  --clr-on-medium: var(--clr-on-light);
+  --clr-site-dark: #222;
+  --clr-on-dark: #{$white};
+  /*  primary colors */
+  --clr-primary: #{$primary-color};
+  --clr-primary-dark: #{darken($primary-color, 15%)};
+  --clr-primary-light: #{lighten($primary-color, 15%)};
+  --clr-on-primary: var(--clr-on-dark); // start by assuming primary is dark
+  /*  secondary colors */
+  --clr-secondary: #{$secondary-color};
+  --clr-secondary-dark: #{darken($secondary-color, 15%)};
+  --clr-secondary-light: #{lighten($secondary-color, 15%)};
+  --clr-on-secondary: var(--clr-on-dark);
+
+  //--clr-accent: #b75712;
+  //--clr-on-accent: #FFF;
+  /* specific item colors and variables */
+  --anchor-color: #3366CC;
+  --anchor-color-hover: #224b99;
+  --anchor-color-visited: #382299;
+
+  --header-color: inherit;
+
+  //defaults but are overridden by settings
+  --btn-color: var(--clr-primary);
+  --btn-text-color: var(--clr-on-primary);
+  --btn-accent-color: var(--clr-secondary);
+  --btn-accent-text-color: var(--clr-ntrl-min);
+
+  --btn-hover-color: rgba(0,0,0,.4); /* overlay on hover */
+  --btn-hover-opacity: 0.4;
+
+  --global-radius: 0;
+  --button-radius: 0;
+
+  --eyebrow-color: var(--clr-primary);
+  --footer-links-color: inherit;
+  --social-icon-color: inherit;
+  --slideshow-background: var(--clr-site-dark);
+  --pageheader-bg: var(--clr-site-dark);
+  --pageheader-color: var(--clr-on-dark);
+  --box-accent-color: var(--clr-primary);
+  --category-color: var(--clr-secondary);
+  --collapsible-icon-color: var(--clr-primary);
+  --archive-bg-color: var(--clr-site-dark);
+  --schedule-accent: var(--clr-secondary);
+
+  /* These have defaults, but can be overridden here*/
+  /* --card-image-bg: inherit;  */
+  /* --lister-cornerbadge-color: inherit; */
+  /* --photobox-drawertabs-color: inherit; */
+  /* --dropdownmenu-arrow-color: inherit; */
+  /* --accordionmenu-arrow-color: var(--clr-primary) ; */
+  /* --dropdown-menu-item-color-active: var(--clr-primary) ; */
+
+
+}
+

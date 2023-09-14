@@ -1,0 +1,67 @@
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x standard ">
+        <div class="content-body">
+            <!-- Accrisoft Freedom v/11 Apr 7, 2021 -->
+            <div class="membershipModule moduleLister">
+                <div>
+                    <div class="h5">Search By</div>
+                    <h3>Name, Description, etc:</h3>
+                </div>
+                <div class="search moduleSearchBox">
+                    <form action="index.php" method="get" id="form_membership_search" style="margin:0px;">
+                        <div class="formContent">
+                            <div class="formGroup formGroup--medium">
+                                <label>Business Name:</label> <input type="text" name="xsearch[0]" size="20" value="" class="directorySearchInput">
+                            </div>
+                            <div class="formGroup formGroup--small">
+                                <label>Business Category:</label> <select name="xsearch[1]" id="xsearch_1" class="directorySearchInput" size="1"><option value="" selected="">-----  All Categories -----</option></select>
+                            </div>
+                            <div class="formGroup inline-form" style="width:calc(17% - .75rem)">
+                                <input type="submit" value="Search" class="button">
+                            </div>
+                        </div>
+                        <div style="display:none"><input type="hidden" name="xsearch_id" value="membership_search"><input type="hidden" name="src" value="membership"><input type="hidden" name="srctype" value="membership_lister"></div></form>            <a class="" href="index.php?src=membership">Clear Filters</a>
+                </div>
+                <div class="moduleHeader grid-x align-justify align-middle">
+
+                    <div class="left"><strong>1 Members</strong></div>
+                    <div class="right inline-form">
+                        <strong>Sort By</strong>
+                        <button class="button hollow secondary  dropdown sort-toggle-js" type="button" data-toggle="member-sort-dropdown" >
+                            <span class="sort-value-js">A-Z</span>&nbsp;&nbsp;</button>
+                            <div class="dropdown-pane" id="member-sort-dropdown" data-dropdown data-auto-focus="true">
+                                <ul class="sort-filter menu vertical">
+                                    <li><a href="membership/" class="hollow secondary" data-sort-value="A-Z">A-Z</a></li>
+                                    <li><a href="index.php?src=membership&amp;srctype=membership_lister_desc"  class="hollow secondary" data-sort-value="Z-A">Z-A</a></li>
+                                </ul>
+                            </div>
+                    </div>
+
+
+                </div>
+
+                <div class="business-lister lister-border-bottom"><div class="lister-item">
+                    <div class="lister-image">
+                        <img src="//via.placeholder.com/190x100" width="190">
+                    </div>
+                    <div class="lister-content">
+                        <h2 class="lister-title"><a href="index.php?src=membership&amp;srctype=detail&amp;category=Members&amp;refno=1&amp;submenu=MemberDirectory">Accrisoft</a></h2>
+                        <div class="contactInfo">
+                            <div class="primary-category"><span class="h5">Sarasota</span></div>
+                            <div class="website"><a href="http://www.accrisoft.com" target="_blank">http://www.accrisoft.com</a></div>    </div>
+                    </div>
+                    <div class="lister-action"><a href="index.php?src=membership&amp;srctype=detail&amp;category=Members&amp;refno=1&amp;submenu=MemberDirectory" class="button">Read More</a></div>
+
+                </div>
+                </div>
+
+                <div class="pagination"><div style="text-align:center;width:100%;padding-top:10px" class="paginationText">Items 1-1 of 1  </div></div></div>
+
+            <script type="text/javascript">
+                //<![CDATA[
+                function EncodeClick(u3,u1,u2,u4) { if (u4!='') { var i=new Image; i.src=u4; } if (u1=='') window.open(u3,'_blank'); else location.href='mai'+'lto'+':'+u1+'@'+u2+'.'+u3; }
+                //]]>
+            </script>
+        </div>
+    </div>
+</main>

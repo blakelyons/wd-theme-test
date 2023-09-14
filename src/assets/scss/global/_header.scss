@@ -1,0 +1,460 @@
+
+////
+/// @group Header
+////
+
+/// Default header icon color
+/// @type Color
+$header-icon-color: var(--clr-primary) !default;
+
+/// All anchors in main navigation
+/// @type Color
+$header-main-navigation-color: $black !default;
+
+$header-include-mega-menu: false !default;
+
+@mixin anchor-arrow {
+  position: relative;
+  padding-right: 1.3rem;
+  &:after{
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    border: inset 6px;
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: get-color(primary) transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    left: auto;
+    margin-top: -3px;
+  }
+}
+
+@mixin mega-menu(){
+
+  //before we wrap them for mega display none
+  &>li>ul{
+    display:none
+  }
+  .header-mega-wrapper{
+    position: absolute;
+    top: 100%;
+    left:0;
+    width:100%;
+    background: $white;
+    height:0;
+    overflow: hidden;
+    z-index: 1;
+    border-bottom: 1px solid #c3c3c3;
+    border-top: 1px solid #c3c3c3;
+
+    transition:  height 0.4s linear 0.2s, opacity 0.6s ease;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .mega-menu-sponsor {
+      display: block;
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+      text-align: center;
+      background: $light-gray;
+    }
+
+    &>ul {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-evenly;
+      li { margin-right:1rem;
+        padding-left: 2em;
+        position: relative;
+        align-items: stretch;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+      //moved via javascript
+      li.sponsor {
+        display:none;
+
+      }
+      li.after-sponsor {
+        position:relative;
+        display:block;
+        content:' ';
+        width:100%;
+        height:3rem;
+      }
+      //li>a {
+      //  color:#000;
+      //}
+      li>i {
+        position: absolute;
+        left: 0;
+        font-size: 2em;
+        color: get-color(primary);
+        line-height: 1
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  & > li:hover > .header-mega-wrapper, .header-mega-wrapper.is-open {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 5px;
+    min-height: 53px;
+    pointer-events: all;
+
+  }
+
+}
+
+
+.site-header {
+  display: block;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 5;
+  background: $white;
+  //modify per site / style as needed
+  border-bottom: 1px solid transparentize($dark-gray, .2);
+  &.is-stuck {
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  }
+
+  // for when the home header overlays the slideshow
+  body.header-is-overlay & {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  // Generic helpers that can be used in various places
+  //NOTE - all sticky header setup is now custom per site
+  &.is-stuck .hide-on-stuck {
+    display: none;
+
+  }
+}
+
+.header-top::before {
+  position: relative;
+  z-index: 1;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 6px;
+  content: "";
+  //background-image: linear-gradient(to left, brand-stripe($jcccolors) );
+}
+.header-right{
+  text-align: right;
+  justify-content: flex-end;
+}
+.header-level {
+  display: flex;
+  align-items: center;
+}
+//prevents group of buttons from text wrapping
+.header-buttons {
+  margin-left: 1rem;
+  flex: 0 0 auto;
+  a {
+    white-space: nowrap;
+  }
+}
+
+// jcc usually - micro site logo links
+.header-logo-links {
+  display: flex;
+  a {
+    display: block;
+    padding: 0;
+  }
+  a:hover {
+    background: #333;
+  }
+  img {
+    max-height:  40px;
+  }
+}
+
+.header-links {
+  a {
+    color: inherit;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+    line-height: 1.25rem;
+    //modify per site as needed - may need to specify within top bar of main bar if used in both
+    //&:hover {
+    //  background-color: rgba(0, 0, 0, .2);
+    //}
+  }
+  .icon {
+    margin-right: 8px;
+    font-size: 1.25rem;
+  }
+  .icon.large {
+    font-size: 2rem;
+  }
+  .icon.color {
+    color: $header-icon-color;
+
+  }
+
+  &.header-featured-links {
+    .icon {
+      color: $header-icon-color;
+      font-size: 2rem;
+    }
+  }
+}
+
+
+.header-logo {
+  flex-shrink: 0;
+  margin-right: 40px;
+  transition: color 0.4s ease, width 0.4s ease;
+  width: 240px;
+  .is-stuck & {
+    width: 250px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  //modify per site
+  .element-j, .svg-logo-icon {
+    height: 75px;
+    color: var(--clr-primary);
+  }
+
+  .text {
+    font-size: 1.125rem;
+    color: #222222;
+    text-transform: uppercase;
+    font-family: $header-font-family;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+}
+
+.header-util {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 67px;
+  justify-self: flex-end;
+  margin-left: auto;
+  .button, .input-group {
+    margin-bottom: 0;
+  }
+}
+
+.header-main, .header-fullnav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: height 0.4s ease;
+}
+
+.header-fullnav {
+  height: 67px;
+}
+
+//modify per site
+.header-main {
+  //primary nav is next to logo - needs a height and flex-end for overflow to work correctly
+  //height: 106px;
+  //padding-bottom: 1rem;
+  //align-items: flex-end;
+  //---
+  // if featured links
+  padding: 1rem 0;
+  align-items: center;
+
+  .header-nav {
+    align-self: flex-end;
+  }
+}
+
+.header-fullnav-bar {
+  //background: $header-fullnav-background;
+  //first level in the full navigation
+  .header-nav > li > a {
+    color: inherit;
+  }
+}
+//.header-nav is the .menu ul
+//header-hav can be in multiple locations
+.header-nav  {
+
+  align-items:flex-end;
+  justify-content: space-between;
+  height: 67px;
+  max-height: 105px;
+  max-width: 940px;
+  position: relative;
+  width: 100%;
+  a {
+    color: $header-main-navigation-color;
+    font-size: 1rem;
+    font-weight: 600;
+
+  }
+  li.is-overflown {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  //first level anchors
+  & > li > a{
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    //modify per site -   custom first level styling
+    //color:$header-first-level-color;
+
+    //this makes the underlines closer to the item
+    padding: 1rem 0.2rem .5rem;
+
+  }
+
+  .header-main & {
+    //see _settings.scss $dropdownmenu-padding this shifts the padding from anchor to li partially but keeps the li the same height
+    //1.5rem 1rem
+    & > li {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+    }
+    & > li > a {
+      padding-left: 0.2rem ;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+      padding-right: 0.2rem ;
+    }
+  }
+
+  //second level and beyond
+  & ul li:hover{
+    & > a {
+      //modify per site / style as needed
+      color: var(--clr-base);
+      background: $light-gray;
+    }
+    //&.is-active > a {
+    //  background: $main-navigation-color ;
+    //}
+  }
+
+  & > li.menuItemHighlight > a, & > li:hover > a, & > li.menuItemCurrent > a, & > li > a.current  {
+    border-bottom: 3px solid $dropdown-menu-item-color-active;
+  }
+
+  @if $header-include-mega-menu == true {
+    &.header-mega-menu {
+      position: static;
+      @include mega-menu;
+
+      & > li > a {
+
+        &.parent-anchor {
+          @include anchor-arrow();
+        }
+
+      }
+    }
+  }
+
+}
+
+.header-search{
+  .button {
+    margin-bottom: 0;
+  }
+}
+.header-search-popup {
+  position: absolute;
+  /* top: 0; */
+  width: calc(100% - 50px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  //background: #333; modify or use theme class
+  margin-top: auto;
+  max-width: 400px;
+  padding: 2rem 2rem 1rem;
+  box-shadow: 0 3px 3px rgba(0, 0,0, .3);
+  border:0;
+}
+
+@include breakpoint(medium down){
+  .header-nav {
+    display: none;
+  }
+}
+.site-header .header-mobile-only-trigger {
+  display: none;
+}
+
+
+/*! Incrementally hide / show menu items - modify per site as needed */
+@media screen and (max-width: 640px) {
+  .site-header .header-links {
+    display: none;
+  }
+  .site-header .header-fullnav-bar {
+    display: none;
+  }
+  .site-header .header-mobile-only-trigger {
+    display: block;
+  }
+  .site-header .header-logo-mobile-only {
+    display: block;
+    align-self: flex-start;
+    margin-right: auto;
+  }
+  .header-top {
+    max-height: unset;
+  }
+
+}
+
+@media screen and (max-width: 925px) {
+  .site-header .header-social {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 880px) {
+  .site-header .header-search {
+    display: none;
+  }
+}

@@ -1,0 +1,5 @@
+/*! TinyMCE reset  - change body back to 16px from 14px ugh*/
+.mce-content-body { font-size: 16px;}
+.mce-content-body p, .mce-content-body div, .mce-content-body h1, .mce-content-body h2, .mce-content-body h3, .mce-content-body h4, .mce-content-body h5, .mce-content-body h6{
+  line-height: 1.6;
+}

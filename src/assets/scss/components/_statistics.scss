@@ -1,0 +1,38 @@
+////
+/// @group components
+////
+
+/// Default Quickstat padding.
+/// @type Color
+$quickstat-padding: null !default;
+
+.quickStats-component{}
+
+.quickStat {
+  text-align: center;
+  padding: $quickstat-padding;
+  .stat {
+    font-weight: $global-weight-bold;
+    font-size: 3.5rem;
+    color:inherit;
+  }
+  .statIcon {
+    font-size: 3.5rem;
+    position: relative;
+    width: 92px;
+    margin: 0 auto;
+    .icon {
+      position: relative;
+      left:5px;
+    }
+
+  }
+
+  .statTitle {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+}
+

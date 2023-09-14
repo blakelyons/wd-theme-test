@@ -1,0 +1,169 @@
+////
+/// @group Module - Commerce
+////
+
+/// Default checkout heading background
+/// @type Color
+$checkout-heading-background: var(--clr-secondary) !default;
+/// Default checkout heading color
+/// @type Color
+$checkout-heading-color: var(--clr-on-secondary) !default;
+
+/// Default card table header background
+/// @type Color
+$cart-header-background: var(--clr-site-dark) !default;
+
+/* Product Add to Cart Widget */
+.cartAddWidget { display: flex; flex-flow: row wrap;  align-items: flex-end;font-weight: bold;}
+.cartAddWidget>div {margin-right: 1rem;}
+.cartAddWidget .choice {display:block; }
+.cartAddSubmit input[type="submit"] { padding: 10px 1.5rem; }
+.cartAddSubmit input[type="submit"][disabled] { background: #999; }
+.cartAddQty input[type="text"] { background-color: #fff;}
+.cartAddSelect select {  background-color: #fff; }
+input.shoppingFormQuantity {width: auto; background: white}
+
+
+/*! Carts */
+.shoppingCart {
+    margin-bottom: 1rem;
+    .name {font-size:18px;  font-weight: bold}
+    .shoppingFormQuantity {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    .cartRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}
+.cartSubDetails {
+    font-size: 0.8em;
+}
+.cartDelete {  color: #333;
+    &:hover { color:#b52525}
+}
+.shoppingAlert { color: red;  }
+.shoppingInStock { }
+.shoppingItemHeading { }
+.shoppingOutOfStock { color: #7e030e}
+.shoppingLowStock { color: #e79700}
+
+//Cart Table
+.shoppingCartTableHeader, .shoppingCartTableHeader td { background: $cart-header-background; color: #fff; font-size: 1.125rem;}
+.shoppingCartTable{ border: 1px solid #dcdcdc;}
+.shoppingCartTableFooter {  font-size: 18px; font-weight: bold;}
+.shoppingCartTable .product.even,.shoppingCartTable .product.even + .discount {background-color: smart-scale($table-background, $table-color-scale);}
+.shoppingCartTable .quantity {text-align:center;}
+.shoppingCartTable .price {}
+.shoppingCartTable .total { text-align:right;}
+.shoppingCartTable .description { text-align:left; font-size: 1.125rem}
+.discount .description {}
+.shoppingCartButtons { display: flex;  justify-content: space-between;}
+
+.shoppingCartMini {
+    .total {
+        font-weight: bold;
+    }
+ .shoppingCartMini-summary {
+     padding: 1rem 0;
+     border-top: 1px solid $medium-gray
+ }
+}
+.shoppingCartCheckout {
+
+}
+/*! Checkout page*/
+#cart_charges_summary td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5em;
+}
+.shoppingCartCheckout .price {
+
+}
+
+.cartTotalPrice {
+    font-size:18px;
+}
+
+/*! Checkout Form */
+.checkout-form {
+    counter-reset: section;
+}
+
+.checkout-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: content-box;
+    min-height: 2rem;
+    padding: .5rem;
+    background-color: $checkout-heading-background;
+    color: $checkout-heading-color;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background 200ms;//todo??
+}
+
+
+.checkout-form .step-bar::before {
+    counter-increment: section;
+    content: counter(section);
+    margin-right: 1rem;
+    background: white;
+    color: #000;
+    border-radius: 50%;
+    height:30px;
+    width: 30px;
+    line-height:30px
+}
+
+.checkout-panel {
+    margin-bottom: 2em;
+    border: 1px solid #DDD;
+    padding: 1em;
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+}
+
+#IDFormField_coupon_code_0,#IDFormField_giftcard_code_0 {
+    width: calc(100% - 150px);
+    display: inline-block;
+}
+#applyCouponBtn, #applyGiftCardBtn { vertical-align: bottom}
+
+#refreshShippingBtn { display:none }
+
+.checkout-form, .checkout-summary {
+    width: 100%;
+    flex: 1 1 100%;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+#commerce_checkoutTable {
+    display: flex;
+    flex: 1 1 100%;
+    flex-flow: row wrap ;
+}
+
+@media screen and (min-width:50em) {
+    #commerce_checkoutTable {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+    }
+    .checkout-form, .checkout-summary {flex: 0 1 auto}
+
+    .checkout-form {
+        width: calc(60% - 1rem);
+    }
+
+    .checkout-summary {
+        width: calc(40% - 1rem);
+    }
+
+
+}

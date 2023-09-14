@@ -1,0 +1,319 @@
+////
+/// @group mobile menu
+////
+
+/// Default mobile menu trigger background
+/// @type Color | Keyword
+$mobilemenu-trigger-background: transparent !default;
+
+/// Default mobile menu navigation
+/// @type Color
+$mobilemenu-navigation-color: $black !default;
+
+/// Default mobile menu background
+/// @type Color
+$mobilemenu-background: white !default;
+
+/// Default mobile menu show always breakpoint
+/// @type Number
+$mobilemenu-trigger-breakpoint: 64em !default;
+
+/// Default mobile menu  top level anchor transforms
+/// @type Color
+$mobilemenu-top-anchor-transform: null !default;
+
+/// Default mobile menu level 3  color
+/// @type Color
+$mobilemenu-level-three: $dark-gray !default;
+
+/// Default mobile menu  position from top.
+/// @type Number
+$mobilemenu-top: null !default;
+
+/// Default mobile menu inner  from top --
+// todo this is messed up needs fixing
+/// @type Number
+$mobilemenu-inner-top: null !default;
+
+/// Default mobile menu top level nav item padding
+/// @type Number
+$mobilemenu-toplevel-padding: 1rem !default;
+
+/// Default mobile menu top level nav item border divider
+/// @type List
+$mobilemenu-toplevel-border: 1px solid #ddd !default;
+
+/// Default mobile menu main nav font weight
+/// @type Font-Weight
+$mobilemenu-font-weight: $global-weight-bold !default;
+
+/// Default mobile menu font size
+/// @type Number
+$mobilemenu-font-size: 1rem !default;
+
+/// Default mobile menu top level weight. overrides the $mobilemenu-font-weight value
+/// @type Font-Weight
+$mobilemenu-toplevel-font-weight: $mobilemenu-font-weight !default;
+
+.mobileNav-trigger {
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  //color: #000; // set only if needed
+  background: $mobilemenu-trigger-background;
+  width: 50px;
+  margin: 0 0 0 1rem;
+}
+
+.site-header .mobileNav-trigger {
+  height: 56px;
+  //color: #000; set only if needed should inherit
+  margin-left: auto;
+}
+
+@include breakpoint(medium up) {
+  .site-header .mobileNav-trigger {
+    margin-top: auto;
+  }
+}
+
+.mobileNav-trigger {
+  margin-bottom: 6px;
+}
+
+.mobileNav-trigger .mobileNav-hamburger {
+  margin: 0 auto;
+  position: relative;
+}
+
+.mobileNav-trigger .mobileNav-hamburger:before, .mobileNav-trigger .mobileNav-hamburger:after {
+  position: absolute;
+  content: '';
+}
+
+.mobileNav-trigger .mobileNav-hamburger, .mobileNav-trigger .mobileNav-hamburger:before, .mobileNav-trigger .mobileNav-hamburger:after {
+  width: 30px;
+  height: 4px;
+  background-color: currentColor;
+  display: block;
+  border-radius: 2px;
+  transition-duration: 0s;
+  transition-delay: 0.2s;
+}
+
+.mobileNav-trigger .mobileNav-hamburger:before {
+  margin-top: -12px;
+}
+
+.mobileNav-trigger .mobileNav-hamburger:after {
+  margin-top: 12px;
+}
+
+.mobileNav-trigger.is-active .mobileNav-hamburger,
+.mobileNav-trigger[aria-expanded="true"] .mobileNav-hamburger {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.mobileNav-trigger .mobileNav-hamburger:before, .mobileNav-trigger .mobileNav-hamburger:after {
+  transition-property: margin, transform;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s, 0s;
+}
+
+.mobileNav-trigger[aria-expanded="true"] .mobileNav-hamburger:before, .mobileNav-trigger[aria-expanded="true"] .mobileNav-hamburger:after,
+.mobileNav-trigger.is-active .mobileNav-hamburger:before, .mobileNav-trigger.is-active .mobileNav-hamburger:after {
+  margin-top: 0;
+  transition-delay: 0s, 0.2s;
+}
+
+.mobileNav-trigger.is-active .mobileNav-hamburger:before,
+.mobileNav-trigger[aria-expanded="true"] .mobileNav-hamburger:before {
+  transform: rotate(45deg);
+}
+
+.mobileNav-trigger.is-active .mobileNav-hamburger:after,
+.mobileNav-trigger[aria-expanded="true"] .mobileNav-hamburger:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 40em) {
+  .mobileNav-inner .mobileNav-trigger {
+    display: flex;
+  }
+}
+
+@if $mobilemenu-trigger-breakpoint > 0 {
+@include breakpoint($mobilemenu-trigger-breakpoint) {
+  .mobileNav-trigger {
+    //main trigger
+    display: none;
+  }
+}
+
+}
+
+.site-header.has-mobile-trigger .mobileNav-trigger {
+  display: flex;
+}
+
+.mobileNav {
+  height: calc(100%);
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  top:$mobilemenu-top;
+}
+
+.mobileNav-inner {
+  background: $mobilemenu-background;
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  overflow-y: scroll;
+  padding: 0 0;
+  position: absolute;
+  right: 0;
+  transform: translate(100%, 0);
+  transition: transform 0.5s ease 0.3s, visibility 0.5s ease;
+  visibility: hidden;
+  width: calc(100% - 76px);
+  top: $mobilemenu-inner-top;
+}
+
+.mobileNav-inner .mobileNav-trigger {
+  position: absolute;
+  right: 1rem;
+}
+
+.mobileNav-menu > li {
+  border-top: $mobilemenu-toplevel-border;
+  position: relative;
+}
+
+.mobileNav-menu a {
+  color: $mobilemenu-navigation-color;
+  font-weight: $mobilemenu-font-weight;
+  font-size: $mobilemenu-font-size;
+}
+
+.mobileNav-menu > li > a {
+  position: relative;
+  padding: $mobilemenu-toplevel-padding;
+  font-weight: $mobilemenu-toplevel-font-weight;
+  text-transform: $mobilemenu-top-anchor-transform;
+}
+
+//.mobileNav-menu .submenu-toggle {
+//  height: 56px; // height of a
+//}
+
+.mobileNav-menu > li > ul > li {
+  position: relative;
+  align-items: stretch;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+
+.mobileNav-menu ul ul a {
+  color: $mobilemenu-level-three;
+}
+
+.mobileNav-menu ul ul > li {
+  padding: 0;
+}
+
+
+.mobileNav-menu > li > ul {
+  display: none;
+}
+
+.mobileNav-actions {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+}
+
+.mobileNav-login .button {
+  margin: 0;
+}
+
+.mobileNav-overlay {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+//secondary items here
+
+.mobileNav-secondary {
+  padding: 1rem 1.5rem;
+  margin-top: auto;
+  .socialMenu {
+    margin-bottom: 0;
+    .menu {
+      justify-content: center  }
+  }
+  .socialMenu a {
+    font-size: 1.5rem;
+    //margin-bottom: 1rem;
+  }
+}
+
+
+
+
+@media screen and (min-width: 40em) {
+  .mobileNav {
+    height: 100%;
+    z-index: 11;
+  }
+  .mobileNav-inner {
+    width: 335px;
+  }
+  .mobileNav-inner .mobileNav-trigger {
+    display: flex;
+  }
+}
+
+.site-header.has-mobile-trigger .mobileNav-trigger {
+  display: flex;
+}
+//todo variables here
+@media screen and (min-width: 900px) {
+  .mobileNav-inner {
+    padding-top: 0px; //height of top bar //todo
+  }
+  .is-header-stuck .mobileNav-inner {
+    padding-top: 0; //height of top bar
+  }
+}
+
+.is-mobilenav-open {
+  overflow-y: hidden;
+}
+
+.is-mobilenav-open .mobileNav {
+  pointer-events: all;
+}
+
+.is-mobilenav-open .mobileNav-inner {
+  transform: translate(0, 0);
+  visibility: visible;
+}
+
+.is-mobilenav-open .mobileNav-overlay {
+  background: rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,184 @@
+
+////
+/// @group Module -  Fitness Schedule
+////
+
+/// Default color for fitness item time.
+/// @type Color
+$schedule-accent: var(--schedule-accent)!default;
+
+/// Colors for intensities.
+/// @type Map
+$schedule-pip-map: (
+        low: #bfc82e,
+        medium: #dd2b71,
+        high: #50bce1,
+) !default;
+
+/*! ----- Group Exercise  ------ */
+/*! ModuleBegin::directory-schedule */
+#scheduleRawItems {
+  display: none
+}
+
+.pip {
+  font-size: 7px;
+  line-height: 14px;
+  vertical-align: middle;
+  margin-right: .5rem;
+  @each $name, $color in $schedule-pip-map {
+    &.#{$name} {
+      color: $color;
+    }
+  }
+
+}
+
+#scheduleToggle {
+  display: none
+}
+
+#scheduleWrapper {
+  border: 2px solid $medium-gray;
+  border-radius: 4px;
+  padding: 6px 10px
+}
+
+.scheduleLabels {
+  margin: 4px 0 0 87px;
+  line-height: 30px;
+  display: flex;
+
+  & > div {
+    flex: 1 0 auto;
+    margin: 0 .5%;
+    text-align: center;
+    font-weight: 700;
+    width: 13%;
+
+  }
+
+  .scheduleDate {
+    font-weight: 400
+  }
+}
+
+.rowTitle {
+  position: relative;
+  margin: 16px 0;
+  height: 2px;
+  background: #c3c3c3;
+  page-break-after: avoid;
+  break-after: avoid;
+
+  span {
+    position: absolute;
+    left: 0;
+    padding: 0 10px;
+    line-height: 36px;
+    font-size: 17px;
+    top: -18px;
+    background: #fff
+  }
+}
+
+
+@media print {
+  .rowTitle {
+    border-top: 1px solid #c3c3c3
+  }
+  .rowTitle span {
+    top: unset
+  }
+}
+
+.rowDays {
+  margin: 4px 0 0 87px;
+  min-height: 20px;
+  height: auto;
+  display: flex;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+  & > div {
+    width: 13%;
+    margin: 0 .5% 4px
+  }
+
+  .clear {
+    display: none
+  }
+}
+
+.scheduleItem .itemPopup {
+  display: none
+}
+
+.scheduleItem {
+  background: rgba(0, 0, 0, .04);
+  border-radius: 5px;
+  text-align: left;
+  padding: 3px;
+  margin: 3px 0;
+  cursor: pointer;
+  font-size: 13px
+}
+
+.scheduleItem .itemName {
+  font-weight: 700
+}
+
+.scheduleItem .itemTime {
+  color: $schedule-accent;
+  font-weight: 700
+}
+
+.itemPopup .popupTitle {
+  color: $schedule-accent;
+  font-size: 26px;
+  text-align: center;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #c3c3c3
+}
+
+.itemPopup .popupAlert {
+  background: #ddd;
+  padding: 1em;
+  text-align: left;
+  border-radius: 4px
+}
+
+.itemPopup b {
+  display: inline-block;
+  width: 105px
+}
+
+.itemPopup .popupLink {
+  text-align: center;
+  margin-top: 15px
+}
+
+.scheduleFilter select {
+  display: inline-block;
+  width: 300px
+}
+
+.scheduleFilter span {
+  width: 150px;
+  display: inline-block
+}
+
+@media screen and (max-width: 63em) {
+  #scheduleToggle {
+    display: block
+  }
+  .rowDays > div, .scheduleLabels > div {
+    width: 100%;
+    display: none
+  }
+  .rowDays > div.currentSchedule, .scheduleLabels > div.currentSchedule {
+    display: block
+  }
+}
+
+/*! ModuleEnd::directory-schedule */

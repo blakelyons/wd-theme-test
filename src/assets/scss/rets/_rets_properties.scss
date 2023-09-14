@@ -1,0 +1,591 @@
+// RETS
+$rets-accent-color: var(--clr-primary) !default;
+$rets-search-bar-color: var(--clr-secondary) !default;
+
+$rets-status-active-color: #22BE40 !default;
+$rets-status-pending-color: orange !default;
+$rets-status-closed-color: #ff0000 !default;
+
+$rets-property-image-border-radius: 6px !default;
+$rets-property-item-box-shadow: 0px 3px 15px rgba(0,0,0,.2) !default;
+$rets-property-item-box-shadow-hover: 0px 3px 15px rgba(0,0,0,.4) !default;
+
+$rets-detail-property-address-ribbon-background-color: var(--clr-primary) !default;
+$rets-detail-property-address-ribbon-font-family: $header-font-family !default;
+
+$rets-search-slider-bar-color: $primary-color !default;
+
+$prop-search-widget-bg: get-color('dark') !default;
+$prop-search-widget-nav-button-color: $primary-color;
+$prop-search-container-bg: none !default;
+$prop-search-widget-margin: 0 !default;
+$prop-search-widget-padding: 2rem 0 !default;
+$prop-search-widget-input-bottom-border: $primary-color !default;
+
+.propertySearchWidget {
+  margin: $prop-search-widget-margin;
+  background: $prop-search-widget-bg;
+  padding: $prop-search-widget-padding;
+
+  &-container {
+    padding: 1rem;
+    background-color: $prop-search-container-bg;
+  }
+
+  header {
+    .eyebrow {
+      color: color-pick-contrast($prop-search-widget-bg, ($white, $black));
+    }
+    &, h2,h3,p {
+      color: color-pick-contrast($prop-search-widget-bg, ($white, $black));
+    }
+    .intro {
+      margin-bottom: 2rem;
+    }
+  }
+  .propAction {
+    text-align:right;
+  }
+  .grid-x {
+    display: flex;
+    flex-flow: row wrap;
+    justify-self: flex-start;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 45px;
+    overflow: hidden;
+  }
+  .propSearch-input-wrapper {
+    background-color: $white;
+    border-bottom:0.5rem solid $prop-search-widget-input-bottom-border;
+    padding: 0.5rem;
+    margin-top:-1rem;
+  }
+  input {
+    background-color:$white;
+    border:none;
+    box-shadow:none;
+  }
+  .searchField {
+    &:focus {
+      outline: 0;
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+  }
+  .propertySearchWidget-js a {
+    background-color: $prop-search-widget-nav-button-color;
+    color: color-pick-contrast($prop-search-widget-nav-button-color, ($white, $black));
+    &:hover {
+      background-color: scale-color($prop-search-widget-nav-button-color, $lightness: -15%);
+    }
+    &.active {
+      background-color: $retsAccent2;
+      color: color-pick-contrast($retsAccent2, ($white, $black));
+      &:hover {
+        background-color: scale-color($retsAccent2, $lightness: 15%);
+      }
+    }
+  }
+}
+
+.propertyAdvancedSearchWidget {
+  .tabs {
+
+  }
+  .tabs-title {
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .tabs-title>a {
+    background: var(--clr-primary);
+    border-radius: $global-radius $global-radius 0 0;
+  }
+  .tabs-title>a:focus, .tabs-title>a[aria-selected=true] {
+    background-color: $retsAccent2;
+  }
+  .tabs-panel {
+    padding: 0 1rem 1rem 0;
+  }
+  .tabs-content {
+    .retsAdvancedSearch {
+      display: block;
+      box-shadow: 0 3px 15px rgba(0,0,0, .2);
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}
+
+// Global Styles
+.retsModule {
+  // Loading Icon when Search is Submitted
+  .loader {
+    margin: 0 0 2em;
+    height: auto;
+    width: auto;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*
+    Set the color of the icon
+  */
+  .loader svg path,
+  .loader svg rect{
+    fill: $rets-accent-color;
+  }
+}
+
+.retsList, .retsDetail, .retsOptions {
+  .grid-x.grid-x-align-middle {
+    align-items: center;
+  }
+}
+
+.retsList, .retsDetail {
+  .inline-label {
+    display: inline-block;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+  .flickity-button {
+    background: rgba(0,0,0,.3);
+    color: $white;
+    transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+    &:hover {
+      background: rgba(0,0,0,.8);
+    }
+  }
+  .flickity-prev-next-button {
+    border-radius: 0;
+  }
+  .flickity-prev-next-button.next {
+    right: 0;
+  }
+  .flickity-prev-next-button.previous {
+    left: 0;
+  }
+}
+
+// UI Search Range Bars
+.sliderContainer {
+  padding: 1rem;
+  box-shadow: $rets-property-item-box-shadow;
+}
+.carousel-image {
+  padding: .5rem;
+  max-height: 400px;
+}
+
+// RETS Lister Filter Bar
+.retsFilterBar {
+
+  margin-bottom: 2rem;
+
+  .divider {
+    display: inline-block;
+    margin: 0 2em;
+    width: 1px;
+    height: 33px;
+    background-color: #B4B4B4;
+    vertical-align: middle;
+  }
+
+  .retsFilterBar-reset-search {
+    display: none;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+    opacity: 0;
+    &.active {
+      display: block;
+    }
+  }
+
+  .retsFilterBar-search-control, .retsFilterBar-list-map-control {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .retsFilterBar-list-map-control {
+    justify-content: flex-end;
+    a.active {
+      border-bottom: 3px solid $rets-accent-color;
+    }
+    .propertiesListView {
+      margin-right: 1rem;
+    }
+  }
+
+}
+
+// RETS Advanced Search Form
+.retsAdvancedSearch {
+  // Testing
+  //display: block;
+  display: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid $medium-gray;
+  border-radius: 8px;
+  transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+
+  &.active {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, .2%);
+  }
+
+  &-form {
+    label {
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    input[type="text"], select[multiple], .multiSelect select, .multiSelect {
+      width: 100%;
+    }
+    select[multiple], .multiSelect, .multiSelect select {
+      height: 140px;
+    }
+  }
+
+  .retsAdvancedSearch-header {
+    h4 {
+      font-weight: 400;
+    }
+    &:after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 1rem auto;
+      content: '';
+      position: relative;
+      background-color: $medium-gray;
+    }
+  }
+
+  .ui-slider {
+    position: relative;
+    height: 4px;
+    background-color: #B7E1FF;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+
+  .ui-slider::before, .ui-slider::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #B7E1FF;
+  }
+
+  .ui-slider::before {
+    left: -2px;
+  }
+
+  .ui-slider::after {
+    right: -2px;
+  }
+
+  .ui-slider-range.ui-widget-header {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    background-color: $rets-search-slider-bar-color;
+    transition: all 0.3s;
+  }
+
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    top: -6px;
+    z-index: 2;
+    margin-left: -6px;
+    border: 3px solid $rets-search-slider-bar-color;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    font: 16px 'Monserrat', sans-serif;
+    color: inherit;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .ui-slider .ui-slider-handle::after {
+    content: attr(value);
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+
+  .retsAdvancedSearch-field-container {
+    &--bedrooms {
+      padding-right: .9375rem;
+    }
+    &--bathrooms {
+      padding-left: .9375rem;
+    }
+  }
+}
+
+// RETS Lister
+.retsOptions {
+  margin: 3rem 0 2rem 0;
+  align-items: center;
+  .retsOptions-sort {
+    align-items: center;
+    > :nth-child(1) {
+      padding-right: 1rem;
+    }
+    select {
+      margin-bottom: 0;
+    }
+  }
+  .retsOptions-results {
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+  .inline-label {
+    font-weight: 600;
+  }
+}
+
+.property {
+  margin: 2rem 0;
+  color: inherit;
+  border-top-left-radius: $rets-property-image-border-radius;
+  border-bottom-left-radius: $rets-property-image-border-radius;
+
+  &.box-shadow {
+    box-shadow: $rets-property-item-box-shadow;
+    transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+    &:hover {
+      box-shadow: $rets-property-item-box-shadow-hover;
+      color: inherit;
+      transform: scale(1.01);
+    }
+  }
+
+  .border-top {
+    border-top: 1px solid $medium-gray;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid $medium-gray;
+  }
+
+  &-image {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 240px;
+    border-top-left-radius: $rets-property-image-border-radius;
+    border-bottom-left-radius: $rets-property-image-border-radius;
+    border-right: 5px solid $retsAccent1;
+    @include background-cover;
+    .noImage-container {
+      display: none;
+    }
+    &.no-image {
+      .icon {
+        font-size: 3rem;
+      }
+      .noImage-container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        color: $medium-gray;
+        background-color: #fefefe;
+        text-transform: uppercase;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-info {
+    padding: 1rem 3rem;
+    box-sizing: border-box;
+    &.grid-x {
+      align-items: center;
+    }
+  }
+
+  &-address {
+    h4 {
+      text-transform: uppercase;
+    }
+  }
+
+  &-meta-info {
+    display: block;
+    text-align: left;
+    @media screen and (min-width: 63em) {
+      text-align: right;
+    }
+    .status {
+      content: '';
+      display: inline-block;
+      margin-left: 0.5em;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      &.active {
+        background-color: $rets-status-active-color;
+      }
+      &.pending {
+        background-color: $rets-status-pending-color;
+      }
+      &.closed {
+        background-color: $rets-status-closed-color;
+      }
+    }
+  }
+
+  &-info-row {
+    margin: .5rem 0;
+    padding: .5rem 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--extraPadTop {
+      padding-top: 1rem;
+    }
+    &--extraPadBottom {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &-description {
+    margin-bottom: 2rem;
+  }
+
+  &-additional-info {
+    margin: 0 0 2rem 0;
+    height: 450px;
+  }
+
+  &-details {
+    height: 100%;
+    overflow-y: scroll;
+
+    thead {
+      background: none;
+      border: none;
+    }
+  }
+
+  &-map {
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// RETS Detail
+.retsDetail-property-address-bar {
+  background: $rets-detail-property-address-ribbon-background-color;
+  color: color-pick-contrast($rets-detail-property-address-ribbon-background-color, ($black, $white));
+  text-align: center;
+  font-size: 1.5625rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: $rets-detail-property-address-ribbon-font-family;
+  text-transform: uppercase;
+  font-weight: 600;
+  .goBackUrl {
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+  }
+}
+
+// RETS Map
+.retsMap {
+  margin-bottom: -50px;
+}
+
+.retsMap #utilityBar {
+  margin-bottom: 0;
+}
+
+#propertyMapArea {
+  position: relative;
+  padding-bottom: 10rem;
+  background-color: #fff;
+}
+
+//#propertyMap{position:absolute;top:0;left:0;right:420px;bottom:0}
+
+#propertyMap .refresh {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  background-color: #fff;
+  border: 0 none;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  font-size: larger;
+  box-shadow: rgba(0, 0, 0, .3) 0 1px 4px -1px;
+}
+
+.retsMap #propertyList {
+  padding: 20px;
+  max-height: 1000px;
+}
+
+.retsMapList {
+  position: relative;
+  height: 100%;
+  > div {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+.retsMap #propertyList .media-object:first-child {
+  border-top: 0 none;
+}
+
+.retsMap #propertyList .media-object.current {
+  background-color: #f4f3ef;
+}
+
+#propertyList .property {
+  //padding: 20px;
+  &:first-child {
+    margin-top: 0;
+  }
+}

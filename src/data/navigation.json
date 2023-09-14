@@ -1,0 +1,234 @@
+{
+  "primary": [
+    {  "text": "Basic Menu Item",
+      "link": "components.html",
+      "submenu": [
+        {
+          "text": "Basic Webpage",
+          "link": "interior.html",
+          "icon": "swimming"
+        },
+        {
+          "text": "Forms Fields",
+          "link": "form.html",
+          "icon": "media"
+        },
+        {
+          "text": "Community",
+          "link": "#",
+          "icon": "team",
+          "submenu": [
+            {
+              "text": "Group Exercise",
+              "link": "community/fitness_schedule.html"
+            },
+            {
+              "text": "Programs",
+              "link": "community/program_landing.html"
+            },
+            {
+              "text": "Program Category",
+              "link": "community/program_category.html"
+            },
+            {
+              "text": "Course Detail",
+              "link": "community/course_detail.html"
+            },
+            {
+              "text": "Reservations",
+              "link": "community/reservations.html"
+            }
+            ]
+        },
+        {
+          "text": "Other Modules",
+          "link": "#",
+          "submenu": [ {
+            "text": "Job Board - TODO",
+            "link": "other/jobs_board.html"
+          },
+            {
+              "text": "Podcast - TODO",
+              "link": "other/podcast.html"
+            },
+            {
+              "text": "Resource Library - TODO",
+              "link": "other/knowledge_base.html"
+            }]
+        }
+      ]
+    },
+    {
+      "text": "Member Services",
+      "link": "#",
+      "submenu": [
+
+        {
+          "text": "My Account",
+          "link": "membership/myaccount.html",
+          "submenu": [
+            {
+              "text": "Login",
+              "link": "membership/login.html"
+            },
+            {
+              "text": "My Account Form",
+              "link": "membership/myaccount_form.html"
+            }
+          ]
+        },
+        {
+          "text": "Member Lister",
+          "link": "membership/member_lister.html"
+        },
+        {
+          "text": "Member Detail",
+          "link": "membership/member_detail.html"
+        }
+      ]
+    },
+    {
+      "text": "Commerce",
+      "link": "#",
+      "submenu": [
+        {
+          "text": "Products",
+          "link": "commerce/products.html"
+        },
+        {
+          "text": "Product Detail - TODO",
+          "link": "commerce/product_detail.html"
+        },
+        {
+          "text": "Cart",
+          "link": "commerce/cart.html"
+        },
+        {
+          "text": "Checkout",
+          "link": "commerce/checkout.html"
+        }
+      ]
+    },
+    {
+      "text": "News & Events",
+      "link": "lister.html",
+      "submenu": [
+        {
+          "text": "Event Lister / Calendar",
+          "link": "events/event_lister.html"
+        },
+        {
+          "text": "Event Detail",
+          "link": "events/event_detail.html"
+        },
+        {
+          "text": "Miscellanous Lister Options",
+          "link": "lister.html"
+        }
+      ]
+    },
+    {
+      "text": "Properties",
+      "link": "rets/property_lister.html",
+      "submenu": [
+        {
+          "text": "Property Search",
+          "link": "rets/advanced_search.html"
+        },
+        {
+          "text": "Property Detail",
+          "link": "rets/property_detail.html"
+        },
+        {
+          "text": "Property Map ",
+          "link": "rets/property_map.html"
+        },
+        {
+          "text": "Widget Search",
+          "link": "rets/search_widget.html"
+        },
+        {
+          "text": "Agents",
+          "link": "rets/agents.html"
+        },
+        {
+          "text": "Agents / Affiliates",
+          "link": "rets/affiliates.html"
+        },
+        {
+          "text": "Offices",
+          "link": "rets/offices.html"
+        }
+      ]
+    },
+    {
+      "text": "About Us",
+      "link": "lister.html",
+      "submenu": [
+        {
+          "text": "People Options",
+          "link": "people/staff_table.html",
+          "submenu": [
+            {
+              "text": "Table",
+              "link": "people/staff_table.html"
+            },
+            {
+              "text": "2 Column Lister",
+              "link": "people/staff.html"
+            },
+            {
+              "text": "Grouped",
+              "link": "people/staff_grouped.html"
+            },
+            {
+              "text": "Photo Grid",
+              "link": "people/staff_photos.html"
+            },
+            {
+              "text": "Photo Grid 2",
+              "link": "other/sponsors_style1.html"
+            }
+
+          ]
+        },
+        {
+          "text": "Components",
+          "link": "components.html"
+        },
+        {
+          "text": "Debug",
+          "link": "#",
+          "submenu": [
+            {
+              "text": "Page Headers",
+              "link": "debug/page_headers.html"
+            },
+            {
+              "text": "Quicklinks",
+              "link": "debug/quicklinks.html"
+            },
+            {
+              "text": "Split Content",
+              "link": "debug/split_content.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "top": [
+    {
+      "text": "Member Login",
+      "link": "login.html"
+    },
+    {
+      "text": "About Us",
+      "link": "components.html"
+    },
+    {
+      "text": "Contact Us",
+      "link": "form.html"
+    }
+  ]
+}

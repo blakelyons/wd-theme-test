@@ -1,0 +1,346 @@
+---
+page-title: Classes & Events
+page-eyebrow: Month View
+pageheader-hide: true
+---
+<section class="pageHeader" id="interiorHeaderBanner">
+    <div class="grid-container pageHeader-inner">
+        <div class="pageHeader-content loading">
+            <h1>{{page-title}}</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="{{root}}events/event_lister.html" class="button">Lister View</a>
+            <a href="{{root}}events/event_glance.html" class="button">Month View</a>
+        </div>
+    </div>
+</section>
+
+<main id="contentControl" class="modulePage content">
+
+    <div class="grid-container grid-x ">
+        <div class="content-body">
+            <div class="moduleHeader">
+                <div class="left">
+                    <form id="eventForm" method="get" action="index.php">
+                        <div style="display:none">
+                            <input type="hidden" name="src" value="events">
+                            <input type="hidden" name="srctype" value="lister">
+                        </div>
+                        <div id="eventCategoryFilter" class="freedomCategoryFilter">
+                            <span class="freedomFilterLabel">Filter:</span>
+                            <select name="category" id="category" onchange="document.getElementById('eventForm').submit()" size="1">
+                                <option value="" selected="">(Show All Categories)</option>
+                                <option value="" selected="">Classes</option>
+                                <option value="" selected="">Events</option>
+                                <option value="" selected="">Members Only</option>
+                            </select>
+                        </div>
+                        <div style="display:none">
+                            <input type="hidden" name="submenu" value="Events">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="eventsGlance" class="cal largeCalendar">
+                <table class="calTop" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td width="10%" valign="middle">
+                            <a class="calPrev ajax" href="index.php?src=events&amp;srctype=events_glance&amp;m=11&amp;y=2020">
+                                <i class="fa fa-angle-left">
+                                </i>
+                            </a>
+                        </td>
+                        <td valign="middle" class="calMonth">December 2020</td>
+                        <td width="10%" valign="middle">
+                            <a class="calNext ajax" href="index.php?src=events&amp;srctype=events_glance&amp;m=1&amp;y=2021">
+                                <i class="fa fa-angle-right">
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" cellpadding="0" class="calGrid" border="0">
+                    <thead>
+                    <tr class="calWeek show-for-largeCalendar">
+                        <td>Sunday</td>
+                        <td>Monday</td>
+                        <td>Tuesday</td>
+                        <td>Wednesday</td>
+                        <td>Thursday</td>
+                        <td>Friday</td>
+                        <td>Saturday</td>
+                    </tr>
+                    <tr class="calWeek show-for-smallCalendar">
+                        <td>SUN</td>
+                        <td>MON</td>
+                        <td>TUE</td>
+                        <td>WED</td>
+                        <td>THU</td>
+                        <td>FRI</td>
+                        <td>SAT</td>
+                    </tr>
+                    </thead>
+                    <tbody class="calendarDays">
+                    <tr>
+                        <td class="  "></td>
+                        <td class="  "></td>
+                        <td class="eventOn"> 1
+                            <div class="glanceInner moreEvents">
+                                <a href="event_detail.html">"Home for the Holidays" Virtual Raffle</a>
+                                <a href="event_detail.html"> Commercial Member Services &amp; Membership Committee</a>
+                                <a href="event_detail.html"> Commercial Member Services &amp; Membership Committee</a>
+                            </div>
+                            <a class="indicator js-glanceMoreEvents">...</a>
+                        </td>
+                        <td class="eventOn"> 2
+                            <div class="glanceInner">
+                                <a href="event_detail.html">"Home for the Holidays" Virtual Raffle</a>
+                                <a href="event_detail.html">"Home for the Holidays" Virtual Raffle</a>
+                                <a href="event_detail.html">Residential Education Committee</a>
+                                <a href="event_detail.html">Residential Education Committee</a>
+                                <a href="event_detail.html">Residential Education Committee</a>
+                                <a href="event_detail.html"> Commercial Member Services &amp; Membership Committee</a>
+                            </div>
+                        </td>
+                        <td class=""> 3</td>
+                        <td class=""> 4</td>
+                        <td class=""> 5</td>
+                    </tr>
+                    <tr>
+                        <td class=""> 6</td>
+                        <td class=""> 7</td>
+                        <td class="eventOn"> 8
+                            <div class="glanceInner">
+                                <a href="event_detail.html">YPN Committee Meeting</a>
+                                <a href="event_detail.html">Member Services Committee (RS)</a>
+                            </div>
+                        </td>
+                        <td class="eventOn"> 9
+                            <div class="glanceInner">
+                                <a href="event_detail.html">MLS Committee</a>
+                            </div>
+                        </td>
+                        <td class="eventOn"> 10
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Commercial Education Committee</a>
+                                <a href="event_detail.html">Flexmls 1</a>
+                                <a href="event_detail.html">Recognition &amp; Sales Awards Committee</a>
+                            </div>
+                        </td>
+                        <td class="eventOn"> 11
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Affordable Housing Committee</a>
+                            </div>
+                        </td>
+                        <td class=""> 12</td>
+                    </tr>
+                    <tr>
+                        <td class=""> 13</td>
+                        <td class="eventOn today day">
+                            <span class="todayInner">14</span>
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Officers Meeting</a>
+                                <a href="event_detail.html">MLS Board of Directors</a>
+                            </div>
+
+                        </td>
+                        <td class="eventOn"> 15
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Flexmls 2</a>
+                                <a href="event_detail.html">Freddie Mac Conventional &amp; OHFA Loan Basics Webinar</a>
+                            </div>
+                        </td>
+                        <td class="eventOn"> 16
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Real Estate Data Accuracy</a>
+                                <a href="event_detail.html">Board of Directors</a>
+                            </div>
+                        </td>
+                        <td class="eventOn"> 17
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Realist Tax Search</a>
+                                <a href="event_detail.html">2020 Virtual President's Ball</a>
+                            </div>
+                        </td>
+                        <td class=""> 18</td>
+                        <td class=""> 19</td>
+                    </tr>
+                    <tr>
+                        <td class=""> 20</td>
+                        <td class=""> 21</td>
+                        <td class=""> 22</td>
+                        <td class=""> 23</td>
+                        <td class=""> 24</td>
+                        <td class="eventOn"> 25
+                            <div class="glanceInner">
+                                <a href="event_detail.html">Columbus REALTORS Office Closed</a>
+                            </div>
+                        </td>
+                        <td class=""> 26</td>
+                    </tr>
+                    <tr>
+                        <td class=""> 27</td>
+                        <td class=""> 28</td>
+                        <td class=""> 29</td>
+                        <td class=""> 30</td>
+                        <td class="eventOn"> 31</td>
+                        <td class="  "></td>
+                        <td class="  "></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="miniGlance">
+                <div class="cal smallCalendar">
+                    <table class="calTop" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td width="10%" valign="middle">
+                                <a class="calPrev ajax" href="index.php?src=events&amp;srctype=events_glance&amp;m=11&amp;y=2020">
+                                    <i class="fa fa-angle-left">
+                                    </i>
+                                </a>
+                            </td>
+                            <td valign="middle" class="calMonth">December 2020</td>
+                            <td width="10%" valign="middle">
+                                <a class="calNext ajax" href="index.php?src=events&amp;srctype=events_glance&amp;m=1&amp;y=2021">
+                                    <i class="fa fa-angle-right">
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table cellspacing="0" cellpadding="0" class="calGrid" border="0">
+                        <tbody>
+                        <tr class="calWeek">
+                            <td>SUN</td>
+                            <td>MON</td>
+                            <td>TUE</td>
+                            <td>WED</td>
+                            <td>THU</td>
+                            <td>FRI</td>
+                            <td>SAT</td>
+                        </tr>
+                        <tr>
+                            <td class="emptyDay  "></td>
+                            <td class="emptyDay  "></td>
+                            <td class="eventOn"> 1
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">"Home for the Holidays" Virtual Raffle</a>
+                                    <a href="event_detail.html">
+                                        Commercial Member Services &amp; Membership Committee</a>
+                                </div>
+                            </td>
+                            <td class="eventOn">
+                                <span class="dayDate">2</span>
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">"Home for the Holidays" Virtual Raffle</a>
+                                    <a href="event_detail.html">Residential Education Committee</a>
+                                </div>
+                            </td>
+                            <td class=""> 3</td>
+                            <td class=""> 4</td>
+                            <td class=""> 5</td>
+                        </tr>
+                        <tr>
+                            <td class=""> 6</td>
+                            <td class=""> 7</td>
+                            <td class="eventOn"> 8
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">YPN Committee Meeting</a>
+                                    <a href="event_detail.html">Member Services Committee (RS)</a>
+                                </div>
+                            </td>
+                            <td class="eventOn"> 9
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">MLS Committee</a>
+                                </div>
+                            </td>
+                            <td class="eventOn"> 10
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Commercial Education Committee</a>
+                                    <a href="event_detail.html">Flexmls 1</a>
+                                    <a href="event_detail.html">Recognition &amp; Sales Awards Committee</a>
+                                </div>
+                            </td>
+                            <td class="eventOn"> 11
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Affordable Housing Committee</a>
+                                </div>
+                            </td>
+                            <td class=""> 12</td>
+                        </tr>
+                        <tr>
+                            <td class=""> 13</td>
+                            <td class="eventOn today day">
+                        <span class="todayInner">14<span>
+                        <div class="glanceInner">
+                        <a href="event_detail.html">Officers Meeting</a>
+                        <a href="event_detail.html">MLS Board of Directors</a>
+                        <div class="bottomTriangle left">
+                        </div>
+                        <div class="bottomTriangle right">
+                        </div>
+                        </div>
+                        </span>
+                        </span>
+                            </td>
+                            <td class="eventOn"> 15
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Flexmls 2</a>
+                                    <a href="event_detail.html">Freddie Mac Conventional &amp; OHFA Loan Basics Webinar</a>
+                                </div>
+                            </td>
+                            <td class="eventOn"> 16
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Real Estate Data Accuracy</a>
+                                    <a href="event_detail.html">Board of Directors</a>
+                                </div>
+                                <span class="indicator"></span>
+                            </td>
+                            <td class="eventOn"> 17
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Realist Tax Search</a>
+                                    <a href="event_detail.html">2020 Virtual President's Ball</a>
+                                </div>
+                            </td>
+                            <td class=""> 18</td>
+                            <td class=""> 19</td>
+                        </tr>
+                        <tr>
+                            <td class=""> 20</td>
+                            <td class=""> 21</td>
+                            <td class=""> 22</td>
+                            <td class=""> 23</td>
+                            <td class=""> 24</td>
+                            <td class="eventOn"> 25
+                                <div class="glanceInner">
+                                    <a href="event_detail.html">Columbus REALTORS Office Closed</a>
+                                </div>
+                            </td>
+                            <td class=""> 26</td>
+                        </tr>
+                        <tr>
+                            <td class=""> 27</td>
+                            <td class=""> 28</td>
+                            <td class=""> 29</td>
+                            <td class=""> 30</td>
+                            <td class="eventOn"> 31</td>
+                            <td class="  "></td>
+                            <td class="  "></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+

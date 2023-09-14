@@ -1,0 +1,133 @@
+---
+page-title: Home
+---
+
+{{> slideshow}}
+{{> spanning_cta theme-class='theme-dark' title='Interested in Becoming a Member?'}}
+{{> split_content_advanced}}
+
+<section class="eventsComponent moduleComponent themeMedium pad-top-medium">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x carousel-wrapper  cards-slider medium-up-2 large-up-4" data-equalizer data-flickity='{"cellAlign":"left", "cellSelector":".carousel-cell"}'>
+            <div class="cell carousel-cell">
+                <div class="card themeDark" data-equalizer-watch>
+                    <div class="card-section">
+                        <h2 class="h1">Classes and Events</h2>
+                        <a href="lister.html" class="button">All Events</a>
+                    </div>
+                </div>
+            </div>
+            {{#each general.events}}
+            <div class="cell carousel-cell gridItem">
+                <div class="card card--show-more" data-equalizer-watch>
+                    <div class="card-image">
+                        <img src="{{image}}" class="">
+                    </div>
+                    <a class="card-section grid-y">
+                        <div class="lister-date">{{date}}</div>
+                        <h3 class="lister-title">{{title}}</h3>
+                        <p>{{blurb}}</p>
+                        <p class="card-action-text arrowLink"> Read More</p>
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</section>
+<section class="newsComponent moduleComponent">
+    <div class="grid-container">
+        <header data-aos="fade-up" class="moduleHeader">
+            <div class="text-center">
+                <h2>Latest News</h2>
+                <p class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sit amet aliquam
+                              ex.</p>
+                <a href="lister.html" class="button">All News</a>
+            </div>
+
+        </header>
+        <div class="grid-x grid-margin-x cardGridLister medium-up-2 large-up-4">
+            {{#repeat 3 }}
+            <div class="cell card card--show-more card--no-shadow">
+                <div class="card-section">
+                    <div class="lister-date">December 19, 2020</div>
+                    <h3 class="lister-title">
+                        <a href="#">This is a Recent News Article: A Very Recent News Story to Tell</a>
+                    </h3>
+                    <p>{{lorem count='15' units='word'}}</p>
+                    <p class="card-action-text">
+                        <a href="#" class="arrowLink">
+                            Read More
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+            {{/repeat}}
+
+        </div>
+    </div>
+</section>
+{{> sponsors_slider}}
+<!-- market stats split content -->
+<section class="content splitContent-component">
+    <div class="grid-container">
+
+        <div class="editorContent grid-x grid-padding-x grid-padding-y splitContent">
+            <div class="columnContent cell large-6 splitContent-text">
+                <div class="eyebrow">Video</div>
+                <h2>Monthly Housing Statistics</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin velit in quam dignissim
+                   venenatis. Ut faucibus nunc nisi, imperdiet ultricies augue porta sed. Vivamus dictum gravida
+                   nibh, ac malesuada nibh ornare ac. Interdum et malesuada fames ac ante ipsum primis in
+                   faucibus.</p>
+                <div class="grid-x medium-up-3">
+                    <div class="cell quickStat">
+                        <figure>
+                            <div class="stat h1">
+                                <span class="prefix">$</span><span class="number">1,346</span><span class="suffix"></span>
+                            </div>
+                            <figcaption>
+                                <div class="h5">Total Home Sales</div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="cell quickStat">
+                        <figure>
+
+                            <div class="stat h1">
+                                <span class="prefix"></span><span class="number">45</span><span class="suffix">+</span>
+                            </div>
+                            <figcaption>
+                                <div class="h5">Open Houses</div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="cell quickStat">
+                        <figure>
+
+                            <div class="stat h1">
+                                <span class="number">240</span><span class="suffix">K</span>
+                            </div>
+                            <figcaption>
+                                <div class="h5">Average Sales Price</div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="columnContent cell large-6 splitContent-media">
+                <div class="responsive-embed  widescreen columnMedia columnMedia--left">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/T06tdvhk38M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{{> testimonials}}
+
+{{> spanning_cta theme-class='theme-primary' button-class='dark' title='Lorem ipsum dolor sit amet consectetur'}}

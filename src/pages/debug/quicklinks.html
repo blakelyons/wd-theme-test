@@ -1,0 +1,47 @@
+---
+palette-testing:
+    - jerusalem
+    - negev
+    - tel-aviv
+---
+<div class="grid-container">
+    <h2>Quicklinks</h2>
+    <p>JCC Color Testing - make sure to include the debug.scss is temporarily in stylesheet.scss and to change $quicklink-style to none</p>
+
+</div>
+<section class="quicklinks-component pad-y-medium">
+    <div class="grid-container full quicklinks-inner">
+        <h3>Default Palette</h3>
+        <div class="grid-x quicklinks solid large-up-4">
+            {{#repeat 8}}
+            {{> quicklink_single title='Quicklink Title' icon='icon icon-media'}}
+            {{/repeat}}
+
+        </div>
+        <div class="grid-x quicklinks bordered large-up-4">
+            {{#repeat 8}}
+            {{> quicklink_single title='Quicklink Title' icon='icon icon-media'}}
+            {{/repeat}}
+
+        </div>
+    </div>
+</section>
+{{#each palette-testing}}
+<section class="quicklinks-component pad-y-medium">
+    <div class="grid-container full quicklinks-inner">
+        <div class="grid-container"><h3>{{this}} Palette</h3></div>
+        <div class="grid-x quicklinks {{this}}-solid large-up-4">
+            {{#repeat 8}}
+            {{> quicklink_single title='Quicklink Title' icon='icon icon-media'}}
+            {{/repeat}}
+
+        </div>
+        <div class="grid-x quicklinks {{this}}-bordered large-up-4">
+            {{#repeat 8}}
+            {{> quicklink_single title='Quicklink Title' icon='icon icon-media'}}
+            {{/repeat}}
+
+        </div>
+    </div>
+</section>
+{{/each}}

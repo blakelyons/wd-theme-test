@@ -1,0 +1,13 @@
+<section class="quicklinks-component">
+    <div class="grid-container extra-wide quicklinks-inner">
+        <div class="grid-x quicklinks {{style}} medium-2 large-up-4">
+            {{#repeat 8}}
+            {{> quicklink_single title='Quicklink Title' icon='icon icon-media'}}
+            {{/repeat}}
+            {{#each modules.quicklinks}}
+            {{> quicklink_single this }}
+            {{/each}}
+
+        </div>
+    </div>
+</section>

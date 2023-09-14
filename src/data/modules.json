@@ -1,0 +1,276 @@
+
+{
+  "logo": "",
+  "font_url": "https://use.typekit.net/owu3qtp.css",
+  "theme-palette": ["primary","secondary","light-primary","light-secondary","dark","medium","light","light-gray","medium-gray","dark-gray","darker-gray","black"],
+  "button-palette": ["primary","secondary","dark","white"],
+  "events": [
+    {
+      "title": "This is an Event Title",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": ""
+    },
+    {
+      "title": "This is an Event Title",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus. Interdumet malesuada fames ac ante ipsum primis in faucibus.",
+      "image": "https://picsum.photos/400/400"
+    },
+    {
+      "title": "This is an Event Title - An Event Title Shows Here",
+      "date": "September 19, 2021",
+      "blurb": "Lorem ipsum dolor sit amet,",
+      "image": "https://picsum.photos/400/400"
+    }
+  ],
+  "program_intro": [
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    },
+    {
+      "title": "Group Fitness",
+      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lobortis purus.",
+      "image": "https://picsum.photos/300/500"
+    }
+  ],
+  "quicklinks": [
+    {
+      "title": "Make a Reservation",
+      "icon": "calendar",
+      "blurb": "Reservations are first come, first served. Full payment is due in order to reserve a facility. ",
+      "image": "https://picsum.photos/300/500",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Benefits of Membership",
+      "icon": "team",
+      "blurb": "Provides a safe place to meet, Sports Leagues,  The Culture, Promotes a healthy lifestyle, etc.",
+      "image": "https://picsum.photos/300/500",
+      "link": ""
+    },
+    {
+      "title": "Group Exercise Schedule",
+      "icon": "yoga",
+      "blurb": "All classes will be on a reservation system. Participants will have a maximum of 24 hours to reserve their spot.",
+      "image": "https://picsum.photos/500/500",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Person Training ",
+      "icon": "fitness",
+      "blurb": "Set your goal, commit to a training frequency, and allow your trainer to keep you on track with achieving results. Training sessions may be conducted virtually or in-person.",
+      "image": "https://picsum.photos/500/300",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Aquatics",
+      "icon": "swimming",
+      "blurb": "When you learn to swim, you gain confidence, acquire safety/rescue skills and experience water activities you can enjoy for a lifetime.",
+      "image": "https://picsum.photos/300/500",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Senior Programs",
+      "icon": "color-palette",
+      "blurb": "Exercise Opportunities, Health Programs, Education Programs, Income Tax Preparation, etc.",
+      "image": "https://picsum.photos/300/500",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Camp 2021",
+      "icon": "microphone",
+      "blurb": "We're committed to making our camps a safe place for campers to have fun with friends.",
+      "image": "https://picsum.photos/300/500",
+      "link": "reservations.html"
+    },
+    {
+      "title": "Make a Reservation",
+      "icon": "calendar",
+      "blurb": "Reservations are first come, first served. Full payment is due in order to reserve a facility. ",
+      "image": "https://picsum.photos/300/500",
+      "link": "reservations.html"
+    }
+  ],
+  "slideshow": [
+    {
+      "title": "",
+      "blurb": "",
+      "image": "",
+      "theme": "",
+      "tab-text": ""
+    }
+  ],
+  "repeatables": [
+    {
+      "title": "Interviews and Job Opportunities",
+      "blurb": "Reservations are first come, first served. Full payment is due in order to reserve a facility. ",
+      "image": "https://picsum.photos/300/500",
+      "icon": "calendar",
+      "color": "blue",
+      "link": "interior.html",
+      "link_text": "Read More Now"
+    },
+    {
+      "title": "Communities & Surrounding Cities",
+      "blurb": "This would be a short example description",
+      "image": "",
+      "icon": "icon-sun",
+      "color": "color2",
+      "link": "interior.html"
+    },
+    {
+      "title": "Programs We Offer",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "sun",
+      "color": "color2",
+      "link": "interior.html"
+    },
+    {
+      "title": "Helpful Resources and Research Papers",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "file",
+      "color": "color2",
+      "link": "interior.html"
+    },
+    {
+      "title": "Markets We Serve",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "icon-house",
+      "color": "color2",
+      "link": "interior.html"
+    },
+    {
+      "title": "Teh Software Systems We Recommend for you",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "icon-sun",
+      "color": "color2",
+      "link": "interior.html"
+    },
+    {
+      "title": "There are many type of Design Options to Choose From",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "football",
+      "color": "color4",
+      "link": "interior.html"
+    },
+    {
+      "title": "this would be an example title that might be on the long side",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "headphone",
+      "color": "primary",
+      "link": "interior.html"
+    },
+    {
+      "title": "Telling a Story with your Brand's \"Voice\"",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "mircophone",
+      "color": "primary-light",
+      "link": "interior.html"
+    }
+  ],
+  "boxes_3": [
+    {
+      "title": "Interviews and Job Opportunities",
+      "blurb": "Reservations are first come, first served. Full payment is due in order to reserve a facility. ",
+      "image": "https://picsum.photos/300/500",
+      "icon": "calendar",
+      "color": "blue",
+      "link": "interior.html",
+      "link_text": "Read More Now",
+      "link_style": "link"
+    },
+    {
+      "title": "Communities & Surrounding Cities",
+      "blurb": "This would be an  short example desc",
+      "image": "https://picsum.photos/300/400",
+      "icon": "sun",
+      "color": "color2",
+      "link": "interior.html",
+      "link_style": "button"
+    },
+    {
+      "title": "Programs We Offer",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "sun",
+      "color": "color2",
+      "link": "interior.html",
+      "link_style": "box"
+    }
+  ],
+  "boxes_4": [
+    {
+      "title": "There are many type of Design Options to Choose From",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "football",
+      "color": "color4",
+      "link": "interior.html"
+    },
+    {
+      "title": "Interviews and Job Opportunities",
+      "blurb": "Reservations are first come, first served. Full payment is due in order to reserve a facility. ",
+      "image": "https://picsum.photos/300/500",
+      "icon": "calendar",
+      "color": "blue",
+      "link": "interior.html",
+      "link_text": "Read More Now",
+      "link_style": "link"
+    },
+    {
+      "title": "Communities & Surrounding Cities",
+      "blurb": "This would be an  short example desc",
+      "image": "https://picsum.photos/300/400",
+      "icon": "sun",
+      "color": "color2",
+      "link": "interior.html",
+      "link_style": "button"
+    },
+    {
+      "title": "Programs We Offer",
+      "blurb": "This would be an example description for a information card.",
+      "image": "https://picsum.photos/300/400",
+      "icon": "sun",
+      "color": "color2",
+      "link": "interior.html",
+      "link_style": "box"
+    }
+  ]
+}

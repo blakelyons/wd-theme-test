@@ -1,0 +1,249 @@
+////
+/// @group modules - slideshow
+////
+
+/// Slideshow height map based on breakpoints
+/// @type Map
+$slideshow-height-map: (
+    small: 500px,
+    large: 575px,
+    xxlarge: 700px
+) !default;
+
+/// Slideshow background
+/// @type Color
+$slideshow-background: var(--slideshow-background, var(--clr-site-dark)) !default;
+
+/// Slideshow Overlay
+/// @type Gradient
+$slideshow-slide-overlay-bg: linear-gradient(to bottom, $slideshow-background 0%, transparent 100%) !default;
+
+/// Slideshow Overlay Height
+/// @type Number
+$slideshow-slide-overlay-height: 100% !default;
+
+/// Slideshow content color
+/// @type Color
+$slide-content-color: #FFF !default;
+
+/// Slideshow color dark theme
+/// @type Color
+$slide-content-color-dark: $black !default;
+
+/// Slideshow title font family.
+/// Ignored if null (default)
+/// @type Color
+$slideshow-slide-title-family: null !default;
+
+
+.slideshow {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  .slides {
+    display: block;
+    position: relative;
+    z-index: 1;
+    @each $breakpoint, $size in $slideshow-height-map {
+      @include breakpoint($breakpoint) {
+        height: $size;
+      }
+    }
+
+  }
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $slideshow-background;
+
+    .slideBackground {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      font-family: "object-fit: cover";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+      // curved bottom
+      //clip-path: ellipse(150% 98% at 50% 0%);
+    }
+
+    .slideInner {
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      @include alignment-classes();
+      z-index: 2;
+    }
+
+    .slideContent {
+      //needed only if home has over slideshow header
+      .header-is-overlay &{
+        margin-top: 150px;
+        margin-bottom: 50px
+      }
+      color: $slide-content-color;
+      display: block;
+      position: relative;
+      max-width: 850px;
+      padding: 3rem;
+      z-index: 1;
+
+      &.textDark {
+        color: $slide-content-color-dark;
+      }
+
+      .slideTitle {
+        color: inherit;
+
+        margin: 0;
+        padding: 0;
+        transition: transform .5s ease, opacity 0.5s ease;
+        font-family: $slideshow-slide-title-family;
+        opacity: 0;
+        transform: translateY(4rem);
+
+      }
+
+      .slideCaption {
+        color: inherit;
+      }
+
+    }
+
+    &.is-selected {
+      .slideTitle {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  .slide-overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    content: '';
+    z-index: 1;
+    opacity: .5;
+  }
+  .slide:nth-child(1) {
+    z-index: 2;
+  }
+  .flickity-enabled .slide:nth-child(1) {
+    z-index: initial;
+  }
+}// .slideShow
+
+@media screen and (min-width: 60em){
+  .flickity-prev-next-button.previous {
+    left: 40px;
+  }
+
+  .flickity-prev-next-button.next {
+    right: 40px;
+  }
+}
+
+/*! flickity-fade */
+
+.flickity-enabled.is-fade .flickity-slider > * {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flickity-enabled.is-fade .flickity-slider > .is-selected {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/*! Slideshow Navigation */
+.slideshow-navigation {
+  display: none;
+}
+@media screen and (min-width: 40em) {
+  .slideshow-navigation {
+    display: flex;
+  }
+}
+.slideshow-navigation-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .slideNavButton {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33.33%;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+
+    .image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      @include background-cover;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .text {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: $header-font-family;
+      padding: 1rem;
+      box-sizing: border-box;
+      transition: $transition-fast;
+
+      @media screen and (min-width: 60em) {
+        font-size: 1.75rem
+      }
+    }
+    &.active {
+      .activeSlideArrow {
+        transform: translateX(0);
+      }
+    }
+    .activeSlideArrow {
+      display: block;
+      position: absolute;
+      left: -30px;
+      width: 0px;
+      height: 0px;
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-right: 30px solid $white;
+      z-index: 1;
+      transition: $transition-fast;
+      transform: translateX(30px);
+    }
+  }
+
+  .slideshow-navigation .slideNavButton .slideBackground.video {
+    opacity: .7;
+  }
+}

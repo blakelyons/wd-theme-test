@@ -1,0 +1,16 @@
+<a class="cell quicklink {{quicklink_style}}">
+     <div class="quicklink-content">
+        {{#if icon}}
+        <div class="quicklink-icon"><i class="af-icon icon-{{icon}}"></i></div>
+        {{/if}}
+        <h3 class="quicklink-title">{{title}}</h3>
+        {{#if blurb}}
+        <p class="quicklink-desc">{{blurb}}</p>
+        {{/if}}
+        {{#if more-text}}
+        <span class="quicklink-action button">
+                {{more-text}}
+            </span>
+        {{/if}}
+    </div>
+</a>

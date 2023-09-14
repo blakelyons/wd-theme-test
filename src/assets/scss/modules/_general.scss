@@ -1,0 +1,175 @@
+$lister-item-border-bottom: 2px solid rgba(0, 0, 0, 0.1) !default;
+$lister-cornerbadge-color: var(--lister-cornerbadge-color, var(--clr-primary)) !default;
+$lister-dateicon-background: $black !default;
+$lister-dateicon-radius: 50% !default;
+$lister-dateicon-size: 60px !default;
+$lister-dateicon-day-font-size: 1.5rem !default;
+$lister-item-striped-odd: $light-gray !default;
+
+$archive-background: var(--archive-bg-color)!default;
+/*! ---------------General Module Styles--------------- */
+#editAnywhere {  display: none;}
+.lister-striped {
+  .lister-item {
+    padding: 1rem;
+  }
+  .lister-item:nth-child(odd){
+    background-color: $lister-item-striped-odd;
+  }
+}
+.lister-border-bottom {
+  .lister-item {
+    border-bottom: $lister-item-border-bottom;
+  }
+}
+.lister-item {display:flex; flex-flow:row wrap;  position:relative; clear:both; margin: 1em 0 .5em; padding-bottom:1em; padding-top: 1rem}
+.lister-title a {  color:inherit;}
+.lister-content{}
+.lister-image{max-width:400px;width:300px;flex:0 1 auto;margin-right:2rem;text-align:center}
+.lister-date { color: $dark-gray}
+.lister-content {flex:1 1 50%; position: relative}
+.lister-dateIcon {
+  position:relative;
+  margin: 1rem 1rem 2rem 1rem;
+  align-self: flex-start;
+  @include iconBox($background:$lister-dateicon-background, $size: $lister-dateicon-size, $radius: $lister-dateicon-radius);
+  .day {
+    font-size: $lister-dateicon-day-font-size;
+    font-weight: bold;
+  }
+}
+.lister-item--boxed {
+  padding: 1rem;
+  background: var(--clr-site-medium);
+}
+.lister-badge {
+  position: absolute;
+  top: 0;
+  padding: 10px 20px;
+  line-height: 1;
+  border-radius: 4px;
+  text-transform: none;
+  font-size: 1rem;
+  background: var(--clr-secondary);
+  font-weight: 600;
+  color: white;
+}
+.lister-item--boxed .lister-badge{
+  right: -1rem;
+  border-radius: 4px 0 0 4px;
+}
+.lister-cornerBadge {
+  padding-top: unset;
+}
+.lister-cornerBadge::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border: 40px solid $lister-cornerbadge-color;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  overflow:visible;
+  content:"";
+}
+
+
+.lister-action {
+  align-self: center;
+  padding-left:  1rem;
+}
+.lister-action .arrowLink {
+  color: $anchor-color;
+}
+.cardGridLister {
+  .lister-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  .gridItem {
+    margin-bottom: 1rem;
+  }
+  .cell .card {
+    height: 100%;
+  }
+}
+.mini-lister .lister-item {
+  border: 0;
+}
+
+.lister-search{
+  align-items: flex-end;
+}
+.lister-searchLabel {
+  margin-bottom: 1rem;
+}
+.lister-searchItem {
+  margin-right: 1rem;
+}
+.lister-subHeader {  margin: 2rem 0;}
+/*! common elements across modules */
+.label { font-weight:bold; margin-right:10px; }
+.title { }
+.description { }
+.blurb { }
+.thumbnail { }
+.info { }
+.author { }
+.date {  font-weight: bold}
+.time { }
+.imageLink { float:left; }
+.category {
+  color: var(--category-color);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.tags { }
+.tags a {
+  background: $light-gray;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: lighten($black, 15%);
+  display: inline-block;
+  padding: 3px 6px;
+  margin-right: 2px;
+
+  &:hover {
+    color: $black;
+  }
+}
+.tagCloud { margin-bottom:2rem }
+.tagCloudBox { border: 2px solid #ddd; border-radius:4px; padding:12px; }
+.tagCloud a {
+  margin: 2px;
+  &:hover {
+    color: $black;
+  }
+}
+.utilityLinks { margin-top:25px; }
+.comments { margin-top:12px; }
+.comment { padding:10px; background:$light-gray; margin-bottom:15px; border: 1px solid #ccc; }
+.comment .info { color:#333; font-weight:600; margin-bottom:10px; }
+
+.errorMessage { font-weight:bold; color:#f00; }
+
+.archive{margin-bottom:2rem}
+
+.archive .year > a {
+  background-color: $archive-background;
+  font-size: 1.125rem;
+  color: var(--clr-on-dark);
+}
+
+.archive .menu.monthContainer{}
+.archive .month a{}
+
+.inline-form input,.inline-form select{width:auto;display:inline-block}
+.inline-form .button{margin-bottom:0}
+
+.moduleHeaderFilters .freedomCategoryFilter{
+  float: left;
+  margin-left: 1rem;
+}
+.freedomFilterLabel { font-weight:600}

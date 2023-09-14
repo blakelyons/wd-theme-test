@@ -1,0 +1,329 @@
+////
+/// @group global
+/// General Base
+////
+
+/// Default component padding
+/// @type Map
+$component-padding: (
+    none: 0,
+    small: 1rem,
+    medium: 3rem,
+    large: 5rem,
+) !default;
+/*! -------------------------------- -------------------------------- */
+/*! ---------------------------- Headings --------------------------- */
+/*! -------------------------------- -------------------------------- */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+}
+
+h5,
+.h5 {
+    font-weight: 400;
+    font-style: italic;
+    font-family: var(--ff-alt-beta);
+}
+
+h2 a {
+    color: inherit;
+}
+
+.hollow-text {
+    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-fill-color: transparent;
+}
+
+.button {
+    //text-transform: uppercase;
+}
+
+.editorContent a:not([class]) {
+    font-weight: bold;
+}
+.logo.demo {
+    display: inline-block;
+}
+/*! -------------------------------- -------------------------------- */
+/*! ---------------------------- Sections --------------------------- */
+/*! -------------------------------- -------------------------------- */
+
+#contentControl h1.pageTitle {
+    display: none;
+}
+
+.content {
+    background-color: $white;
+}
+
+section {
+    display: block;
+    position: relative;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.grid-container.slim {
+    max-width: 50em;
+}
+.grid-container.wide {
+    max-width: 85em;
+}
+
+.grid-container.extra-wide,
+.grid-container.hd-wide {
+    max-width: 120em;
+}
+
+.grid-x.reversed {
+    flex-direction: row-reverse;
+}
+
+.forceWhite {
+    color: white;
+}
+
+.themeDark {
+    background: var(--clr-site-dark);
+    color: var(--clr-on-dark);
+
+    & address,
+    p,
+    a:not(.button),
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: var(--clr-on-dark);
+    }
+}
+.themePrimary {
+    background: var(--clr-primary);
+    color: var(--clr-on-primary);
+
+    & address,
+    p,
+    a:not(.button),
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: inherit;
+    }
+}
+
+@each $name, $size in $component-padding {
+    .pad-y-#{$name} {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+    .pad-top-#{$name} {
+        padding-top: $size;
+    }
+    .pad-bottom-#{$name} {
+        padding-bottom: $size;
+    }
+}
+.push-to-bottom {
+    margin-top: auto;
+    justify-self: flex-end;
+}
+//todo revisit
+.moduleHeader {
+    margin-bottom: 1.5rem;
+}
+
+/*! -------------------------------- -------------------------------- */
+/*! ------------------- Misc. General Site Styling ------------------ */
+/*! -------------------------------- -------------------------------- */
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: var(--clr-secondary) var(--clr-secondary) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 2rem auto;
+}
+.loader::after,
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent var(--clr-primary) var(--clr-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: var(--clr-secondary) var(--clr-secondary) transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.imageLeft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+.imageRight {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+@include breakpoint(medium up) {
+    .imageHalf {
+        width: 50%;
+    }
+}
+.eyebrow {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--eyebrow-color);
+    font-family: var(--ff-alt-beta);
+}
+.responsive-table {
+    width: 100% !important;
+    height: unset !important;
+}
+.responsive-table tr,
+.responsive-table th,
+.responsive-table td,
+.responsive-table table {
+    width: initial !important;
+    height: initial !important;
+}
+
+// stylized link that should be an editor style
+// as well as used in some listers / components
+
+.arrowLink,
+.moreLink {
+    color: inherit;
+    font-weight: bold;
+}
+@media screen {
+    .arrowLink,
+    .moreLink,
+    .button.arrow,
+    .button.arrow-hover {
+        &::after {
+            right: 5px;
+            left: auto;
+            margin-left: 5px;
+            transition: transform 0.2s ease;
+            display: inline-block;
+            border: none;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor;
+            color: inherit;
+            content: "";
+            height: 10px;
+            width: 10px;
+            transform: translateX(0rem) rotate(45deg);
+        }
+
+        &:hover,
+        .a:hover & {
+            &::after {
+                transform: translateX(0.5rem) rotate(45deg);
+            }
+        }
+    }
+}
+.arrow-hover {
+    padding-left: 1.5rem;
+}
+.arrow-hover:after {
+    opacity: 0;
+    transform: translateX(-0.5rem) rotate(45deg);
+}
+.arrow-hover:hover:after {
+    opacity: 1;
+}
+
+/*! -------------------------------------------------------------------- */
+/*! Foundation Overrides                                                 */
+//*! -------------------------------------------------------------------- */
+//.submenu-toggle::after {
+//  border: none;
+//  border-bottom: 2px solid currentColor;
+//  border-left: 2px solid currentColor;
+//  color: $dropdownmenu-arrow-color;
+//  content: '';
+//  height: 10px;
+//  width: 10px;
+//  transform: translateY(-25%) rotate(-45deg);
+//  transition: transform 0.2s ease;
+//  }
+//
+//.submenu-toggle[aria-expanded='true']::after {
+//  transform: translateY(25%) rotate(-225deg);
+//  }
+
+//flourish - fancy things - svg borders - blockquotes etc
+.svgDivider {
+    height: 5vw;
+    width: 100%;
+    position: relative;
+}
+
+.hasSvg--top {
+    .grid-container {
+        padding-top: calc(2rem + 5vw);
+    }
+    .svgDivider {
+        margin-bottom: -5vw;
+        z-index: 1;
+        //top: 1px;
+    }
+}
+.hasSvg--bottom {
+    padding-bottom: 0;
+
+    .grid-container {
+        padding-bottom: calc(2rem + 5vw);
+    }
+
+    .svgDivider {
+        margin-top: -5vw;
+        z-index: 1;
+    }
+}

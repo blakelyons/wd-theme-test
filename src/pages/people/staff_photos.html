@@ -1,0 +1,39 @@
+---
+page-title: People Directory
+page-eyebrow:  Photo Grid Style
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <div class="grid-container">
+                <div class="grid-x staff-boxes photoBoxes grid-margin-x large-up-3">
+                    {{#each people.staff}}
+                        <div class="cell photoBox photoBox--staff">
+                            <div class="photoBoxBg photoBg" style="background-image: url('https://picsum.photos/600/600');"></div>
+
+                            <div class="photoBox-drawer vertical">
+                                <div href="components.html" class="photoBox-content">
+                                    <h3 class="lister-title">{{first_name}} {{last_name}}</h3>
+                                    <p class="text-center eyebrow">{{position}}</p>
+                                    <div class="photoBox-drawerCopy text-center">
+                                        <p class="position">{{phone}}</p>
+                                        <p class="email"><a href="mailto:ceo@yourwebsite.org">Email {{fname}}</a></p>
+                                        <span class="button clear secondary photoBox-action">Learn More</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    {{/each}}
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

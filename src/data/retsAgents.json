@@ -1,0 +1,183 @@
+{ "agentType": [
+  "Affiliate",
+  "Realtor"
+],
+  "rets_agent": [{
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 1,
+    "first_name": "Javier",
+    "last_name": "Geraudel",
+    "title": "Lorem Ipsum Dolor",
+    "email": "jgeraudel0@yellowpages.com",
+    "phone": "361-516-6556",
+    "office_long_name": "Coldwell Banker Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 2,
+    "first_name": "Gregg",
+    "last_name": "Kolodziej",
+    "title": "Lorem Ipsum Dolor",
+    "email": "gkolodziej1@indiatimes.com",
+    "phone": "576-258-1528",
+    "office_long_name": "RE/MAX Alliance Group",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 3,
+    "first_name": "Kristy",
+    "last_name": "Clethro",
+    "title": "Lorem Ipsum Dolor",
+    "email": "kclethro2@kickstarter.com",
+    "phone": "370-861-2120",
+    "office_long_name": "Keller Williams Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 4,
+    "first_name": "Doralynne",
+    "last_name": "Bowser",
+    "title": "Lorem Ipsum Dolor",
+    "email": "dbowser3@google.com.br",
+    "phone": "689-373-0098",
+    "office_long_name": "Signature Sotheby's",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 5,
+    "first_name": "Dudley",
+    "last_name": "Diggons",
+    "title": "Lorem Ipsum Dolor",
+    "email": "ddiggons4@cdc.gov",
+    "phone": "340-582-1237",
+    "office_long_name": "Berkshire Hathaway",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 6,
+    "first_name": "Brandise",
+    "last_name": "Tetlow",
+    "title": "Lorem Ipsum Dolor",
+    "email": "btetlow5@hatena.ne.jp",
+    "phone": "859-640-8067",
+    "office_long_name": "Michael Saunders",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 7,
+    "first_name": "Carlynne",
+    "last_name": "Sprowell",
+    "title": "Lorem Ipsum Dolor",
+    "email": "csprowell6@wikimedia.org",
+    "phone": "464-566-2942",
+    "office_long_name": "Coldwell Banker Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 8,
+    "first_name": "Irene",
+    "last_name": "Baudasso",
+    "title": "Lorem Ipsum Dolor",
+    "email": "ibaudasso7@edublogs.org",
+    "phone": "160-934-1315",
+    "office_long_name": "Michael Saunders",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 9,
+    "first_name": "Kale",
+    "last_name": "Lounds",
+    "title": "Lorem Ipsum Dolor",
+    "email": "klounds8@usgs.gov",
+    "phone": "886-504-6016",
+    "office_long_name": "RE/MAX Alliance Group",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 10,
+    "first_name": "Alvina",
+    "last_name": "Morecombe",
+    "title": "Lorem Ipsum Dolor",
+    "email": "amorecombe9@yale.edu",
+    "phone": "407-488-2704",
+    "office_long_name": "Signature Sotheby's",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 11,
+    "first_name": "Base",
+    "last_name": "Ison",
+    "title": "Lorem Ipsum Dolor",
+    "email": "bisona@bloglines.com",
+    "phone": "258-492-7804",
+    "office_long_name": "Berkshire Hathaway",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 12,
+    "first_name": "Cherin",
+    "last_name": "Conville",
+    "title": "Lorem Ipsum Dolor",
+    "email": "cconvilleb@wix.com",
+    "phone": "392-696-3191",
+    "office_long_name": "Coldwell Banker Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 13,
+    "first_name": "Beaufort",
+    "last_name": "Rmatrix_unique_idgers",
+    "title": "Lorem Ipsum Dolor",
+    "email": "brmatrix_unique_idgersc@moonfruit.com",
+    "phone": "858-727-8806",
+    "office_long_name": "Keller Williams Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 14,
+    "first_name": "Gabrila",
+    "last_name": "Derham",
+    "title": "Lorem Ipsum Dolor",
+    "email": "gderhamd@bing.com",
+    "phone": "409-372-6909",
+    "office_long_name": "Keller Williams Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }, {
+    "detail_url": "agent_detail.html",
+    "matrix_unique_id": 15,
+    "first_name": "Nicolais",
+    "last_name": "Wanka",
+    "title": "Lorem Ipsum Dolor",
+    "email": "nwankae@wikispaces.com",
+    "phone": "749-256-7607",
+    "office_long_name": "Michael Sasunders & Co.",
+    "agent_photo": "https://picsum.photos/410"
+  }],
+  "agent_tags": {
+    "matrix_unique_id": 1,
+    "mls_id": "[[misc0]]",
+    "photos": "[[misc1]]",
+    "photo_count": "[[PhotoCount]]",
+    "first_name": "[[misc4]]",
+    "last_name": "[[misc3]]",
+    "full_name": "[[misc4]] [[misc3]]",
+    "title": "[[Title]]",
+    "email": "[[Email]]",
+    "phone": "[[DirectWorkPhone]]",
+    "office_long_name": "[[linked_OfficeLongName]]",
+    "office_mui": "[[misc5]]",
+    "office_area_code": "[[Office_Area_Code]]",
+    "office_phone": "[[linked_Phone]]",
+    "designations": ""
+  },
+  "agent_detail_sample_data": {
+    "matrix_unique_id": 1,
+    "first_name": "Javier",
+    "last_name": "Geraudel",
+    "title": "Lorem Ipsum Dolor",
+    "email": "jgeraudel0@yellowpages.com",
+    "phone": "361-516-6556",
+    "office_long_name": "Coldwell Banker Realty",
+    "agent_photo": "https://picsum.photos/410"
+  }
+}

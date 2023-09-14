@@ -1,0 +1,270 @@
+$section-heading-active-bg-color: $light-gray !default;
+$section-heading-active-text-color: $black !default;
+$section-heading-disabled-bg-color: $medium-gray !default;
+$section-heading-disabled-text-color: $light-gray !default;
+// Loading Overlay Boxes
+$loading-box-size: 50px;
+$loading-box-size-half: $loading-box-size * 0.5;
+$loading-box-size-double: $loading-box-size * 2;
+$loading-box-one-color: #d7106d;
+$loading-box-two-color: #ff5859;
+$loading-box-three-color: #2378d8;
+$loading-box-four-color: #00b44e;
+$loading-text-color: #000000;
+$loading-text-font-family: ubuntu,sans-serif;
+$loading-box-overlay-color: rgba(255, 255, 255, 0.9);
+
+#estimate_amount_table .amount {
+  text-align: right;
+}
+input[type="text"] {
+  transition: all 0.2s ease-in-out;
+}
+#total_amount {
+  font-weight: bold;
+}
+.repeatSectionWrap {
+  padding: 1em;
+  border: 1px solid #cacaca;
+  margin-bottom: 1rem;
+}
+.formContent,
+.formSectionContent {
+  width: 100%;
+}
+.formSectionContent {
+  display: none;
+}
+.formSectionContent.active {
+  display: flex;
+}
+.formSectionHeading {
+  background: $section-heading-disabled-bg-color;
+  color: $section-heading-disabled-text-color;
+  padding-left: 0.5rem;
+}
+.formSectionHeading.active {
+  background: $section-heading-active-bg-color;
+  color: $section-heading-active-text-color;
+}
+input.invalid,
+select.invalid {
+  border-color: red;
+}
+.validationErrors {
+  color: red;
+}
+.takenMembershipTour-js,
+.takenMembershipTourDate-js {
+  transition: all 0.2s cubic-bezier(0.36, 0.53, 0.33, 1.01);
+  -webkit-transition: all 0.2s cubic-bezier(0.36, 0.53, 0.33, 1.01);
+  -moz-transition: all 0.2s cubic-bezier(0.36, 0.53, 0.33, 1.01);
+}
+
+//custom mixins
+#progressBar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
+}
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  animation: $animation;
+}
+@mixin keyframes($name, $name1) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//custom mixins
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
+}
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  animation: $animation;
+}
+@mixin keyframes($name, $name1) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//cube only
+.cube-folding {
+  width: $loading-box-size;
+  height: $loading-box-size;
+  display: inline-block;
+  @include transform(rotate(45deg));
+  font-size: 0;
+  span {
+    position: relative;
+    width: $loading-box-size-half;
+    height: $loading-box-size-half;
+    @include transform(scale(1.1));
+    display: inline-block;
+    &::before {
+      content: "";
+      background-color: $loading-box-one-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: $loading-box-size-half;
+      height: $loading-box-size-half;
+      -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      @include animation(folding 2.5s infinite linear both);
+    }
+  }
+  .cube2 {
+    @include transform(rotateZ(90deg) scale(1.1));
+    &::before {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+      background-color: $loading-box-two-color;
+    }
+  }
+  .cube3 {
+    @include transform(rotateZ(270deg) scale(1.1));
+    &::before {
+      -webkit-animation-delay: 0.9s;
+      animation-delay: 0.9s;
+      background-color: $loading-box-three-color;
+    }
+  }
+  .cube4 {
+    @include transform(rotateZ(180deg) scale(1.1));
+    &::before {
+      -webkit-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      background-color: $loading-box-four-color;
+    }
+  }
+}
+
+//animation
+@include keyframes(folding, folding animation) {
+  0%,
+  10% {
+    @include transform(perspective(140px) rotateX(-180deg));
+    @include opacity(0);
+  }
+  25%,
+  75% {
+    @include transform(perspective(140px) rotateX(0deg));
+    @include opacity(1);
+  }
+  90%,
+  100% {
+    @include transform(perspective(140px) rotateY(180deg));
+    @include opacity(0);
+  }
+}
+
+//with loading text and shadow
+.cube-wrapper {
+  position: relative;
+  //width: $loading-box-size * 3;
+  height: $loading-box-size-double;
+  text-align: center;
+  transform: translateY(-150px);
+  //shadow
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    width: $loading-box-size * 1.8;
+    height: 6px;
+    z-index: 1;
+    background-color: rgba(black, 0.1);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    @include border-radius(100%);
+    @include animation(shadow 0.5s ease infinite alternate);
+  }
+  .loadingProgress {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    display: block;
+    color: $loading-text-color;
+    font-family: $loading-text-font-family;
+    position: relative;
+    top: $loading-box-size-half;
+    z-index: 2;
+    @include animation(text 0.5s ease infinite alternate);
+  }
+}
+@include keyframes(text, text animation) {
+  100% {
+    top: ($loading-box-size-half) + 10;
+  }
+}
+@include keyframes(shadow, shadow animation) {
+  100% {
+    bottom: -18px;
+    width: $loading-box-size-double;
+  }
+}

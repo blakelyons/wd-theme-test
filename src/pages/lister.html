@@ -1,0 +1,267 @@
+---
+page-title: Miscellaneous Lister Styles
+---
+
+<main id="contentControl" class="modulePage content">
+
+    <div class="grid-container grid-x ">
+        <div class="content-body">
+            <div class="tagCloud" data-sidebar-item>
+                <!-- get moved to sidebar via js -->
+                <h3>Tags</h3>
+                <div class="tagCloudBox tags"><a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Cool%20Article">Cool Article</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Cool%20Blog%20Post">Cool Blog Post</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Featured">Featured</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Ideas">Ideas</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Sample%20Post">Sample Post</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Tagging">Tagging</a>
+                    <a href="index.php?src=blog&amp;srctype=lister&amp;mrkrs=Testing">Testing</a>
+                </div>
+            </div>
+            <div class="newsModule moduleLister">
+                <div class="moduleHeader grid-x align-middle align-justify">
+                    <h2>All News</h2>
+                    <div class="right">
+                        <form id="newsForm" action="index.php" method="get">
+                            <div style="display:none">
+                                <input type="hidden" name="src" value="news">
+                                <input type="hidden" name="srctype" value="lister">
+                            </div>
+                            <div id="newsCategoryFilter" class="freedomCategoryFilter">
+                                <span class="freedomFilterLabel">Filter:</span>
+                                <select name="category" id="category" onchange="document.getElementById('newsForm').submit()" size="1">
+                                    <option value="" selected="">(Show All Categories)</option>
+                                    <option value="Sample">Sample</option>
+                                    <option value="">Updates</option>
+                                    <option value="">Association News</option>
+                                    <option value="">Market News</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="lister">
+                    <article class="lister-item news">
+                        <div class="lister-image">
+                            <img class="thumbnail" src="https://picsum.photos/400/400" alt="">
+                        </div>
+                        <div class="lister-content">
+                            <div class="lister-category category">Association News</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Sample News Article #1 : Image and
+                                                               Blurb Lister Item</a>
+                            </h3>
+                            <p class="lister-author author">By <a href="mailto:accritest@accrisoft.com">Bobby McTest</a>
+                            </p>
+                            <div class="lister-blurb">
+                                <p></p>
+                                <p>Nam modo autem similique in, per inani adversarium ei, erroribus cotidieque has ne.
+                                   Molestie molestiae quo ei, an qui ridens nemore. Option denique aliquando usu
+                                   in.</p>
+                                <p></p>
+                            </div>
+                            <p>
+                                <a href="detail.html" class="button">Read More</a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item news">
+                        <div class="lister-image">
+                            <img class="thumbnail" src="https://picsum.photos/400/500" alt="">
+                        </div>
+                        <div class="lister-content">
+                            <div class="lister-date date">Friday, March 1, 2019</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Sample News Article #2</a>
+                            </h3>
+                            <p class="lister-author author">By <a href="mailto:accritest@accrisoft.com">Bobby McTest</a>
+                            </p>
+                            <div class="lister-blurb">
+                                <p></p>
+                                <p>Nam modo autem similique in, per inani adversarium ei, erroribus cotidieque has ne.
+                                   Molestie molestiae quo ei, an qui ridens nemore. Option denique aliquando usu
+                                   in.</p>
+                                <p></p>
+                            </div>
+                            <p>
+                                <a href="detail.html" class="button">Read More</a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item news">
+                        <div class="lister-content">
+                            <div class="lister-date date">Friday, March 1, 2019</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Sample News Article #3 : Simple
+                                                               News Item</a>
+                            </h3>
+                            <p class="lister-author author">By <a href="mailto:accritest@accrisoft.com">Bobby McTest</a>
+                            </p>
+                            <p>
+                                <a href="detail.html" class="moreLink">Read More</a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item events">
+                        <div class="lister-content">
+                            <div class="lister-date date">Friday, March 1, 2019</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Sample Event #1</a>
+                            </h3>
+                            <p class="lister-time time"> 10:30 AM EST</p>
+                        </div>
+                        <div class="lister-action">
+                            <p>
+                                <a href="event_detail.html" class="arrowLink">Arrow Link </a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item lister-item--boxed">
+                        <div class="lister-image">
+                            <img class="thumbnail" src="https://picsum.photos/500/400" alt="">
+                        </div>
+                        <div class="lister-content">
+                            <div class="lister-date date">Friday, March 1, 2019</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Boxed Lister Item</a>
+                            </h3>
+                            <p class="lister-author author">By <a href="mailto:accritest@accrisoft.com">Bobby McTest</a>
+                            </p>
+                            <div class="lister-blurb">
+                                <p></p>
+                                <p>Nam modo autem similique in, per inani adversarium ei, erroribus cotidieque has ne.
+                                   Molestie molestiae quo ei, an qui ridens nemore. Option denique aliquando usu
+                                   in.</p>
+                                <p></p>
+                            </div>
+                            <p>
+                                <a href="detail.html" class="button">Read More</a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item lister-item--boxed">
+                        <div class="lister-content">
+                            <div class="lister-date date">Friday, March 1, 2019</div>
+                            <h3 class="lister-title ">
+                                <a class="" href="detail.html">Boxed Lister Item #2</a>
+                            </h3>
+                            <p class="lister-author author">By <a href="mailto:accritest@accrisoft.com">Bobby McTest</a>
+                            </p>
+                            <div class="lister-blurb">
+                                <p></p>
+                                <p>Nam modo autem similique in, per inani adversarium ei, erroribus cotidieque has ne.
+                                   Molestie molestiae quo ei, an qui ridens nemore. Option denique aliquando usu
+                                   in.</p>
+                                <p></p>
+                            </div>
+
+                        </div>
+                        <div class="lister-action"><a href="event_detail.html" class="button">Read More</a></div>
+
+                    </article>
+                    <article class="lister-item events">
+                        <div class="lister-dateIcon">
+                            <span class="month">Sept</span>
+                            <span class="day">15</span>
+                        </div>
+                        <div class="lister-content">
+                            <p class="lister-category category">
+                                <a href="mailto:accritest@accrisoft.com">Classes</a>
+                            </p>
+                            <h3 class="lister-title ">
+                                <a class="" href="index.php?src=events">Sample Event Title</a>
+                            </h3>
+                            <div class="lister-date date">Friday, March 1, 2019 / 4:00 - 5:00pm</div>
+                            <div class="lister-blurb">
+                                <p></p>
+                                <p>Nam modo autem similique in, per inani adversarium ei, erroribus cotidieque has ne.
+                                   Molestie molestiae quo ei, an qui ridens nemore. Option denique aliquando usu
+                                   in.</p>
+                                <p></p>
+                            </div>
+                            <p>
+                                <a href="detail.html" class="button">Read More</a>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="lister-item event lister-cornerBadge">
+                        <!--<div class="lister-image"><img class="thumbnail" src="images/stock/stock5_med.jpg" alt="" /></div>-->
+                        <div class="lister-dateIcon"><span class="month">Apr</span><span class="day">23</span></div>
+                        <div class="lister-content">
+                            <h3 class="lister-title "><a class="" href="index.php?src=events&amp;submenu=events&amp;srctype=detail&amp;category=Sample&amp;refno=5&amp;submenu=events">Sample Event 5</a></h3>
+                            <div class="lister-date dateTime"><em>April 23, 2021 11:00 am - 1:00 pm</em></div>    </div>
+                        <div class="lister-action"><a href="index.php?src=events&amp;submenu=events&amp;srctype=detail&amp;category=Sample&amp;refno=5" class="button">Read More</a></div>
+                    </article>
+                    <article class="lister-item event lister-cornerBadge">
+                        <!--<div class="lister-image"><img class="thumbnail" src="images/stock/stock5_med.jpg" alt="" /></div>-->
+                        <div class="lister-dateIcon"><span class="month">Apr</span><span class="day">23</span></div>
+                        <div class="lister-content">
+                            <h3 class="lister-title "><a class="" href="index.php?src=events&amp;submenu=events&amp;srctype=detail&amp;category=Sample&amp;refno=5&amp;submenu=events">Sample Event 5</a></h3>
+                            <div class="lister-date dateTime"><em>April 23, 2021 11:00 am - 1:00 pm</em></div>    </div>
+                        <div class="lister-action"><a href="event_detail.html" class="arrowLink">Read More</a></div>
+                    </article>
+                </div>
+                <div class="pagination">
+                    <div style="position:relative;white-space:nowrap;padding-top:20px" class="paginationLinks">
+                        <div style="position:absolute;left:0px" class="pageLinkPrevChunk"></div>
+                        <div style="position:absolute;right:0px" class="pageLinkNextChunk">
+                            <a class="prevnextWindowArrow" href="">11  &gt&gt</a>
+                        </div>
+                        <div style="width:100%;text-align:center;white-space:nowrap" class="paginationBlankSpace">
+                            <div style="display:inline;display:inline-block" class="pageLinkPrev">
+                                <a class="prevnextLink" href="">&lt&lt Previous</a>
+                            </div>
+                            <div style="display:inline;display:inline-block;padding:0px 10px" class="pageLinks">
+                                <a href="" class="prevnextWindow pageLink">1</a><a href="" class="prevnextWindow pageLink">2</a>
+                                <a href="pos=60,30,316" class="prevnextWindow pageLink">3</a><a href="pos=90,30,316" class="prevnextWindow pageLink">4</a><a href="pos=120,30,316" class="prevnextWindow pageLink">5</a><a href="pos=150,30,316" class="prevnextWindow pageLink">6</a><a href="pos=180,30,316" class="prevnextWindow pageLink">7</a><a href="pos=210,30,316" class="prevnextWindow pageLink">8</a><a href="pos=240,30,316" class="prevnextWindow pageLink">9</a><span class="prevnextCurrent pageLink pageLinkCurrent">10</span>
+                            </div>
+                            <div style="display:inline;display:inline-block" class="pageLinkNext">
+                                <a class="prevnextLink" href="">Next &gt&gt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center;width:100%;padding-top:10px" class="paginationText">Items 271-300 of 316</div>
+                </div>
+                <!--pagination-->
+            </div>
+        </div>
+        <div class="content-sidebar">
+            <div id="sideBanners">
+                <div class="sidebarItem">
+                    <span id="bnrinst_2_2">
+                        <a class="fba_links" rel="nofollow" href="index.php?src=fba&amp;srctype=click&amp;id=2" onclick="window.open(this.href); return false;"><img src="https://via.placeholder.com/275x150" width="275" height="150" style="border:0" alt=""></a>
+                    </span>
+                </div>
+                <div class="sidebarItem">
+                    <span id="bnrinst_3_3">
+                        <a class="fba_links" rel="nofollow" href="index.php?src=fba&amp;srctype=click&amp;id=3" onclick="window.open(this.href); return false;"><img src="https://via.placeholder.com/275x150" width="275" height="150" style="border:0" alt=""></a>
+                    </span>
+                </div>
+            </div>
+            <div class="blogModule moduleLister archive sidebarItem" data-sidebar-item="">
+                <h3>Archives</h3>
+                <ul class="menu vertical">
+                    <li class="year 1"><a href="index.php?src=blog&amp;year=2020">2020</a>
+                        <ul class="monthContainer menu vertical nested">
+                            <li class="month"><a href="index.php?src=blog&amp;year=2020&amp;month=9">September</a></li>
+                        </ul>
+                    </li>
+                    <li class="year 2"><a href="index.php?src=blog&amp;year=2018">2018</a>
+                        <ul class="monthContainer menu vertical nested">
+                            <li class="month"><a href="index.php?src=blog&amp;year=2018&amp;month=4">April</a></li>
+                            <li class="month"><a href="index.php?src=blog&amp;year=2018&amp;month=3">March</a></li>
+                        </ul>
+                    </li>
+                    <li class="year 3"><a href="index.php?src=blog&amp;year=2017">2017</a>
+                        <ul class="monthContainer menu vertical nested">
+                            <li class="month"><a href="index.php?src=blog&amp;year=2017&amp;month=12">December</a></li>
+                        </ul>
+                    </li><!-- Extra Close  for Item Section -->
+                </ul>
+            </div>
+
+        </div>
+        <script>checkSideMenu()</script>
+    </div>
+</main>
+

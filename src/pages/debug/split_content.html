@@ -1,0 +1,38 @@
+<div class="grid-container pad-top-medium">
+
+    <h2>Advanced Split Content</h2>
+</div>
+{{#each general.theme-palette}}
+<section class="content splitContent-component grid-x pad-y-none">
+    <div class="splitContent-column  splitContent-left theme-{{this}}">
+        <div class="splitContent-columnInner ">
+            <h2 class="h1">Solid Color</h2>
+            <p>{{lorem count="1" units="paragraph"}}</p>
+            <p><a href="#" class="button ">Keep Reading</a></p>
+        </div>
+    </div>
+
+    <div class="splitContent-column splitContent-right theme-{{this}} has-image" style="background-image: url('https://picsum.photos/800/450');">
+        <div class="splitContent-columnInner ">
+            <h2 class="h1">Image with {{this}} overlay</h2>
+
+        </div>
+    </div>
+</section>
+{{/each}}
+<section class="content splitContent-component grid-x pad-y-none">
+    <div class="splitContent-column  splitContent-left ">
+        <div class="splitContent-columnInner ">
+            <h2 class="h1">No Color</h2>
+            <p>{{lorem count="1" units="paragraph"}}</p>
+            <p><a href="#" class="button ">Keep Reading</a></p>
+        </div>
+    </div>
+
+    <div class="splitContent-column splitContent-right has-image" style="background-image: url('https://picsum.photos/600/600');">
+        <div class="splitContent-columnInner ">
+            <h2 class="h1">Image with No overlay</h2>
+
+        </div>
+    </div>
+</section>

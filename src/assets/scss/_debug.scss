@@ -1,0 +1,14 @@
+// Sample Code just to show all the options of jcc colors on quicklinks
+//for the test to work properly set the $quicklink-style variable to null
+$contrast-warnings: false;
+.quicklink {
+  @include quicklink-solid($tel_aviv, '.tel-aviv-solid');
+  @include quicklink-bordered($tel_aviv, '.tel-aviv-bordered');
+
+  @include quicklink-solid($jerusalem, '.jerusalem-solid');
+  @include quicklink-bordered($jerusalem, '.jerusalem-bordered');
+
+  @include quicklink-solid($negev, '.negev-solid');
+  @include quicklink-bordered($negev, '.negev-bordered');
+}
+$contrast-warnings: true;

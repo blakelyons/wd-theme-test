@@ -1,0 +1,66 @@
+////
+/// @group Footer
+////
+
+
+/// Default footer link color
+/// @type Color
+$footer-main-link-color: var(--footer-links-color, var(--clr-primary) ) !default;
+
+/// Default footer link weight
+/// @type Color
+$footer-main-link-weight: 700 !default;
+
+.site-footer {
+  display: block;
+  position: relative;
+  padding: 0;
+  //USE THEME CLASSES
+  //@include colorThemeSection($footer-main-background);
+
+  .footer-brand {
+    font-size: 1.2em;
+  }
+}
+
+.footer-main {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+
+  a:not(.button) {
+    color: $footer-main-link-color;
+    font-weight: $footer-main-link-weight;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .socialMenu a:hover {
+    text-decoration: none;
+
+  }
+}
+
+.footer-logo {
+  display: block;
+  width: 330px;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.footer-copyright {
+  padding: 1rem 0;
+  font-size: 0.875rem;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .accrisoft {
+    color: inherit;
+  }
+}
+

@@ -1,0 +1,55 @@
+---
+page-title: Classes & Events
+page-eyebrow: List View
+hide-global-pageheader: true
+---
+<section class="pageHeader" id="interiorHeaderBanner">
+    <div class="grid-container pageHeader-inner">
+        <div class="pageHeader-content loading">
+            <h1>{{page-title}}</h1>
+        </div>
+        <div class="pageHeader-cta">
+            <a href="/events/event_lister.html" class="button">Lister View</a>
+            <a href="/events/event_glance.html" class="button">Month View</a>
+        </div>
+    </div>
+</section>
+
+<main id="contentControl" class="modulePage content">
+
+    <div class="grid-container grid-x ">
+        <div class="content-body">
+            <div class="moduleHeader">
+                <div class="left">
+                    <form id="eventForm" method="get" action="index.php">
+                        <div style="display:none">
+                            <input type="hidden" name="src" value="events">
+                            <input type="hidden" name="srctype" value="lister">
+                        </div>
+                        <div id="eventCategoryFilter" class="freedomCategoryFilter">
+                            <span class="freedomFilterLabel">Category:</span>
+                            <select name="category" id="category" onchange="document.getElementById('eventForm').submit()" size="1">
+                                <option value="" selected="">(Show All Categories)</option>
+                            </select>
+                        </div>
+                        <div style="display:none">
+                            <input type="hidden" name="submenu" value="Events">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            {{#repeat 12}}
+                <article class="lister-item event lister-cornerBadge">
+                    <!--<div class="lister-image"><img class="thumbnail" src="images/stock/stock5_med.jpg" alt="" /></div>-->
+                    <div class="lister-dateIcon"><span class="month">Apr</span><span class="day">23</span></div>
+                    <div class="lister-content">
+                        <h3 class="lister-title "><a class="" href="event_detail.html">Sample Event Title</a></h3>
+                        <div class="lister-date dateTime"><em>April 23, 2021 11:00 am - 1:00 pm</em></div>    </div>
+                    <div class="lister-action"><a href="event_detail.html" class="moreLink">Read More</a></div>
+                </article>
+            {{/repeat}}
+            </div>
+    </div>
+</main>
+

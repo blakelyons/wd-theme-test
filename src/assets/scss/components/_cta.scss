@@ -1,0 +1,51 @@
+.cta-component {
+  --gradient-start-color: var(--theme-background);
+}
+.cta-component .grid-container {
+  position: relative; }
+
+.cta-component--image {
+  color: #151515;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+.cta-component--image::before, .cta-component--gradient::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: .75;
+  content: "";
+}
+.cta-component--image::before {
+  background: var(--theme-background, transparent);
+}
+
+.cta-component--gradient::before{
+  background: linear-gradient(var(--gradient-direction, to bottom), var(--gradient-start-color, #fff) 0%, var(--gradient-end-color,transparent) 100%);
+}
+//gradient helpers
+.to-top {
+  --gradient-direction: to top;
+}
+.to-right {
+  --gradient-direction: to right;
+}
+.to-bottom {
+  --gradient-direction: to bottom;
+}
+.to-left {
+  --gradient-direction: to left;
+}
+.to-dark {
+  --gradient-end-color: var(--clr-site-dark);
+}
+.to-light {
+  --gradient-end-color: var(--clr-site-light);
+}
+.to-primary {
+  --gradient-end-color: var(--clr-primary);
+}

@@ -1,0 +1,112 @@
+////
+/// @group collapsibles
+/// Tiny MCE Editor Collapsibles
+////
+
+/// Default Collapsible Background.
+/// @type Color
+$collapsible-background: $light-gray !default;
+
+/// Default Collapsible icon indicator Color.
+/// @type Color
+$collapsible-icon-color: var(--collapsible-icon-color);
+
+/// Default Collapsible icon indicator  plus, chevron or arrow.
+/// @type Keyword
+$collapsible-icon: plus !default;
+
+/// Default Collapsible font family
+/// @type Font
+$collapsible-font-family: inherit !default;
+
+/// Default Collapsible header color
+/// @type Color
+$collapsible-color: $header-color !default;
+
+/// Default Collapsible font size
+/// @type Color
+$collapsible-font-size: 1.125rem !default;
+
+/*! Expandies / Collapsible Content */
+.collapsibleHeader {
+  text-transform: none;
+
+  font-size: $collapsible-font-size;
+  position: relative;
+  padding: .4rem .4rem .4rem 2.75rem;
+  cursor: pointer;
+  border-bottom:1px solid #E2E4EA;
+  background: $collapsible-background;
+  font-family: $collapsible-font-family;
+  color: $collapsible-color;
+
+}
+
+.collapsibleHeader::before {
+  position: absolute;
+  color: $collapsible-icon-color;
+  line-height: 1em;
+  text-align:center;
+  transition: transform .2s ease;
+
+  left: .5rem;
+
+  @if $collapsible-icon == plus {
+    content: '\002B';
+    border-radius: 50%;
+    padding-left: 1px;
+    width: 1em;
+    height: 1.5em;
+    top: 3px;
+    font-size: 1.5em;
+  }
+  @else if $collapsible-icon == chevron {
+    border-bottom: 2px solid currentColor;
+    border-left: 2px solid currentColor;
+    content: '';
+    display: inline-block;
+    transform: translateY(-50%) rotate(-45deg);
+    margin-top: -4px;
+    margin-left: 8px;
+    width: .5em;
+    height: .5em;
+    top: 50%;
+
+  }
+  @else if $collapsible-icon == arrow {
+    @include css-triangle(8px,$collapsible-icon-color, down);
+    top: 50%;
+    transform: translateY(-50%);
+    left: .8rem;
+
+
+  }
+
+}
+
+.collapsibleHeader.active {
+  border-bottom-color:transparent;
+}
+.collapsibleHeader.active::before  {
+  @if $collapsible-icon == plus {
+    content:'\2212';
+    padding-left: 3px;
+    padding-bottom: 2px;
+  }
+  @else if $collapsible-icon == chevron {
+    content: '';
+    transform: translateY(0%) rotate(-225deg);
+  }
+  @else if $collapsible-icon == arrow {
+    content: '';
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+.collapsibleContent {
+  border-bottom: 1px solid #E2E4EA;
+  overflow: hidden;
+  display: none;
+}
+.no-js .collapsibleContent{
+  display:block;
+}

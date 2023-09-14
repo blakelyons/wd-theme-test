@@ -1,0 +1,197 @@
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Header
+//   3. Footer
+//   4. Social Media
+//   5. Mobile Nav
+//   6. Content Framework
+//   7. Sidemenu
+//   8. Collapsibles / Expandies
+//   9. Slideshow
+//  10. Page Header
+//  11. responsive_carousels
+//  12. partners
+//  13. Quicklinks
+//  14. Info Cards
+//  15. Testimonials
+//  16. Photoboxes
+//  17. Statistics
+//  18. CTA - Spanning Stripe
+//  19. multi_column
+//  20. Split Content
+//  21. General Modules
+//  22. Pagination
+//  23. Forms
+//  24. Membership
+//  25. Events
+//  26. Photos
+//  27. Commerce
+//  28. Staff
+//  29. Group Exercise
+
+// 1. Globals
+$component-padding: (
+        "none": 0,
+        "small": 1rem,
+        "medium": 3rem,
+        "large": 5rem
+);
+
+// 2. Header - main menu
+// ---------
+//Header
+$header-icon-color: var(--clr-primary);
+$header-main-navigation-color: $black;
+$header-include-mega-menu: true;
+
+// 3. Footer
+$footer-main-link-weight: 700;
+
+// 4. Social Media
+$social-background-color: null;
+$social-border-radius: 50%;
+$social-padding: .7rem 1rem;
+$social-width:  1.6em;
+$social-height:  1.6em;
+$social-font-size: 1.5rem;
+
+// 5. Mobile Menu
+
+$mobilemenu-trigger-background: transparent;
+
+$mobilemenu-navigation-color: $black;
+
+$mobilemenu-background: white;
+
+$mobilemenu-trigger-breakpoint: 64em;
+$mobilemenu-top-anchor-transform: null;
+
+$mobilemenu-level-three: $dark-gray;
+$mobilemenu-top: null;
+$mobilemenu-inner-top: null;
+
+$mobilemenu-toplevel-padding: 1rem;
+$mobilemenu-toplevel-border: 1px solid smart-scale($mobilemenu-background );
+$mobilemenu-font-weight: $global-weight-bold;
+$mobilemenu-font-size: 1rem;
+$mobilemenu-toplevel-font-weight: $global-weight-bold;
+
+//   6. Content Framework
+$sidebar-padding-top: 1rem;
+$sidebar-boxed-background: var(--clr-site-medium);
+
+//   7. Sidemenu
+$sidemenu-color: $black;
+$sidemenu-color-active: $dark-gray;
+$sidemenu-font-family: null;
+
+//   8. Collapsibles / Expandies
+$collapsible-background: $light-gray;
+$collapsible-icon: plus;
+$collapsible-font-family: inherit;
+$collapsible-color: $black;
+$collapsible-font-size: 1.125rem;
+
+//   9. Slideshow
+$slideshow-height-map: (
+        "small": 500px,
+        "large": 575px,
+        "xxlarge": 700px
+);
+
+$slideshow-background: get-color(dark);
+$slideshow-slide-overlay-bg: linear-gradient(to bottom, $slideshow-background 0%, transparent 100%);
+$slideshow-slide-overlay-height: 530px;
+
+$slide-content-color: #FFF;
+$slide-content-color-dark: $black;
+
+$slideshow-slide-title-family: null;
+
+//  10. Page Header
+
+$pageheader-image-overlay-type-full-cover: true;
+$pageheader-image-overlay-opacity: .6;
+$pageheader-overlay-direction: to right;
+/// If `true`, images have overlay by default and an .noOverlay class is created. If `false`, a .hasOverlay class is created.
+$pageheader-has-overlay: false;
+
+//todo should page header use the generic theme classes
+$pageheader-color-image: $white;
+
+$pageheader-height: 250px;
+$pageheader-image-height: 320px;
+
+//  11. responsive_carousels
+$flickity-button-background: null;
+$flickity-button-color: null;
+$carousel-margin-bottom: 2rem;
+
+//  12. Partners slider
+$partners-height: 175px;
+$partners-width: 175px;
+
+//  14. Info Cards
+//no scss variables
+
+//  15. Testimonials
+//no scss variables
+
+//  16. Photoboxes
+//no scss variables
+
+//  17. Statistics
+$quickstat-padding: null;
+
+//  18. CTA - Spanning Stripe
+//  19. multi_column
+//  20. Split Content
+$column-media-shadow: null;
+
+//  21. General Modules
+$lister-item-border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+$lister-dateicon-background: $black;
+$lister-dateicon-radius: 50%;
+$lister-dateicon-size: 60px;
+$lister-dateicon-day-font-size: 1.5rem;
+$lister-item-striped-odd: $light-gray;
+
+
+//  22. Pagination
+//Also set the foundation pagination settings found in _settings.scss
+$pagination-item-background: $light-gray;
+$pagination-item-border: 1px solid $light-gray;
+$pagination-item-border-hover: 1px solid $pagination-item-background-current;
+$pagination-item-color-hover: $black;
+$pagination-font-weight: normal;
+$pagination-next-background: $pagination-item-background;
+$pagination-next-color: $pagination-item-color;
+$pagination-prev-background: $pagination-item-background;
+$pagination-prev-color: $pagination-item-color;
+
+//  23. Forms
+$freedom-fieldset-border: 2px solid $light-gray;
+$freedom-check-radio-border: 2px solid $light-gray;
+
+//  24. Membership / Login / MyAccount
+$login-box-top: -180px;
+
+//  25. Events
+$calendar-week-background: $light-gray;
+$calendar-small-width: 450px;
+$calendar-small-width: 450px;
+
+//  26. Photos
+//TODO
+
+//  27. Commerce
+//no scss variables
+//  28. Staff
+$staff-alternating-background : $light-gray;
+//todo other styles
+
+//  29. Group Exercise

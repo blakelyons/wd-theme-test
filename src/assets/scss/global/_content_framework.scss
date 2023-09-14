@@ -1,0 +1,51 @@
+////
+/// @group global
+////
+
+/// Default sidebar padding top - todo revisit
+/// @type Color
+$sidebar-padding-top: 1rem !default;
+
+/// Default sidebar boxed background
+/// @type Color
+$sidebar-boxed-background: var(--clr-site-medium)!default;
+
+.modulePage {
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+.componentPage {
+
+}
+#interiorHeaderSource, #interiorHeaderOverride {
+  display: none;
+}
+.content-body {
+  flex: 1 1 20px;
+  width: auto;
+}
+.content-sidebar {
+  flex: 1 1 auto;
+  width: 100%;
+  padding-top: $sidebar-padding-top;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-sidebar {
+    width: 290px;
+    margin-right: 36px;
+    flex: 0 0 auto;
+    order: -1;
+    display:none;
+  }
+  .content-sidebar.is-visible {
+    display: block;
+  }
+}
+.sidebarItem {
+  margin-bottom: 2rem;
+}
+.sidebarItem--boxed {
+  padding: 2rem;
+  background: $sidebar-boxed-background;
+  }

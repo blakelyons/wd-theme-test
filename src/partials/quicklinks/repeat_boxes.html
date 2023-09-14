@@ -1,0 +1,125 @@
+<section class="info-boxes-component pad-y-medium">
+    <div class="grid-container">
+        <header class="info-boxes-header">
+            <h2>Standard Icon Set</h2>
+            <p class="info-box-header-description">
+                Explore the different options you have have with repeatables.
+                This is the Standard Icon Set that is left alligned and has varied colors for icons and is 3 columns across
+            </p>
+        </header>
+        <div class="boxes boxes-three-up text-center">
+            <div class="box">
+                <div class="box-image">
+                    <a href="components.html" class="no-icon">
+                        <div class="box-icon-image" style="background-image: url('https://picsum.photos/800/600')">
+                            <div class="box-icon">
+                                <i class="af-icon icon-football"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="box-content">
+                    <h3 class="box-title">
+                        <a href="interior.html" >Here is a Sample Title</a>
+                    </h3>
+                    <div class="box-description">
+                        <p>My Fancy Blurb</p>
+                    </div>
+                    <div class="box-action">
+                        <a class="moreLink" href="interior.html">
+                            Link Text Here
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-image">
+                    <div class="box-icon-image" style="background-image: url('https://picsum.photos/600/600')">
+                        <div class="box-icon">
+                            <i class="af-icon icon-football"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <h3 class="box-title">
+                        <a href="interior.html" >Here is a Sample Title</a>
+                    </h3>
+                    <div class="box-description">
+                        <p>My Fancy Blurb</p>
+                    </div>
+                    <div class="box-action">
+                        <a class="moreLink" href="interior.html">
+                            Link Text Here
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{#each modules.repeatables}}
+            <div class="box">
+                <div class="box-image fixed-size-rect">
+                    <a href="{{link}}" >
+                        {{#if image}}
+                        <img width="400" height="300" src="{{image}}" />
+                        {{else}}
+                        <div class="box-image-placeholder" >&nbsp;</div>
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="box-content">
+                    <h3 class="box-title">
+                        <a href="{{link}}" >{{title}}</a>
+                    </h3>
+                    <div class="box-description">
+                        <p>{{blurb}}</p>
+                    </div>
+                    <div class="box-action">
+                        <a class="moreLink" href="{{link}}">
+                            {{#if link_text}}
+                            {{link_text}}
+                            {{else}}
+                            Link Text Here
+                            {{/if}}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            {{/each}}
+
+
+        </div>
+
+        <div class="boxes boxes-three-up pad-y-medium">
+            {{#each modules.boxes_3}}
+            <div class="box">
+                <div class="box-content">
+                    <a href="interior.html" ><div class="box-icon">
+                        <i class="af-icon icon-{{icon}}"></i>
+                    </div></a>
+                    <h3 class="box-title">
+                        <a href="{{link}}" >{{title}}</a>
+                    </h3>
+                    <div class="box-description">
+                        <p>{{blurb}}</p>
+                    </div>
+                    <div class="box-action">
+                        <a class="moreLink" href="{{link}}">
+                            {{#if link_text}}
+                            {{link_text}}
+                            {{else}}
+                            Link Text Here
+                            {{/if}}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            {{/each}}
+        </div>
+        <div class="boxes boxes-four-up pad-y-medium">
+            {{#each modules.boxes_4}}
+            {{> box_icon_image_single this }}
+            {{/each}}
+        </div>
+    </div>
+</section>

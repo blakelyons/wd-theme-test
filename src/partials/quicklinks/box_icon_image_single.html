@@ -1,0 +1,30 @@
+<!-- icon image style only WIP -->
+<div class="box">
+    <div class="box-image ">
+        <a href="{{link}}">
+            <div class="box-icon-image">
+                <div class="box-icon">
+                    <i class="af-icon icon-{{icon}}"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="box-content">
+
+        <h3 class="box-title">
+            <a href="{{link}}" >{{title}}</a>
+        </h3>
+        <div class="box-description">
+            <p>{{blurb}}</p>
+        </div>
+        <div class="box-action">
+            <a class="{{#ifequal link_style 'link'}}moreLink{{/ifequal}}{{#ifequal link_style 'button'}}button{{/ifequal}}" href="{{link}}">
+                {{#if link_text}}
+                {{link_text}}
+                {{else}}
+                Link Text Here
+                {{/if}}
+            </a>
+        </div>
+    </div>
+</div>

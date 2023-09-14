@@ -1,0 +1,28 @@
+---
+page-title: Programs Home
+categories:
+    - Adult Enrichment
+    - Adult Fitness
+    - Adult Tennis
+    - Aquatics
+    - ECD Enrichment
+    - Youth Enrichment
+    - Youth Sports
+    - Youth Tennis
+---
+
+<section class="quicklinks-component">
+    <div class="grid-container">
+        <h2> Browse Programs By Category</h2>
+    </div>
+    <div class="grid-container full quicklinks-inner">
+
+        <div class="grid-x quicklinks bordered medium-2 large-up-4">
+
+            {{#each categories}}
+                {{> quicklink_single title=this icon='icon icon-sport' link='program_category.html' }}
+            {{/each}}
+
+        </div>
+    </div>
+</section>

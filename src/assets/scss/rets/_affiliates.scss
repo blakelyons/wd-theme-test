@@ -1,0 +1,30 @@
+#lastNameSearch span {
+  font-size: 18px;
+  margin: 0 .5rem;
+  font-weight: 700;
+}
+
+.business-lister {
+  .lister-item {display:flex; flex-flow:row wrap; align-items: center; position:relative; clear:both; margin: 1em 0 .5em; padding-bottom:1em; padding-top: 1rem}
+  .lister-item .contactInfo{
+    margin-bottom: 0 !important;
+  }
+  .lister-item .lister-logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 15%;
+  }
+
+
+  .lister-action {
+    a {
+      margin-bottom: 0;
+    }
+  }
+
+}

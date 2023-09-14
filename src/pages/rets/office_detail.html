@@ -1,0 +1,73 @@
+---
+page-title: Office Details
+page-eyebrow:
+---
+
+<script src="{{root}}assets/script/rets.js"></script>
+
+<main id="contentControl" class="content modulePage retsModule">
+  <div class="grid-container">
+    <div class="content-body">
+
+      {{#with retsOffices.office_tags}}
+      <h1 class="pageTitle">Office Details</h1>
+      <div class="retsModule retsDetail retsOffices">
+        <div id="utilityBar"><a href="index.php?src=directory&amp;view=[[type]]&hurl=n" class="button secondary searchResultsLink" data-append-query >Return to Results</a></div>
+        <div class="media-object office">
+          <div class="media-object-section main-section">
+            <div class="info grid-x">
+
+              <div class="name cell"><h4>{{info.office_long_name}}</h4></div>
+              <div class="contact cell large-7">
+                <div><span class="value">
+                    {{location.address_1}} {{location.address_2}}<br>
+                    {{location.address_city}}, {{location.address_state}} {{location.address_zip}}</span></div>
+                <div><span class="label">{{info.email}}</span></div>
+              </div>
+              <div class="phone cell large-5">
+                <div><span class="label">Office:&nbsp;</span><span class="value">{{info.area_code}}{{info.phone}}</span></div></if>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {{/with}}
+
+        <script>
+          $(function() {
+            initOfficeDetailPage('79132373');
+          });
+        </script>
+
+        <div class="retsAgentsList officeDetail grid-x" id="agentsOfOffice" data-office-id="{{location.matrix_unique_id}}">
+
+          <div class="cell medium-12">
+            <h2>Agents of Office</h2>
+          </div>
+
+          {{#each retsAgentsSampleData.rets_agent}}
+          <div class="cell agent grid-x grid-padding-x box-shadow">
+            <a href="{{detail_url}}" class="cell medium-3 image media-object" id="photo" data-photos="{{photo_count}}" style="background-image: url('https://picsum.photos/210');"></a>
+            <div class="cell medium-7 agent-info main-section">
+              <div class="agent-info-inner grid-x">
+                <div class="name cell"><h3><a href="{{detail_url}}">{{first_name}} {{last_name}}</a></h3></div>
+                <div class="contact cell large-7">
+                  <div><span class="value">{{office_long_name}}</span></div>
+                  <div><span class="label"><a href="mailto:{{email}}" target="_blank">{{email}}</a></span></div>
+                </div>
+                <div class="phone cell large-5">
+                  {{phone}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>

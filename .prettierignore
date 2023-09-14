@@ -1,0 +1,4 @@
+dist
+node_modules
+*.json
+src/assets/js/autoplay-inline-embedded-videos-on-scroll.min.js

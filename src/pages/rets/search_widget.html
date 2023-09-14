@@ -1,0 +1,53 @@
+---
+page-title: Search Widget
+page-eyebrow:
+---
+
+<script src="{{root}}assets/script/rets.js"></script>
+
+<main id="contentControl" class="content modulePage">
+
+    {{#with retsSearchWidget.sample_data}}
+    <section class="propSearch propertySearchWidget">
+        <div class="grid-container">
+
+            <header class="propSearch-header" data-aos="fade-up" style="text-align:center;">
+                <div class="align-center text-center">
+                    <div class="eyebrow">{{introEyebrow}}</div>
+                    <h2>{{introTitle}}</h2>
+                    <div class="intro">{{introDescription}}</div>
+                </div>
+            </header>
+
+            <div class="propSearch-container">
+                <div class="propertySearchWidget-js">
+                    <a href="#" data-property-type="rets_res" class="button active">Homes</a>
+                    <a href="#" data-property-type="rets_multi" class="button">Multi-Family</a>
+                    <a href="#" data-property-type="rets_res_rent" class="button">Rentals</a>
+                    <a href="#" data-property-type="rets_com" class="button">Commercial</a>
+                    <a href="#" data-property-type="rets_lnd" class="button">Land</a>
+                </div>
+
+                <div class="propSearch-input-wrapper">
+                    <div class="grid-x" data-property-type="rets_res">
+                        <div class="cell large-10 propInput">
+                            <div class="freedomSearchField">
+                                <input type="text" value="" class="searchField" placeholder="Residential MLS #, Street Address, City, Zip etc.">
+                            </div>
+                            <!--
+                            <input type="hidden" name="xsearch[1]" size="20" value="Active" class="directorySearchInput">
+                            <input type="text" value="" class="searchField" placeholder="MLS #, Street Address, City, Zip etc."/>
+                            -->
+                        </div>
+                        <div class="cell large-2 propAction"><button type="submit" class="button primary">Search</button></div>
+                    </div>
+
+                </div>
+                <p></p>
+                <p><a href="index.php?src=pages&ref=property-advanced-search">Or begin advanced search</a></p>
+            </div>
+        </div>
+    </section>
+    {{/with}}
+
+</main>

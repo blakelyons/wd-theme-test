@@ -1,0 +1,24 @@
+<div class="header-fullnav">
+    {{#if mega-menu}}
+    <ul class="menu_main_header menu header-nav header-mega-menu" data-mega-menu data-check-icons data-nav>
+    {{else}}
+    <ul class="menu_main_header menu header-nav dropdown" data-dropdown-menu data-nav>
+    {{/if}}
+
+        {{> primary_navigation}}
+    </ul>
+
+    <div class="header-util">
+        <div class="header-buttons">
+            <a href="login.html" class="button primary">Member Portal</a>
+        </div>
+        <div class="header-search">
+            <button type="button" data-toggle="header-search-dropdown" class="button primary clear"><i class="fa fa-search"></i></button>
+        </div>
+        {{> header_search_popup}}
+        <div class="mobileNav-trigger" data-mobile-nav-trigger="">
+            <div class="mobileNav-hamburger"></div>
+        </div>
+    </div>
+
+</div>

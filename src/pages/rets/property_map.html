@@ -1,0 +1,149 @@
+---
+page-title: Property Map
+---
+
+<script src="{{root}}assets/script/rets.js"></script>
+
+<main id="contentControl" class="content modulePage retsModule">
+  <div class="grid-container grid-x full">
+    <div class="content-body">
+      <div class="retsMap retsModule">
+
+        <h1 class="pageTitle">Residential Properties</h1>
+        <div class="grid-container">
+
+          <!-- RETS Property Filter Bar -->
+          {{> rets_property_filter_bar}}
+          <!-- RETS Property Filter Bar -->
+
+          <!-- BEGIN: RETS Advanced Search -->
+          {{> rets_property_advanced_search}}
+          <!-- END: RETS Advanced Search -->
+
+          <!-- RETS Property Search Results & Filter Bar -->
+          {{> rets_property_lister_search_results_filter_bar}}
+
+        </div>
+        <div id="propertyMapArea" class="grid-container full">
+          <div class="grid-x">
+            <div id="propertyMap" class="cell medium-7"></div>
+            <div id="propertyList" class="cell medium-5">
+
+              <div class="retsMapList">
+                <div>
+
+                  {{#with retsProperties.sample_data}}
+                  {{#repeat 10}}
+
+                  <a href="{{detail_url}}"
+                     class="retsList-item property box-shadow detailUrl grid-x grid-padding-x grid-padding-y">
+                    <div class="cell medium-3 property-image"
+                         style="background-image: url(https://picsum.photos/1024/768);"></div>
+                    <div class="cell medium-9 property-info grid-x">
+
+                      <div class="cell property-info-row grid-x">
+
+                        <div class="medium-6 property-address">
+                          <h4>{{location.address_1}}<br/>
+                            {{location.city}}, {{location.state}} {{location.zip_code}}</h4>
+                          <p>{{info.category}}: {{info.style_description}}</p>
+                        </div>
+                        <div class="medium-6 property-meta-info">
+                          <h3 class="property-price">{{info.listing_price}}</h3>
+                          <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                          <!--
+                          Replace active classname with below <if> statement for Status <span class="value status active"></span>
+                          <if [[Status]] == "Active"> active</if><if [[Status]] == "Closed"> closed</if><if [[Status]] == "Pending"> pending</if>
+                          -->
+                        </div>
+
+                      </div>
+
+                      <div
+                          class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom">
+                        <div class="cell">
+                          Bedrooms: {{info.bedrooms}}
+                        </div>
+                        <div class="cell">
+                          Full Baths: {{info.bathrooms}}
+                        </div>
+                        <div class="cell">
+                          1/2 Baths: {{info.total_half_baths}}
+                        </div>
+                        <div class="cell">
+                          Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                        </div>
+                      </div>
+
+                      <div class="cell property-info-row grid-x grid-padding-x medium-up-2">
+                        <div class="cell">
+                          List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                        </div>
+                        <div class="cell text-align-right">
+                          List Office: {{property_listing_office.long_name}}
+                        </div>
+                      </div>
+
+                    </div>
+                  </a>
+
+                  {{/repeat}}
+                  {{/with}}
+
+                </div>
+              </div>
+
+              <div class="pagination">
+                <div class="paginationLinks">
+                  <div class="paginationBlankSpace">
+                    <div class="pageLinks">
+                      <span class="prevnextCurrent pageLink pageLinkCurrent">1</span><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=50,50,4865"
+                        class="prevnextWindow pageLink">2</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=100,50,4865"
+                        class="prevnextWindow pageLink">3</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=150,50,4865"
+                        class="prevnextWindow pageLink">4</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=200,50,4865"
+                        class="prevnextWindow pageLink">5</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=250,50,4865"
+                        class="prevnextWindow pageLink">6</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=300,50,4865"
+                        class="prevnextWindow pageLink">7</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=350,50,4865"
+                        class="prevnextWindow pageLink">8</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=400,50,4865"
+                        class="prevnextWindow pageLink">9</a><a
+                        href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=450,50,4865"
+                        class="prevnextWindow pageLink">10</a></div>
+                    <div class="pageLinkNext"><a class="prevnextLink"
+                                                 href="index.php?src=directory&amp;view=rets_properties&amp;srctype=rets_properties_map_lister_ajax&amp;pos=500,50,4865">&gt;&gt;</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="paginationText">Items 1-50 of 4865</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <script src="{{root}}assets/script/rets_property_map.js"></script>
+      <script async
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG_vS5V23GZxLoTbGlnTcU9Nv5YSJT68k&callback=initMap">
+      </script>
+
+      <!-- Use when ready to go live
+      <script async
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG_vS5V23GZxLoTbGlnTcU9Nv5YSJT68k&callback=initMap">
+      </script>
+      -->
+      <script>
+        $(function () {
+          initializePropertyListerPage('map', 'rets_res')
+        })
+      </script>
+    </div>
+  </div>
+</main>

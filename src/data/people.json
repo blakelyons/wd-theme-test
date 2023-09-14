@@ -1,0 +1,168 @@
+{ "departments": [
+    "Administration",
+    "Membership",
+    "Fitness",
+    "Aquatics"
+  ],
+  "staff": [{
+    "id": 1,
+    "first_name": "Javier",
+    "last_name": "Geraudel",
+    "email": "jgeraudel0@yellowpages.com",
+    "phone": "361-516-6556",
+    "position": "Assistant Professor",
+    "bio": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+  }, {
+    "id": 2,
+    "first_name": "Gregg",
+    "last_name": "Kolodziej",
+    "email": "gkolodziej1@indiatimes.com",
+    "phone": "576-258-1528",
+    "position": "Chemical Engineer",
+    "bio": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."
+  }, {
+    "id": 3,
+    "first_name": "Kristy",
+    "last_name": "Clethro",
+    "email": "kclethro2@kickstarter.com",
+    "phone": "370-861-2120",
+    "position": "Help Desk Operator",
+    "bio": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."
+  }, {
+    "id": 4,
+    "first_name": "Doralynne",
+    "last_name": "Bowser",
+    "email": "dbowser3@google.com.br",
+    "phone": "689-373-0098",
+    "position": "Software Consultant",
+    "bio": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo."
+  }, {
+    "id": 5,
+    "first_name": "Dudley",
+    "last_name": "Diggons",
+    "email": "ddiggons4@cdc.gov",
+    "phone": "340-582-1237",
+    "position": "Physical Therapy Assistant",
+    "bio": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus."
+  }, {
+    "id": 6,
+    "first_name": "Brandise",
+    "last_name": "Tetlow",
+    "email": "btetlow5@hatena.ne.jp",
+    "phone": "859-640-8067",
+    "position": "Structural Engineer",
+    "bio": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus."
+  }, {
+    "id": 7,
+    "first_name": "Carlynne",
+    "last_name": "Sprowell",
+    "email": "csprowell6@wikimedia.org",
+    "phone": "464-566-2942",
+    "position": "Account Executive",
+    "bio": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
+  }, {
+    "id": 8,
+    "first_name": "Irene",
+    "last_name": "Baudasso",
+    "email": "ibaudasso7@edublogs.org",
+    "phone": "160-934-1315",
+    "position": "Civil Engineer",
+    "bio": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+  }, {
+    "id": 9,
+    "first_name": "Kale",
+    "last_name": "Lounds",
+    "email": "klounds8@usgs.gov",
+    "phone": "886-504-6016",
+    "position": "Information Systems Manager",
+    "bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."
+  }, {
+    "id": 10,
+    "first_name": "Alvina",
+    "last_name": "Morecombe",
+    "email": "amorecombe9@yale.edu",
+    "phone": "407-488-2704",
+    "position": "Staff Accountant I",
+    "bio": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi."
+  }, {
+    "id": 11,
+    "first_name": "Base",
+    "last_name": "Ison",
+    "email": "bisona@bloglines.com",
+    "phone": "258-492-7804",
+    "position": "Health Coach IV",
+    "bio": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi."
+  }, {
+    "id": 12,
+    "first_name": "Cherin",
+    "last_name": "Conville",
+    "email": "cconvilleb@wix.com",
+    "phone": "392-696-3191",
+    "position": "Account Representative III",
+    "bio": "Phasellus in felis. Donec semper sapien a libero. Nam dui."
+  }, {
+    "id": 13,
+    "first_name": "Beaufort",
+    "last_name": "Ridgers",
+    "email": "bridgersc@moonfruit.com",
+    "phone": "858-727-8806",
+    "position": "Civil Engineer",
+    "bio": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum."
+  }, {
+    "id": 14,
+    "first_name": "Gabrila",
+    "last_name": "Derham",
+    "email": "gderhamd@bing.com",
+    "phone": "409-372-6909",
+    "position": "Civil Engineer",
+    "bio": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst."
+  }, {
+    "id": 15,
+    "first_name": "Nicolais",
+    "last_name": "Wanka",
+    "email": "nwankae@wikispaces.com",
+    "phone": "749-256-7607",
+    "position": "Account Coordinator",
+    "bio": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo."
+  }, {
+    "id": 16,
+    "first_name": "Lucine",
+    "last_name": "Duthie",
+    "email": "lduthief@canalblog.com",
+    "phone": "425-342-7574",
+    "position": "VP Accounting",
+    "bio": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat."
+  }, {
+    "id": 17,
+    "first_name": "Victoir",
+    "last_name": "Sandey",
+    "email": "vsandeyg@nifty.com",
+    "phone": "478-461-4321",
+    "position": "Web Developer I",
+    "bio": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus."
+  }, {
+    "id": 18,
+    "first_name": "Rand",
+    "last_name": "Aizlewood",
+    "email": "raizlewoodh@mozilla.com",
+    "phone": "312-820-8706",
+    "position": "Project Manager",
+    "bio": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum."
+  }, {
+    "id": 19,
+    "first_name": "Edgar",
+    "last_name": "Motten",
+    "email": "emotteni@netvibes.com",
+    "phone": "857-713-5154",
+    "position": "VP Accounting",
+    "bio": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+  }, {
+    "id": 20,
+    "first_name": "Reagan",
+    "last_name": "Ivakhnov",
+    "email": "rivakhnovj@mozilla.org",
+    "phone": "950-655-6854",
+    "position": "Design Engineer",
+    "bio": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
+  }]
+}

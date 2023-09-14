@@ -1,0 +1,148 @@
+---
+page-title: Property Details
+---
+
+<script src="{{root}}assets/script/rets.js"></script>
+<main id="contentControl" class="content modulePage retsModule">
+  {{#with retsProperties.sample_data}}
+  <div class="grid-container">
+      <div class="content-body">
+
+          <div class="retsDetail-property-address-bar">
+              <a href="#" onClick="window.history.back();" class="button secondary goBackUrl">Back to Results</a>
+              {{location.address_1}} {{location.address_2}}, {{location.city}}, {{location.state}} {{location.zip}}
+          </div>
+
+          <div class="retsDetail">
+
+              <div id="photos" class="sliderContainer"></div>
+
+              <div class="property detailUrl grid-x grid-padding-x grid-padding-y">
+                  <div class="cell medium-12 property-info">
+
+                      <div class="cell property-info-row grid-x">
+
+                          <div class="medium-6 property-address">
+                              <h4>{{location.address_1}} {{location.address_2}}<br>
+                                  {{location.city}}, {{location.state}} {{location.zip}} <a href="https://maps.google.com/maps?q={{location.address_1}}+{{location.city}}+{{location.state}}+{{location.zip}}" target="_blank">(View Map)</a></h4>
+                              <p>{{info.category}}: {{info.style_description}}</p>
+                          </div>
+                          <div class="medium-6 property-meta-info">
+                              <h3 class="property-price price">${{info.listing_price}}</h3>
+                              <p><b>Status:</b> {{info.status}}<span class="value status active"></span></p>
+                          </div>
+
+                      </div>
+
+                      <div class="cell property-info-row grid-x medium-up-4 border-top border-bottom property-info-row--extraPadTop property-info-row--extraPadBottom text-center">
+                          <div class="cell">
+                              Bedrooms: {{info.bedrooms}}
+                          </div>
+                          <div class="cell">
+                              Full Baths: {{info.bathrooms}}
+                          </div>
+                          <div class="cell">
+                              1/2 Baths: {{info.total_half_baths}}
+                          </div>
+                          <div class="cell">
+                              Square Feet: <span class="addCommas">{{info.total_square_ft}}</span>
+                          </div>
+                      </div>
+
+                      <div class="cell property-info-row grid-x grid-padding-x">
+                          <div class="cell">
+                              List Agent: {{property_listing_agent.first_name}} {{property_listing_agent.last_name}}
+                          </div>
+                          <div class="cell text-align-right">
+                              List Office: {{property_listing_office.long_name}}
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="cell medium-12 property-description">
+                      <h3>Description</h3>
+                      <p>{{info.public_remarks}}</p>
+                  </div>
+                  <div class="cell medium-12 property-details-header">
+                      <h3>Listing Details</h3>
+                  </div>
+              </div>
+
+              <div class="grid-x grid-padding-x medium-up-2 additional-details"></div>
+
+              <div class="property-additional-info grid-x grid-padding-x medium-up-2">
+                  <div class="cell property-details scroll">
+                      <h6>Details</h6>
+                      <table class="striped">
+                          <tbody>
+                              <tr>
+                                  <td width="25%"><b>MLSID:</b></td>
+                                  <td>{{location.matrix_unique_id}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Listing Price:</b></td>
+                                  <td><span class="addCommas price">${{info.listing_price}}</span></td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Amenities:</b></td>
+                                  <td>{{info.amenities}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Architectural Style:</b></td>
+                                  <td>{{info.architecture}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Construction Materials:</b></td>
+                                  <td>{{info.construction}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Bedrooms:</b></td>
+                                  <td>{{info.bedrooms}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Bathrooms:</b></td>
+                                  <td>{{info.bathrooms}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>SqFt:</b></td>
+                                  <td><span class="addCommas">{{info.total_square_ft}}</span></td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Garage Spaces:</b></td>
+                                  <td>{{info.garage_spaces}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Heating:</b></td>
+                                  <td>{{info.heating}}</td>
+                              </tr>
+                              <tr>
+                                  <td width="25%"><b>Cooling:</b></td>
+                                  <td>{{info.cooling}}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="cell property-map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.3214846750325!2d-82.53212818459032!3d27.303125549745594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c3404d5391fc95%3A0x64e29ad9b016a7f2!2s2001%20Siesta%20Dr%2C%20Sarasota%2C%20FL%2034239!5e0!3m2!1sen!2sus!4v1618435725129!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+              </div>
+
+          </div>
+
+          <script type="text/javascript">
+              $(document).ready(function(){
+                  initializePropertyDetail('rets_res', '259191', 'https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768'); // Parameters: module id, submenu, item id, comma delimited photo URLs
+              });
+          </script>
+
+          <!-- RETS Detail -->
+
+      </div>
+  </div>
+  {{/with}}
+    <script>
+       $(function() {
+           //initializePropertyDetail('rets_res', 121009, 'https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768,https://picsum.photos/1024/768');
+       });
+    </script>
+</main>

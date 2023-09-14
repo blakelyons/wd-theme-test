@@ -1,0 +1,33 @@
+// RETS Offices
+
+$rets-agent-item-box-shadow: 0px 3px 15px rgba(0,0,0,.2) !default;
+$rets-agent-item-box-shadow-hover: 0px 3px 15px rgba(0,0,0,.4) !default;
+
+.retsOfficesList {
+  .office {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    transition: all .2s cubic-bezier(.36,.53,.33,1.01);
+    box-shadow: $rets-agent-item-box-shadow;
+    &:hover {
+      box-shadow: $rets-agent-item-box-shadow-hover;
+      transform: scale(1.01);
+    }
+    &-object-section {
+      padding: 2rem;
+    }
+  }
+}
+
+.retsDetail .office {
+  padding: 2rem;
+  border: 1px solid $medium-gray;
+}
+
+.retsAgentsList.officeDetail {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid $medium-gray;
+}
+

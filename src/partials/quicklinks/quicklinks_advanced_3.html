@@ -1,0 +1,12 @@
+<section class="quicklinks-component">
+    <div class="grid-container full quicklinks-inner">
+        <div class="grid-x quicklinks {{quicklink_style}} large-up-4">
+           {{#each general.quicklinks}}
+            {{> quicklink_single this
+                    more-text='Read More'
+                    blurb=(lorem count='20' units='words')
+            }}
+            {{/each}}
+        </div>
+    </div>
+</section>

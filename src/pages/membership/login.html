@@ -1,0 +1,43 @@
+---
+page-title: Restricted Content
+---
+<main id="contentControl" class="content modulePage">
+
+    <div class="grid-container grid-x ">
+        <div class="content-body">
+            <form method="post" action="index" id="formLogin" autocomplete="off">
+                <div class="flag-hideHeader"></div>
+                <div class="grid-x primaryLogin loginBox" >
+                    <div class="loginForm cell medium-7 large-6">
+                        <h2 class="loginHeader">Member Login</h2>
+                        <p>Please login to see this restricted content</p>
+
+                        <label>Username
+                            <input type="text" name="username" value="" size="20" autocapitalize="none"> </label>
+                        <label>Password
+                            <input type="password" name="password" value="" size="20" autocomplete="off"> </label>
+                        <div class="memberForgot">
+                            <input type="checkbox" id="forgot" name="forgot">
+                            <label for="forgot"> <b>Forgot My Password</b></label>
+                        </div>
+                        <p>
+                            <button type="submit" class="button purple">Login</button>
+                        </p>
+                        <div class="memberForgot"><a href="index.php?src=membership&amp;cmd=forgot_user"><b>I Forgot My Username</b></a></div>
+
+
+                    </div>
+                    <div class="loginCta cell medium-auto">
+                        <div>
+                            <h2>Not a Member?</h2>
+                            <a href="form.html" class="button">Join Today</a>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</main>

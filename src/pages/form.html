@@ -1,0 +1,193 @@
+---
+page-title: Form Fields
+---
+
+<main id="contentControl" class="content modulePage">
+    <div class="grid-container grid-x">
+        <div class="content-body">
+            <div class="freedomWebForm">
+                <form id="form" name="form" method="post" action="" onsubmit="return  false" enctype="multipart/form-data">
+                    <div class="formContent">
+                        <div class="formStaticText" style="text-align:left;">
+                            <h2>Sample Form Fields</h2>
+                            <p>Lorem ipsum dolor sit amet, in probo oportere has. Te usu paulo honestatis. Vim ne dicant
+                               debitis, vim prompta menandri an. Essent lucilius qualisque eam in, accumsan detracto mei
+                               et, usu tempor ignota accusamus te. Sale summo repudiandae vis ei, nec omnis scribentur
+                               at. Phaedrum singulis ad cum, et mel perpetua pericula, fuisset mandamus cum an.</p>
+                        </div>
+
+                        <div class="formGroup formGroup--full">
+                            <label for="IDFormField_customfield0_0" class="formLabel ">Text Field - Large</label>
+                            <input type="text" placeholder="" id="IDFormField_customfield0_0" name="formField_customfield0" value="">
+
+                        </div>
+
+                        <div class="formGroup formGroup--medium">
+                            <label for="IDFormField_customfield1_0" class="formLabel ">Text Field - Medium</label>
+                            <input type="text" placeholder="" id="IDFormField_customfield1_0" name="formField_customfield1" value="">
+
+                        </div>
+
+                        <div class="formGroup formGroup--small">
+                            <label for="IDFormField_customfield2_0" class="formLabel ">Text Field - Small</label>
+                            <input type="text" placeholder="" id="IDFormField_customfield2_0" name="formField_customfield2" value="">
+
+                        </div>
+
+                        <div class="formGroup formGroup--full">
+                            <label for="IDFormField_customtextarea0_0" class="formLabel ">Textarea </label>
+                            <textarea name="formField_customtextarea0" id="IDFormField_customtextarea0_0" placeholder="" rows="5"></textarea>
+                        </div>
+
+                        <div class="formGroup formGroup--checkbox formGroup--align">
+                            <label for="IDFormField_customcheckbox0_0" class="formtext formLabel"> Single Checkbox
+                                <input class="formInput" type="checkbox" id="IDFormField_customcheckbox0_0" name="formField_customcheckbox0" value="1">
+                            </label>
+
+                        </div>
+
+                        <div class="formGroup formGroup--checkbox formGroup--none">
+                            <label for="IDFormField_customcheckbox3_0" class="formtext formLabel">
+                                <input class="formInput" type="checkbox" id="IDFormField_customcheckbox3_0" name="formField_customcheckbox3" value="1">
+                                Single Checkboxes </label>
+
+                        </div>
+
+                        <input type="hidden" name="formMeta_formField_customcheckgroup1" id="" value="expand">
+                        <div class="formGroup formGroup--checkbox formGroup--full">
+                            <fieldset class="formInput-group" data-column="5">
+                                <legend class="">Checkgroup</legend>
+                                <div class="formInput-columns columns-3">
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_1" name="formField_customcheckgroup1[]" value="sample1">&nbsp;sample1</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_2" name="formField_customcheckgroup1[]" value="sample2">&nbsp;sample2</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_3" name="formField_customcheckgroup1[]" value="sample3">&nbsp;sample3</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_4" name="formField_customcheckgroup1[]" value="sample4">&nbsp;sample4</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_5" name="formField_customcheckgroup1[]" value="sample5">&nbsp;sample5</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="checkbox" class="formCheckbox" id="IDFormField_customcheckgroup1_0_6" name="formField_customcheckgroup1[]" value="sample5">&nbsp;sample6</label>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="formGroup formGroup--medium">
+                            <label for="IDFormField_customselect1_0" class="formLabel ">Select</label>
+                            <select class="formInput" id="IDFormField_customselect1_0" name="formField_customselect1">
+                                <option value="choice1">choice1</option>
+                                <option value="choice2">choice2</option>
+                                <option value="choice3">choice3</option>
+                            </select>
+
+                        </div>
+
+                        <div class="formGroup formGroup--listbox formGroup--medium">
+                            <label for="IDFormField_customlistbox1_0" class="formLabel ">List Box </label>
+                            <select class="formInput" multiple="multiple" id="IDFormField_customlistbox1_0" name="formField_customlistbox1">
+                                <option value="sample1">sample1</option>
+                                <option value="sample2">sample2</option>
+                                <option value="sample3">sample3</option>
+                            </select>
+
+                        </div>
+
+                        <div class="formGroup formGroup--medium">
+                            <label for="" class="formLabel ">Date Field</label>
+                            <input type="text" id="IDFormField_customdate1_0" class="form_datepicker hasDatepicker" name="formField_customdate1" value="" size="12">
+                            <script type="text/javascript">
+
+                                $(function () {
+                                    $('#IDFormField_customdate1_0').datepicker();
+                                });
+                            </script>
+
+                        </div>
+
+                        <input type="hidden" name="formMeta_formField_customdatetime2" id="" value="time">
+                        <div class="formGroup formGroup--small">
+                            <label class="formLabel ">Time Field</label>
+                            <div class="formSubGroup">
+                                <div class="formGroup--medium">
+                                    <select id="IDFormField_customdatetime2_0_0" name="formField_customdatetime2[]">
+                                        <option value="" selected="selected"></option>
+                                        <option value="1 am">1 am</option>
+                                        <option value="2 am">2 am</option>
+                                        <option value="3 am">3 am</option>
+                                        <option value="4 am">4 am</option>
+                                        <option value="5 am">5 am</option>
+                                        <option value="6 am">6 am</option>
+                                        <option value="7 am">7 am</option>
+                                        <option value="8 am">8 am</option>
+                                        <option value="9 am">9 am</option>
+                                        <option value="10 am">10 am</option>
+                                        <option value="11 am">11 am</option>
+                                        <option value="12 Noon">12 Noon</option>
+                                        <option value="1 pm">1 pm</option>
+                                        <option value="2 pm">2 pm</option>
+                                        <option value="3 pm">3 pm</option>
+                                        <option value="4 pm">4 pm</option>
+                                        <option value="5 pm">5 pm</option>
+                                        <option value="6 pm">6 pm</option>
+                                        <option value="7 pm">7 pm</option>
+                                        <option value="8 pm">8 pm</option>
+                                        <option value="9 pm">9 pm</option>
+                                        <option value="10 pm">10 pm</option>
+                                        <option value="11 pm">11 pm</option>
+                                        <option value="12 Midnight">12 Midnight</option>
+                                    </select>
+                                </div>
+                                <div class="formGroup--medium">
+                                    <select id="IDFormField_customdatetime2_0_1" name="formField_customdatetime2[]">
+                                        <option value="" selected="selected"></option>
+                                        <option value=":00">:00</option>
+                                        <option value=":15">:15</option>
+                                        <option value=":30">:30</option>
+                                        <option value=":45">:45</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="formGroup formGroup--full">
+                            <label for="IDFormField_custompassword0_0" class="formLabel ">Password Field</label>
+                            <input type="password" id="IDFormField_custompassword0_0" name="formField_custompassword0" value="" size="" maxlength="">
+                        </div>
+
+                        <div class="formGroup formGroup--radio formGroup--full">
+                            <fieldset class="formInput-group" data-column="3">
+                                <legend class="formLabel ">Radio Buttons</legend>
+                                <div class="formInput-columns columns-3">
+                                    <label class="formLabel" data-columns="3"><input type="radio" class="formRadio" id="IDFormField_customradio0_0_1" name="formField_customradio0" value="sample1">&nbsp;sample1</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="radio" class="formRadio" id="IDFormField_customradio0_0_2" name="formField_customradio0" value="sample2">&nbsp;sample2</label>
+
+                                    <label class="formLabel" data-columns="3"><input type="radio" class="formRadio" id="IDFormField_customradio0_0_3" name="formField_customradio0" value="sample3">&nbsp;sample3</label>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="formGroup formGroup--full">
+                            <label for="IDFormField_customupload0_0" class="formLabel ">Upload
+                                <input class="formInput" type="file" id="IDFormField_customupload0_0" name="formField_customupload0" size="0" title="*.txt">
+                            </label>
+                        </div>
+
+                        <div class="formNavigation">
+
+                            <button type="submit" class="button formNavigation-next" alt="Next">Submit</button>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</main>

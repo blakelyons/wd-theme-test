@@ -1,0 +1,98 @@
+---
+page-title: REALTOR&reg; Offices
+page-eyebrow:
+---
+
+<script src="{{root}}assets/script/rets.js"></script>
+
+<main id="contentControl" class="content modulePage retsModule">
+  <div class="grid-container">
+    <div class="content-body">
+
+      <h1 class="pageTitle">REALTOR<sup>&reg;</sup> Offices</h1>
+      <div class="retsModule retsLister retsOffices">
+        <div id="utilitySearch">
+
+          {{> rets_office_search}}
+
+        </div>
+        <div class="retsList retsOfficesList grid-x grid-padding-x grid-padding-y large-up-2">
+
+          {{#with retsOffices.sample_data}}
+          {{#repeat 6}}
+
+          <div class="cell">
+            <div class="office">
+              <div class="office-object-section main-section">
+                <div class="info grid-x grid-padding-x">
+
+                  <div class="name cell auto"><h4><a class="detailUrl" href="{{detail_url}}">{{info.office_long_name}}</a></h4></div>
+
+                  <div class="contact cell medium-7">
+                    <div><span class="label"><a href="{{info.website_address}}" target="_blank">{{info.website_address}}</a></span></div>
+                    <div><span class="value">{{location.address_1}} {{location.address_2}}, {{location.state}}</span></div>
+                  </div>
+                  <div class="phone cell medium-5">
+                    <div><span class="label">Office:&nbsp;</span><span class="value">{{info.area_code}}{{info.phone}}</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{/repeat}}
+          {{/with}}
+
+        </div>
+
+        <!-- <div class="pagination">[[prevnext]]</div> -->
+        <div class="pagination">
+          <div style="position:relative;white-space:nowrap;padding-top:20px" class="paginationLinks">
+            <div style="position:absolute;left:0px" class="pageLinkPrevChunk"></div>
+            <div style="position:absolute;right:0px" class="pageLinkNextChunk"><a class="prevnextWindowArrow"
+                                                                                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=300,30,2377">11-20
+              &gt;&gt;</a></div>
+            <div style="width:100%;text-align:center;white-space:nowrap" class="paginationBlankSpace">
+              <div style="display:inline;display:inline-block" class="pageLinkPrev"></div>
+              <div style="display:inline;display:inline-block;padding:0px 10px" class="pageLinks"><span
+                  class="prevnextCurrent pageLink pageLinkCurrent">1</span><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=30,30,2377"
+                  class="prevnextWindow pageLink">2</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=60,30,2377"
+                  class="prevnextWindow pageLink">3</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=90,30,2377"
+                  class="prevnextWindow pageLink">4</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=120,30,2377"
+                  class="prevnextWindow pageLink">5</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=150,30,2377"
+                  class="prevnextWindow pageLink">6</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=180,30,2377"
+                  class="prevnextWindow pageLink">7</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=210,30,2377"
+                  class="prevnextWindow pageLink">8</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=240,30,2377"
+                  class="prevnextWindow pageLink">9</a><a
+                  href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=270,30,2377"
+                  class="prevnextWindow pageLink">10</a></div>
+              <div style="display:inline;display:inline-block" class="pageLinkNext"><a class="prevnextLink"
+                                                                                       href="index.php?src=directory&amp;view=rets_office&amp;submenu=FindanOffice&amp;srctype=rets_office_lister&amp;pos=30,30,2377">Next
+                &gt;&gt;</a></div>
+            </div>
+          </div>
+          <div style="text-align:center;width:100%;padding-top:10px" class="paginationText">Items 1-30 of 2377</div>
+        </div>
+
+      </div>
+
+      <!--
+      <if ([[header_banner_override]])>
+        <div class="interiorHero-override" data-module="[[type]]" data-header-banner-override="[[header_banner_override]]">rets_offices</div>
+      </if>
+      -->
+
+
+
+
+    </div>
+  </div>
+</main>

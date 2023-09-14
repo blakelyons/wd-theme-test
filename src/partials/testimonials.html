@@ -1,0 +1,35 @@
+<section class="testimonial-component content theme-dark splitContent-component hasSvg--top pad-bottom-none">
+    <div class="svgDivider  padded-none" style="color:white">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1920 90">
+            <path d="M 0 0  L 1500 45 L 1920 0 Z" fill="currentColor" fill-rule="evenodd"></path>
+        </svg>
+    </div>
+    <div class="grid-container extra-wide grid-x ">
+    <div class="splitContent-column splitContent-left medium-12 large-4 theme-dark">
+        <div class="splitContent-columnInner ">
+            <h2>Testimonials</h2>
+            <p>{{lorem count='1' units='paragraph'}}</p>
+            <p><a href="testimonials.html" class="button">Button</a></p>
+        </div>
+    </div>
+
+    <div class="splitContent-column splitContent-right medium-12 large-8 theme-dark-gray has-image" style="background-image: url('https://picsum.photos/800/400')">
+        <div class="splitContent-columnInner ">
+            <div class="testimonial-slider carousel-wrapper" data-flickity='{}'>
+                {{#repeat 3}}
+                <div class="cell testimonial-slide">
+                    <div class="testimonial-image" style="background-image: url('https://picsum.photos/100/100');"></div>
+                    <div class="testimonial-text small">
+                        <p>{{lorem count='1' units='paragraph'}}</p>
+                    </div>
+                    <div class="testimonial-citation">
+                        <div class="h4">Hellen W.</div>
+                        <p>United States</p>
+                    </div>
+                </div>
+                {{/repeat}}
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
